@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">VO2max</string>
+    <string name="greeting">GIH VO2max mobilapp!</string>
 </resources>
