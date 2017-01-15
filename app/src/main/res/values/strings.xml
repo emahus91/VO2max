@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">VO2max</string>
     <string name="greeting">GIH VO2max mobilapp!</string>
-    <string name="aransbutton">Starta en ny mätning!</string>
+    <string name="NewMeasurement">Start a new measurement</string>
+    <string name="textview">Hello to world 2!</string>
 </resources>
