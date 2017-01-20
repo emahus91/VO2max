@@ -9,17 +9,17 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.sam.vo2max.MainActivity">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/greeting"
-        android:id="@+id/textView" />
+        android:id="@+id/GreetingTextViewID" />
 
     <Button
         android:text="@string/NewMeasurement"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
         android:layout_alignParentStart="true"
         android:layout_marginStart="120dp"
         android:layout_marginTop="330dp"
@@ -30,44 +30,27 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="6"
-        android:id="@+id/WeightEditText"
-        android:layout_alignBaseline="@+id/textView4"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_toEndOf="@+id/textView4" />
-
-    <TextView
-        android:text="@string/agetextview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/AgeTextView"
-        android:layout_above="@+id/textView4"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp" />
+        android:id="@+id/WeightEditTextID"
+        android:layout_alignBaseline="@+id/WeightTextViewID"
+        android:layout_alignBottom="@+id/AgeEditTextID"
+        android:layout_toEndOf="@+id/WeightTextViewID" />
 
     <RadioButton
         android:text="@string/radiobuttonman"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/radioButton"
-        android:layout_alignBaseline="@+id/radioButton2"
-        android:layout_alignBottom="@+id/radioButton2"
+        android:id="@+id/radioButtonMaleID"
+        android:layout_alignBaseline="@+id/radioButtonFemaleID"
+        android:layout_alignBottom="@+id/radioButtonFemaleID"
         android:layout_toStartOf="@+id/editText" />
-
-    <TextView
-        android:text="@string/nametextview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/NameTextView"
-        android:layout_alignTop="@+id/NameEditText"
-        android:layout_alignParentStart="true" />
 
     <RadioButton
         android:text="@string/radiobuttonfemale"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/radioButton2"
+        android:id="@+id/radioButtonFemaleID"
         android:layout_marginBottom="29dp"
-        android:layout_above="@+id/NameEditText"
+        android:layout_above="@+id/NameTextView"
         android:layout_toEndOf="@+id/NameTextView" />
 
     <EditText
@@ -75,7 +58,7 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="8"
-        android:id="@+id/AgeEditText"
+        android:id="@+id/AgeEditTextID"
         android:layout_alignBaseline="@+id/AgeTextView"
         android:layout_alignBottom="@+id/AgeTextView"
         android:layout_toEndOf="@+id/AgeTextView" />
@@ -85,19 +68,35 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:padding="15dp"
-        android:text=""
         android:ems="10"
-        android:id="@+id/NameEditText"
+        android:id="@+id/NameEditTextID"
         android:layout_alignParentStart="true"
-        android:layout_above="@+id/AgeEditText" />
+        android:layout_above="@+id/AgeEditTextID" />
 
     <TextView
         android:text="@string/weighttextview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView4"
+        android:id="@+id/WeightTextViewID"
         android:layout_alignBottom="@+id/StartNewMeasurementID"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="148dp" />
+
+    <TextView
+        android:text="@string/nametextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/NameTextView"
+        android:layout_alignTop="@+id/NameEditTextID"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="@string/agetextviewstring"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/AgeTextView"
+        android:layout_marginBottom="15dp"
+        android:layout_above="@+id/WeightTextViewID"
+        android:layout_alignEnd="@+id/NameTextView" />
 
 </RelativeLayout>
