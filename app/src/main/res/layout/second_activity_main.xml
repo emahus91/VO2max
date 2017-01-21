@@ -1,0 +1,250 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="0.13">
+
+            <Chronometer
+                android:layout_width="136dp"
+                android:layout_height="32dp"
+                android:id="@+id/chronometer3" />
+
+            <Button
+                android:id="@+id/buttonStart"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/start" />
+
+            <Button
+                android:id="@+id/buttonRestart"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/restart" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:text="@string/tid_min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewTid"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAlignment="textEnd"
+                android:layout_weight="0.19" />
+
+            <TextView
+                android:text="@string/antal_vandor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewVandor"
+                android:layout_weight="0.66"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAlignment="textEnd" />
+
+            <TextView
+                android:text="@string/borg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewBorg"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAlignment="textEnd"
+                android:layout_weight="0.39" />
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="0.37">
+
+        <TextView
+            android:text="@string/_3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textViewTid3"
+            android:layout_weight="0.33"
+            android:textStyle="normal|bold"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:gravity="center" />
+
+        <EditText
+            android:layout_width="5dp"
+            android:layout_height="match_parent"
+            android:text="@string/_00"
+            android:id="@+id/editTextVandor3"
+            android:layout_weight="0.40"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:inputType="number" />
+
+        <Button
+            android:text="@string/minus3"
+            android:layout_width="34dp"
+            android:layout_height="match_parent"
+            android:id="@+id/buttonBorg3dec"
+            android:layout_weight="0.15"
+            android:textStyle="normal|bold"
+            android:textSize="24sp" />
+
+        <EditText
+            android:layout_width="27dp"
+            android:layout_height="wrap_content"
+            android:text="@string/_0"
+            android:id="@+id/editTextBorg3"
+            android:textSize="24sp"
+            android:layout_weight="0.07"
+            android:gravity="center_vertical|center_horizontal"
+            android:inputType="number" />
+
+
+        <Button
+            android:id="@+id/buttonBorg3inc"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:text="@string/plus3"
+            android:layout_weight="0.16"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="0.37">
+
+            <TextView
+                android:text="@string/_4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textViewTid4"
+                android:layout_weight="0.33"
+                android:textStyle="normal|bold"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:gravity="center" />
+
+            <EditText
+                android:layout_width="5dp"
+                android:layout_height="match_parent"
+                android:text="@string/_000"
+                android:id="@+id/editTextVandor4"
+                android:layout_weight="0.40"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:inputType="number" />
+
+            <Button
+                android:text="@string/minus4"
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                android:id="@+id/buttonBorg4dec"
+                android:layout_weight="0.15"
+                android:textStyle="normal|bold"
+                android:textSize="24sp" />
+
+        <EditText
+            android:layout_width="27dp"
+            android:layout_height="wrap_content"
+            android:text="@string/_0000"
+            android:id="@+id/editTextBorg4"
+            android:textSize="24sp"
+            android:layout_weight="0.07"
+            android:gravity="center_vertical|center_horizontal"
+            android:inputType="number" />
+
+
+        <Button
+                android:id="@+id/buttonBorg4inc"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:text="@string/plus4"
+                android:layout_weight="0.16"
+                android:textSize="24sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="0.37">
+
+            <TextView
+                android:text="@string/_5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textViewTid5"
+                android:layout_weight="0.33"
+                android:textStyle="normal|bold"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:gravity="center" />
+
+            <EditText
+                android:layout_width="5dp"
+                android:layout_height="match_parent"
+                android:text="@string/_00000"
+                android:id="@+id/editTextVandor5"
+                android:layout_weight="0.40"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:inputType="number" />
+
+            <Button
+                android:text="@string/minus5"
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                android:id="@+id/buttonBorg5dec"
+                android:layout_weight="0.15"
+                android:textStyle="normal|bold"
+                android:textSize="24sp" />
+
+            <EditText
+                android:layout_width="27dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_000000"
+                android:id="@+id/editTextBorg5"
+                android:textSize="24sp"
+                android:layout_weight="0.07"
+                android:gravity="center_vertical|center_horizontal"
+                android:inputType="number" />
+
+
+            <Button
+                android:id="@+id/buttonBorg5inc"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:text="@string/plus5"
+                android:layout_weight="0.16"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/buttonUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/update"
+            android:layout_marginLeft="@dimen/updateButtonMargin"
+            android:layout_marginRight="@dimen/updateButtonMargin" />
+
+
+</LinearLayout>

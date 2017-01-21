@@ -16,14 +16,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.second_activity_main);
+        setContentView(R.layout.activity_main);
 
         Button btnNewMeasurement = (Button) findViewById(R.id.StartNewMeasurementID);
         btnNewMeasurement.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, TheMeasurementActivity.class);
+                Intent intent = new Intent(MainActivity.this,TheMeasurementActivity.class);
 
                 EditText etName = (EditText) findViewById(R.id.NameEditTextID);
                 EditText etAge = (EditText) findViewById(R.id.AgeEditTextID);

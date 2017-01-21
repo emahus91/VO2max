@@ -22,7 +22,6 @@ public class SecondActivity extends AppCompatActivity {
         //valueSelector.setMinValue(0);
         //valueSelector.setMaxValue(100);
 
-
         Button buttonUpdate = (Button) findViewById(R.id.buttonUpdate);
         buttonUpdate.setOnClickListener(new View.OnClickListener() { // TODO ersätts av onchronometerticklistener efter test
             @Override
