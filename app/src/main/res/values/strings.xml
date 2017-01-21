@@ -8,4 +8,34 @@
     <string name="radiobuttonfemale">Kvinna</string>
     <string name="weighttextview">Skriv in personens vikt:</string>
     <string name="nametextview">Skriv in personens namn:</string>
+
+<!--Samuel-->
+    <string name="valueSelector_label">Vändor</string>
+    <string name="action_settings">Settings</string>
+    <string name="update">Update</string>
+    <string name="start">Start</string>
+    <string name="restart">restart</string>
+    <string name="tid_min">Tid(min)</string>
+    <string name="antal_vandor">A. Vändor</string>
+    <string name="borg">Borg(1-20)</string>
+    <string name="_3">3</string>
+    <string name="minus3">-</string>
+    <string name="_0">0</string>
+    <string name="_00">0</string>
+    <string name="plus3">+</string>
+    <string name="_4">4</string>
+    <string name="_000">0</string>
+    <string name="minus4">-</string>
+    <string name="_0000">0</string>
+    <string name="plus4">+</string>
+    <string name="_5">5</string>
+    <string name="_00000">0</string>
+    <string name="minus5">-</string>
+    <string name="plus5">+</string>
+    <string name="_000000">0</string>
+    <string name="vandorknappen">0</string>
+    <string name="decrementbutton">decrementbutton</string>
+    <string name="incrementbutton">incrementbutton</string>
+
+
 </resources>

@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.second_activity_main);
 
         Button btnNewMeasurement = (Button) findViewById(R.id.StartNewMeasurementID);
         btnNewMeasurement.setOnClickListener(new View.OnClickListener() {
