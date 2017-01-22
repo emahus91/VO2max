@@ -12,19 +12,29 @@
             android:layout_weight="0.13">
 
             <Chronometer
-                android:layout_width="136dp"
-                android:layout_height="32dp"
-                android:id="@+id/chronometer3" />
+                android:id="@+id/simpleChronometer"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:textSize="30sp"
+                android:textColor="#d3ff0149"
+                android:textStyle="bold"
+                />
 
             <Button
                 android:id="@+id/buttonStart"
-                android:layout_width="wrap_content"
+                android:layout_width="75dp"
                 android:layout_height="50dp"
                 android:text="@string/start" />
 
             <Button
+                android:id="@+id/buttonStop"
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:text="@string/stop" />
+
+            <Button
                 android:id="@+id/buttonRestart"
-                android:layout_width="wrap_content"
+                android:layout_width="85dp"
                 android:layout_height="50dp"
                 android:text="@string/restart" />
         </LinearLayout>
@@ -237,14 +247,21 @@
                 android:textSize="24sp" />
         </LinearLayout>
 
-        <Button
+
+    <com.example.sam.vo2max.ValueSelector
+        android:id="@+id/valueSelector"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/valueSelector_height"
+        android:layout_marginLeft="@dimen/valueSelector_hMargin"
+        android:layout_marginRight="@dimen/valueSelector_hMargin">
+    </com.example.sam.vo2max.ValueSelector>
+
+    <Button
             android:id="@+id/buttonUpdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="@string/update"
-            android:layout_marginLeft="@dimen/updateButtonMargin"
-            android:layout_marginRight="@dimen/updateButtonMargin" />
+            android:text="@string/update" />
 
 
 </LinearLayout>

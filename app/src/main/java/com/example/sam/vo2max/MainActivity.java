@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,TheMeasurementActivity.class);
+                Intent intent = new Intent(MainActivity.this,SecondActivity.class);
 
                 EditText etName = (EditText) findViewById(R.id.NameEditTextID);
                 EditText etAge = (EditText) findViewById(R.id.AgeEditTextID);

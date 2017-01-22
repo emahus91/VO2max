@@ -4,5 +4,5 @@
     <dimen name="valueSelector_label_text">14sp</dimen>
     <dimen name="valueSelector_margin_top">14dp</dimen>
     <dimen name="valueSelector_button_hMargin">25dp</dimen> //högre, minskar knapparna (34)
-    <dimen name="valueSelector_button_insideMargin">10dp</dimen> //30
+    <dimen name="valueSelector_button_insideMargin">40dp</dimen> //30
 </resources>
