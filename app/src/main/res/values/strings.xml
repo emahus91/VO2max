@@ -36,6 +36,7 @@
     <string name="vandorknappen">0</string>
     <string name="decrementbutton">decrementbutton</string>
     <string name="incrementbutton">incrementbutton</string>
+    <string name="stop">Stop</string>
 
 
 </resources>
