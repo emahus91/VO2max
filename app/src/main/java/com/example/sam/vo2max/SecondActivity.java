@@ -1,5 +1,6 @@
 package com.example.sam.vo2max;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
@@ -9,12 +10,9 @@ import android.widget.Chronometer;
 import android.widget.EditText;
 
 
-
-//TODO import activity 1 class (kolla på demo appen från github om hur man anropar alla klaser till SecondActivity
 //TODO import Chronometer class
 
-public class SecondActivity extends AppCompatActivity
-        implements Chronometer.OnChronometerTickListener {
+public class SecondActivity extends AppCompatActivity {
 
     private long timeWhenStopped = 0;
 
@@ -30,6 +28,8 @@ public class SecondActivity extends AppCompatActivity
         //INITIATING VIEWS
         final Chronometer simpleChronometer= (Chronometer) findViewById(R.id.simpleChronometer);
         final EditText etVandor3= (EditText) findViewById(R.id.editTextVandor3);
+        final EditText etVandor4= (EditText) findViewById(R.id.editTextVandor4);
+        final EditText etVandor5= (EditText) findViewById(R.id.editTextVandor5);
         Button btnUpdate = (Button) findViewById(R.id.buttonUpdate);
         Button btnStart = (Button) findViewById(R.id.buttonStart);
         Button btnStop = (Button) findViewById(R.id.buttonStop);
@@ -44,7 +44,7 @@ public class SecondActivity extends AppCompatActivity
                 etVandor3.setText(String.valueOf(value));
             }
         });
-        simpleChronometer.setOnChronometerTickListener(this);
+
         //simpleChronometer.setBase(SystemClock.elapsedRealtime() - (2* 60000 + 0 * 1000)); //making chrono start from a specific time
         // perform click  event on start button to start a chronometer
         btnStart.setOnClickListener(new View.OnClickListener() {
@@ -74,16 +74,41 @@ public class SecondActivity extends AppCompatActivity
                 timeWhenStopped = 0;
             }
         });
+
+        simpleChronometer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
+            @Override
+            public void onChronometerTick(Chronometer chronometer)
+            {
+                if ("00:10".equals(chronometer.getText())) {
+                    //Intent intent = new Intent(SecondActivity.this,MainActivity.class);
+                    // startActivity(intent);
+                       int value = valueSelector.getValue();
+                     etVandor3.setText(String.valueOf(value));
+                }
+
+                if ("00:20".equals(chronometer.getText())) {
+                    int value = valueSelector.getValue();
+                    etVandor4.setText(String.valueOf(value));
+                }
+
+                if ("00:30".equals(chronometer.getText())) {
+                    int value = valueSelector.getValue();
+                    etVandor5.setText(String.valueOf(value));
+                }
+            }
+        });
+
     }
 
-    @Override
-    public void onChronometerTick(Chronometer chronometer) {
+    //Todo fixa Borg knapparna(behöver vi ha + - knappar??)
+    //TODO hämta data från main activity och beräkna Power--Activity 3
+    //Todo update knappen(klar) sparar information(även från main activity) i databasen
 
-    }
+
     //TODO WHEN pressed back? (när användaren trycker tillbaka(till main activity) hur hantera chronometern?)
     //Todo onResume();
-    //Todo onPause();
-    //Todo onDestroy();
+    //Todo onPause();  Chronometern?
+    //Todo onDestroy(); finns det värden som behöver sparas?
 
 
 }
