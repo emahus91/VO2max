@@ -8,6 +8,8 @@
     <string name="radiobuttonfemale">Kvinna</string>
     <string name="weighttextview">Skriv in personens vikt:</string>
     <string name="nametextview">Skriv in personens namn:</string>
+    <string name="button">View Data</string>
+    <string name="ButtonAddData">Add Data</string>
 
 <!--Samuel-->
     <string name="valueSelector_label">Vändor</string>
