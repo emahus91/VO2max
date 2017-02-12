@@ -25,19 +25,19 @@
                 />
 
             <Button
-                android:id="@+id/buttonStart"
+                android:id="@+id/StartButtonID"
                 android:layout_width="75dp"
                 android:layout_height="50dp"
                 android:text="@string/start" />
 
             <Button
-                android:id="@+id/buttonStop"
+                android:id="@+id/StopButtonID"
                 android:layout_width="75dp"
                 android:layout_height="50dp"
                 android:text="@string/stop" />
 
             <Button
-                android:id="@+id/buttonRestart"
+                android:id="@+id/RestartButtonID"
                 android:layout_width="85dp"
                 android:layout_height="50dp"
                 android:text="@string/restart" />
@@ -103,7 +103,7 @@
             android:layout_width="5dp"
             android:layout_height="match_parent"
             android:text="@string/_00"
-            android:id="@+id/editTextVandor3"
+            android:id="@+id/Vandor3EditTextID"
             android:layout_weight="0.40"
             android:gravity="center"
             android:textSize="24sp"
@@ -122,7 +122,7 @@
             android:layout_width="27dp"
             android:layout_height="wrap_content"
             android:text="@string/_0"
-            android:id="@+id/editTextBorg3"
+            android:id="@+id/Borg3EditTextID"
             android:textSize="24sp"
             android:layout_weight="0.07"
             android:gravity="center_vertical|center_horizontal"
@@ -160,7 +160,7 @@
                 android:layout_width="5dp"
                 android:layout_height="match_parent"
                 android:text="@string/_000"
-                android:id="@+id/editTextVandor4"
+                android:id="@+id/Vandor4EditTextID"
                 android:layout_weight="0.40"
                 android:gravity="center"
                 android:textSize="24sp"
@@ -179,7 +179,7 @@
             android:layout_width="27dp"
             android:layout_height="wrap_content"
             android:text="@string/_0000"
-            android:id="@+id/editTextBorg4"
+            android:id="@+id/Borg4EditTextID"
             android:textSize="24sp"
             android:layout_weight="0.07"
             android:gravity="center_vertical|center_horizontal"
@@ -216,7 +216,7 @@
                 android:layout_width="5dp"
                 android:layout_height="match_parent"
                 android:text="@string/_00000"
-                android:id="@+id/editTextVandor5"
+                android:id="@+id/Vandor5EditTextID"
                 android:layout_weight="0.40"
                 android:gravity="center"
                 android:textSize="24sp"
@@ -235,7 +235,7 @@
                 android:layout_width="27dp"
                 android:layout_height="wrap_content"
                 android:text="@string/_000000"
-                android:id="@+id/editTextBorg5"
+                android:id="@+id/Borg5EditTextID"
                 android:textSize="24sp"
                 android:layout_weight="0.07"
                 android:gravity="center_vertical|center_horizontal"
@@ -261,7 +261,7 @@
     </com.example.sam.vo2max.ValueSelector>
 
     <Button
-            android:id="@+id/buttonUpdate"
+            android:id="@+id/UpdateButtonID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

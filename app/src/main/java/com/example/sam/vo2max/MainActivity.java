@@ -9,9 +9,9 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    public final static String EXTRA_MESSAGE1 = "com.example.sam.vo2max.MESSAGE1";
-    public final static String EXTRA_MESSAGE2 = "com.example.sam.vo2max.MESSAGE2";
-    public final static String EXTRA_MESSAGE3 = "com.example.sam.vo2max.MESSAGE3";
+    public final static String USER_NAME = "com.example.sam.vo2max.NAME";
+    public final static String USER_AGE = "com.example.sam.vo2max.AGE";
+    public final static String USER_WEIGHT = "com.example.sam.vo2max.WEIGHT";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,15 +29,15 @@ public class MainActivity extends AppCompatActivity {
                 EditText etAge = (EditText) findViewById(R.id.AgeEditTextID);
                 EditText etWeight = (EditText) findViewById(R.id.WeightEditTextID);
 
-                String sMessage, sAge, sWeight;
+                String sName, sAge, sWeight;
 
-                sMessage = etName.getText().toString();
+                sName = etName.getText().toString();
                 sAge = etAge.getText().toString();
                 sWeight = etWeight.getText().toString();
 
-                intent.putExtra(EXTRA_MESSAGE1, sMessage);
-                intent.putExtra(EXTRA_MESSAGE2, sAge);
-                intent.putExtra(EXTRA_MESSAGE3, sWeight);
+                intent.putExtra(USER_NAME, sName);
+                intent.putExtra(USER_AGE, sAge);
+                intent.putExtra(USER_WEIGHT, sWeight);
 
                 startActivity(intent);
             }
