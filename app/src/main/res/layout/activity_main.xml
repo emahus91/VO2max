@@ -104,5 +104,26 @@
         android:layout_above="@+id/WeightTextViewID"
         android:layout_alignEnd="@+id/NameTextView" />
 
+    <Button
+        android:text="@string/Statistic_Btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/StartNewMeasurementID"
+        android:layout_alignStart="@+id/AgeTextView"
+        android:layout_marginBottom="33dp"
+        android:id="@+id/Statistic_Btn"
+        android:onClick="viewContact"/>
+
+    <Button
+        android:text="@string/Submit_Btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/StartNewMeasurementID"
+        android:layout_alignStart="@+id/Statistic_Btn"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="35dp"
+        android:onClick="addContact"
+        android:id="@+id/SubmitBtn" />
+
 </RelativeLayout>
 </ScrollView>
