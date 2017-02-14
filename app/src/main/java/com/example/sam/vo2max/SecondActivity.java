@@ -8,19 +8,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.EditText;
+import android.widget.Toast;
 
-import static com.example.sam.vo2max.MainActivity.USER_NAME;
-import static com.example.sam.vo2max.MainActivity.USER_WEIGHT;
-
-
-//TODO import Chronometer class
 
 public class SecondActivity extends AppCompatActivity {
 
-    public final static String USER_NAME2 = "com.example.sam.vo2max.USER_NAME2";
-    public final static String USER_AGE2 = "com.example.sam.vo2max.USER_AGE2";
-    public final static String USER_WEIGHT2 = "com.example.sam.vo2max.USER_WEIGHT2";
-    public final static String NEW_NUMBER ="com.example.sam.vo2max.NEW_NUMBER ";
+    public final static String POWER_VALUES ="com.example.sam.vo2max.POWER_VALUES ";
+    public final static String USER_INFO2 ="com.example.sam.vo2max.USER_INFO2";
+    public final static String VO2_MAX ="com.example.sam.vo2max.USER_VO2_MAX";
+
+
 
     private long timeWhenStopped = 0;
 
@@ -106,33 +103,52 @@ public class SecondActivity extends AppCompatActivity {
         btnUpdate.setOnClickListener(new View.OnClickListener() { // TODO ersätts av onchronometerticklistener efter test
             @Override
             public void onClick(View view) {
+                // skapar lokala variabler inför beräkningen
+                double power5MPT_3, power5MPT_4, power5MPT_5, vo2Max_5=0, ageLimit=45; //[W]
+                final double tid_3min =180, tid_4min =240 , tid_5min =300, Height =1.30, tA =9.82; //[s],[l/min], ,[m], [m/s²]
 
-                double power5MPT_3, power5MPT_4, power5MPT_5, vo2Max, Height =1.30, tA =9.82; //[W], [l/min], ,[m], [m/s²]
-                double tid_3min =180, tid_3min4 =240 , tid_5min =300; //[s]
+                //Tar emot user information från Main activity
 
                 Intent intent = getIntent();
-                String sName = intent.getStringExtra(USER_NAME);
-                String sAge = intent.getStringExtra(MainActivity.USER_AGE);
-                String sWeight = intent.getStringExtra(MainActivity.USER_WEIGHT);
+                Bundle user_Info=intent.getExtras();
 
-                power5MPT_3= (((Double.valueOf(sWeight) * tA) * (Double.valueOf(etVandor3.getText().toString())* Height)) / tid_3min);
-                //TODO kopiera över till inten 3(3dje aktivitet)?
+                final String[] userInfo= user_Info.getStringArray(MainActivity.USER_INFO);
 
+                //3 ekvationer för beräkning av Power(utförd arbete) vid minut 3 4 och 5.
+                power5MPT_3= (((Double.valueOf(userInfo[2]) * tA) * (Double.valueOf(etVandor3.getText().toString())* Height)) / tid_3min);
+                power5MPT_4= (((Double.valueOf(userInfo[2]) * tA) * (Double.valueOf(etVandor4.getText().toString())* Height)) / tid_4min);
+                power5MPT_5= (((Double.valueOf(userInfo[2]) * tA) * (Double.valueOf(etVandor5.getText().toString())* Height)) / tid_5min);
+
+                if ((Double.valueOf(userInfo[1])) >= ageLimit && (Double.valueOf(userInfo[1])) <= 90){ //means old adults b/w 45 & 90 years old
+                        vo2Max_5 = (power5MPT_5 - 7.9398)/36.637;}
+                    else if((Double.valueOf(userInfo[1])) <ageLimit && (Double.valueOf(userInfo[1])) >= 10){
+                         vo2Max_5 = (power5MPT_5 - 16.37)/39.5;} ////means young adults b/w 10 & 44 years old
+                       else{
+                            Toast.makeText(SecondActivity.this, "Ogiltig Alder",Toast.LENGTH_LONG).show();
+                        }
+
+
+
+               //Skickar all data till 3dje aktivitet för analys
                 Intent intent2= new Intent(SecondActivity.this,TheMeasurementActivity.class);
+                Bundle user_Info2 =new Bundle(), power_Values =new Bundle();
 
-                intent2.putExtra(NEW_NUMBER, power5MPT_3);
-                //intent2.putExtra(USER_NAME2, sName);
-                //intent2.putExtra(USER_AGE2, sAge);
-                //intent2.putExtra(USER_WEIGHT2, sWeight);
+                user_Info2.putStringArray(USER_INFO2, userInfo);
+                power_Values.putDoubleArray(POWER_VALUES, new double[]{power5MPT_3, power5MPT_4, power5MPT_5}); //TODO initialize the array before
+
+                intent2.putExtras(user_Info2);  //intent2.putExtra(USER_NAME2, sName);  == för enskilda variabler
+                intent2.putExtras(power_Values); // intent2.putExtra(POWER_VALUE, power5MPT_3)
+                intent2.putExtra(VO2_MAX, vo2Max_5);
                 startActivity(intent2);
             }
         });
 
     }
 
+    public void calculatePower(View view){
 
+    }
     //TODO skicka all data(name & age & weight(kan direkt överföras från main activity till third?), vandor och borg) till 3dje activity och beräkna beräkna Power, V02 och spara i databas,
-    //
 
      //Todo fixa Borg knapparna(behöver vi ha + - knappar??)
 

@@ -7,7 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import static com.example.sam.vo2max.SecondActivity.NEW_NUMBER;
+import java.text.DecimalFormat;
+
 
 public class TheMeasurementActivity extends AppCompatActivity {
 
@@ -15,22 +16,25 @@ public class TheMeasurementActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Intent intent= getIntent();
+        Bundle user_Info= intent.getExtras(),power_Values=intent.getExtras() ;
+
         //Intent intent = getIntent();
-
-        Intent mIntent = getIntent();
-        double number = mIntent.getDoubleExtra(NEW_NUMBER, 0); //double number = getIntent().getExtras().getInt("NEW_NUMBER");
-
-        //String sName = intent.getStringExtra(SecondActivity.USER_NAME2);
-        //String sAge = intent.getStringExtra(SecondActivity.USER_AGE2);
-        //String sWeight = intent.getStringExtra(SecondActivity.USER_WEIGHT2);
-
+        final String[] userInfo= user_Info.getStringArray(SecondActivity.USER_INFO2);
+        final double[] powerValues= power_Values.getDoubleArray(SecondActivity.POWER_VALUES);
+        double vo2Max_5 = intent.getDoubleExtra(SecondActivity.VO2_MAX, 0); // or double number = getIntent().getExtras().getInt("NEW_NUMBER");
         //Create the text view
         TextView textView = new TextView(this);
         textView.setTextSize(40);
+        DecimalFormat formatVal= new DecimalFormat("##.##");
+        //textView.setText(formatVal.format(powerValues[0]));
 
-       // textView.setText("Your name is " + sName + " and you are " + sAge + " years old and you weight" + sWeight + " kg");
-       textView.setText("power is " + number);
+       // textView.setText("power is " + power5MPT_3 + "Your name is " + sName + " and you are " + sAge + " years old and you weight" + sWeight + " kg");
+textView.setText("NAME:  " + userInfo[0] + "\nAGE: " +userInfo[1]+ "\nWEIGHT: " + userInfo[2] + " \nPower_3: "+
+        formatVal.format(powerValues[0]) + " \nPower_4:  "+ formatVal.format(powerValues[1])+ " \nPower_5:  "+ formatVal.format(powerValues[2]) + " \nVO2max_5:  "+ formatVal.format(vo2Max_5));
+
         setContentView(textView);
+
 
 
     }
