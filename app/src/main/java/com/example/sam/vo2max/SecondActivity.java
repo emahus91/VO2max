@@ -127,15 +127,12 @@ public class SecondActivity extends AppCompatActivity {
                             Toast.makeText(SecondActivity.this, "Ogiltig Alder",Toast.LENGTH_LONG).show();
                         }
 
-
-
                //Skickar all data till 3dje aktivitet för analys
                 Intent intent2= new Intent(SecondActivity.this,TheMeasurementActivity.class);
                 Bundle user_Info2 =new Bundle(), power_Values =new Bundle();
 
                 user_Info2.putStringArray(USER_INFO2, userInfo);
                 power_Values.putDoubleArray(POWER_VALUES, new double[]{power5MPT_3, power5MPT_4, power5MPT_5}); //TODO initialize the array before
-
 
                 intent2.putExtras(user_Info2);  //intent2.putExtra(USER_NAME2, sName);  == för enskilda variabler
                 intent2.putExtras(power_Values); // intent2.putExtra(POWER_VALUE, power5MPT_3)

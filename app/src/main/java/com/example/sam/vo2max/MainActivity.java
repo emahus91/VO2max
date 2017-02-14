@@ -51,15 +51,11 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Old and wise",Toast.LENGTH_LONG).show();}
                 else if((Double.valueOf(sAge)) < 45 && (Double.valueOf(sAge)) >= 10){
                     Toast.makeText(MainActivity.this, "Young and Idiot!",Toast.LENGTH_LONG).show();}
-                else if(etAge.length() == 0){
-                    etAge.setBackgroundColor(Color.BLUE);
-                    Toast.makeText(MainActivity.this, "HALLÅÅ! Glömt något?",Toast.LENGTH_LONG).show();
-                    return;
-                }
+              //  else if(etAge.length() == 0)
                 else{
                     etAge.setBackgroundColor(Color.RED);
                     Toast.makeText(MainActivity.this, "Wrong Age range",Toast.LENGTH_LONG).show();
-                    
+
                     return;
                 }
 
