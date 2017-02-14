@@ -136,6 +136,7 @@ public class SecondActivity extends AppCompatActivity {
                 user_Info2.putStringArray(USER_INFO2, userInfo);
                 power_Values.putDoubleArray(POWER_VALUES, new double[]{power5MPT_3, power5MPT_4, power5MPT_5}); //TODO initialize the array before
 
+
                 intent2.putExtras(user_Info2);  //intent2.putExtra(USER_NAME2, sName);  == för enskilda variabler
                 intent2.putExtras(power_Values); // intent2.putExtra(POWER_VALUE, power5MPT_3)
                 intent2.putExtra(VO2_MAX, vo2Max_5);

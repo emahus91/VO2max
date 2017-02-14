@@ -29,6 +29,7 @@ public class TheMeasurementActivity extends AppCompatActivity {
         DecimalFormat formatVal= new DecimalFormat("##.##");
         //textView.setText(formatVal.format(powerValues[0]));
 
+
        // textView.setText("power is " + power5MPT_3 + "Your name is " + sName + " and you are " + sAge + " years old and you weight" + sWeight + " kg");
 textView.setText("NAME:  " + userInfo[0] + "\nAGE: " +userInfo[1]+ "\nWEIGHT: " + userInfo[2] + " \nPower_3: "+
         formatVal.format(powerValues[0]) + " \nPower_4:  "+ formatVal.format(powerValues[1])+ " \nPower_5:  "+ formatVal.format(powerValues[2]) + " \nVO2max_5:  "+ formatVal.format(vo2Max_5));

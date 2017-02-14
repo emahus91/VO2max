@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 else{
                     etAge.setBackgroundColor(Color.RED);
                     Toast.makeText(MainActivity.this, "Wrong Age range",Toast.LENGTH_LONG).show();
+                    
                     return;
                 }
 
