@@ -41,6 +41,7 @@
     <string name="stop">Stop</string>
     <string name="Statistic_Btn">Statistik</string>
     <string name="Submit_Btn">Submit</string>
+    <string name="SearchBtn">Search</string>
 
 
 </resources>

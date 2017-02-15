@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Old and wise",Toast.LENGTH_LONG).show();}
                 else if((Double.valueOf(sAge)) < 45 && (Double.valueOf(sAge)) >= 10){
                     Toast.makeText(MainActivity.this, "Young and Idiot!",Toast.LENGTH_LONG).show();}
-              //  else if(etAge.length() == 0)
+                //  else if(etAge.length() == 0)
                 else{
                     etAge.setBackgroundColor(Color.RED);
                     Toast.makeText(MainActivity.this, "Wrong Age range",Toast.LENGTH_LONG).show();
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 user_Info.putStringArray(USER_INFO, new String[]{sName, sAge,sWeight}); //String[0]= sName
                 intent1.putExtras(user_Info);
 
-                //To set the files in to the sql-database
+                //To set the files in to the SQL-database
                 String name = ContactName.getText().toString();
                 String age = ContactAge.getText().toString();
                 String weight = ContactWeight.getText().toString();
@@ -80,17 +80,17 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-//    public void addContact(View view)       //statistik-knappen
-  //  {
-      //  String name = ContactName.getText().toString();
-    //    String age = ContactAge.getText().toString();
-  //      String weight = ContactWeight.getText().toString();
-//        userDbHelper = new UserDbHelper(context);
-        //sqLiteDatabase = userDbHelper.getWritableDatabase();
-      //  userDbHelper.addInformations(name, age, weight, sqLiteDatabase);
-    //        Toast.makeText(getBaseContext(),"Data Saved",Toast.LENGTH_LONG).show();
-  //              userDbHelper.close();
-//    } //TODO ta bort denna stycke kod sen ifall vi ej behöver den då submit data knapp har integrerats med ovan nämnd knapp
+  //  public void addContact(View view)       //statistik-knappen
+//    {
+        //String name = ContactName.getText().toString();
+      //  String age = ContactAge.getText().toString();
+    //    String weight = ContactWeight.getText().toString();
+  //      userDbHelper = new UserDbHelper(context);
+//        sqLiteDatabase = userDbHelper.getWritableDatabase();
+       // userDbHelper.addInformations(name, age, weight, sqLiteDatabase);
+     //   Toast.makeText(getBaseContext(),"Data Saved",Toast.LENGTH_LONG).show();
+   //     userDbHelper.close();
+ //   }
 
     public void viewContact(View view)
     {

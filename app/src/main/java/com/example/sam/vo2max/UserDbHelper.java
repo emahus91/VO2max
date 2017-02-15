@@ -48,6 +48,16 @@ public class UserDbHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    //code for the search-function/class
+    public Cursor getContact(String user_name, SQLiteDatabase sqLiteDatabase)
+    {
+        String[] projections = {UserContract.NewUserInfo.USER_AGE, UserContract.NewUserInfo.USER_WEIGHT};
+        String selection = UserContract.NewUserInfo.USER_NAME+" LIKE ?";
+        String[] selection_args = {user_name};
+        Cursor cursor = sqLiteDatabase.query(UserContract.NewUserInfo.TABLE_NAME,projections,selection,selection_args,null,null,null);
+        return cursor;
+    }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int OldVersion, int NewVersion) {
 

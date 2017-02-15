@@ -128,8 +128,8 @@ public class SecondActivity extends AppCompatActivity {
                         }
 
                //Skickar all data till 3dje aktivitet för analys
-                Intent intent2= new Intent(SecondActivity.this,TheMeasurementActivity.class);
-                Bundle user_Info2 =new Bundle(), power_Values =new Bundle();
+                Intent intent2 = new Intent(SecondActivity.this,TheMeasurementActivity.class);
+                Bundle user_Info2 = new Bundle(), power_Values =new Bundle();
 
                 user_Info2.putStringArray(USER_INFO2, userInfo);
                 power_Values.putDoubleArray(POWER_VALUES, new double[]{power5MPT_3, power5MPT_4, power5MPT_5}); //TODO initialize the array before
