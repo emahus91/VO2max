@@ -65,22 +65,32 @@ public class MainActivity extends AppCompatActivity {
                 user_Info.putStringArray(USER_INFO, new String[]{sName, sAge,sWeight}); //String[0]= sName
                 intent1.putExtras(user_Info);
 
+                //To set the files in to the sql-database
+                String name = ContactName.getText().toString();
+                String age = ContactAge.getText().toString();
+                String weight = ContactWeight.getText().toString();
+                userDbHelper = new UserDbHelper(context);
+                sqLiteDatabase = userDbHelper.getWritableDatabase();
+                userDbHelper.addInformations(name, age, weight, sqLiteDatabase);
+                Toast.makeText(getBaseContext(),"Data Saved",Toast.LENGTH_LONG).show();
+                userDbHelper.close();
+
                 startActivity(intent1);
             }
         });
     }
 
-    public void addContact(View view)       //statistik-knappen
-    {
-        String name = ContactName.getText().toString();
-        String age = ContactAge.getText().toString();
-        String weight = ContactWeight.getText().toString();
-        userDbHelper = new UserDbHelper(context);
-        sqLiteDatabase = userDbHelper.getWritableDatabase();
-        userDbHelper.addInformations(name, age, weight, sqLiteDatabase);
-            Toast.makeText(getBaseContext(),"Data Saved",Toast.LENGTH_LONG).show();
-                userDbHelper.close();
-    }
+//    public void addContact(View view)       //statistik-knappen
+  //  {
+      //  String name = ContactName.getText().toString();
+    //    String age = ContactAge.getText().toString();
+  //      String weight = ContactWeight.getText().toString();
+//        userDbHelper = new UserDbHelper(context);
+        //sqLiteDatabase = userDbHelper.getWritableDatabase();
+      //  userDbHelper.addInformations(name, age, weight, sqLiteDatabase);
+    //        Toast.makeText(getBaseContext(),"Data Saved",Toast.LENGTH_LONG).show();
+  //              userDbHelper.close();
+//    } //TODO ta bort denna stycke kod sen ifall vi ej behöver den då submit data knapp har integrerats med ovan nämnd knapp
 
     public void viewContact(View view)
     {
