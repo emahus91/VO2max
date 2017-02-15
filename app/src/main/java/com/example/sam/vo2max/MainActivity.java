@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ContactName = (EditText) findViewById(R.id.NameEditTextID);
-        ContactName = (EditText) findViewById(R.id.AgeEditTextID);
-        ContactName = (EditText) findViewById(R.id.WeightEditTextID);
+        ContactAge = (EditText) findViewById(R.id.AgeEditTextID);
+        ContactWeight = (EditText) findViewById(R.id.WeightEditTextID);
 
         Button btnNewMeasurement = (Button) findViewById(R.id.StartNewMeasurementID);
         btnNewMeasurement.setOnClickListener(new View.OnClickListener() {
@@ -59,8 +59,6 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-
-
                 Intent intent1 = new Intent(MainActivity.this,SecondActivity.class);
                 Bundle user_Info= new Bundle();
 
@@ -70,10 +68,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
-
     }
 
-    public void addContact(View view)
+    public void addContact(View view)       //statistik-knappen
     {
         String name = ContactName.getText().toString();
         String age = ContactAge.getText().toString();
