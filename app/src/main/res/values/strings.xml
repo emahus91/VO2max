@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">GIH VO2max</string>
     <string name="greeting">Välkommen till Idrottshögskolan GIH VO2max mobilapp!</string>
-    <string name="NewMeasurement">Submit data and start a new measurement</string>
+    <string name="NewMeasurement">Start a new measurement</string>
     <string name="textview">Hello to world 2!</string>
     <string name="agetextviewstring">Skriv in personens ålder:</string>
     <string name="radiobuttonman">Man</string>
@@ -43,6 +43,11 @@
     <string name="Submit_Btn">Submit</string>
     <string name="SearchBtn">Search</string>
     <string name="btnSearch">Search</string>
+    <string name="power5MPT">5MPT</string>
+    <string name="V02max5">V02max5</string>
+    <string name="namn">Namn</string>
+    <string name="alder">Ålder</string>
+    <string name="vikt">Vikt</string>
 
 
 </resources>

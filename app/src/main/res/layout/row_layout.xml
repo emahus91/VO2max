@@ -11,37 +11,55 @@
     android:background="@color/orange">
 
     <TextView
-        android:layout_marginTop="10dp"
-        android:layout_width="100dp"
-        android:layout_height="match_parent"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
         android:id="@+id/text_user_name"
-        android:text="Namn"
+        android:text="@string/namn"
         android:gravity="center"
         android:textColor="@color/black"
-        />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
-        android:layout_width="124dp"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:id="@+id/text_user_age"
-        android:text="Ålder"
+        android:text="@string/alder"
         android:gravity="center"
         android:textColor="@color/black"
-        android:layout_alignBaseline="@+id/text_user_name"
-        android:layout_alignBottom="@+id/text_user_name"
+        android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/text_user_name" />
 
     <TextView
-        android:layout_width="160dp"
-        android:layout_height="match_parent"
-        android:id="@+id/text_user_weight"
-        android:text="Vikt"
+    android:layout_width="60dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/text_user_weight"
+    android:text="@string/vikt"
+    android:gravity="center"
+    android:textColor="@color/black"
+    android:layout_alignParentTop="true"
+    android:layout_toEndOf="@+id/text_user_age" />
+
+    <TextView
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_user_power5"
+        android:text="@string/power5MPT"
         android:gravity="center"
         android:textColor="@color/black"
-        android:layout_marginEnd="13dp"
-        android:layout_alignBaseline="@+id/text_user_age"
-        android:layout_alignBottom="@+id/text_user_age"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/text_user_weight" />
+
+    <TextView
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_user_vo2max5"
+        android:text="@string/V02max5"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/text_user_power5" />
+
 
 </RelativeLayout>
 </ScrollView>

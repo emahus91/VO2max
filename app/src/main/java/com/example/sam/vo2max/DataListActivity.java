@@ -30,12 +30,14 @@ public class DataListActivity extends AppCompatActivity {
         {
             do{
 
-                String name, age, weight;
+                String name, age, weight,power5, vo2max5;
                 name = cursor.getString(0);
                 age = cursor.getString(1);
                 weight = cursor.getString(2);
+                power5 = cursor.getString(3);
+                vo2max5 = cursor.getString(4);
 
-                DataProvider dataProvider = new DataProvider(name, age, weight);
+                DataProvider dataProvider = new DataProvider(name, age, weight,power5,vo2max5);
                 listDataAdapter.add(dataProvider);
 
             }while (cursor.moveToNext());

@@ -4,6 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:fillViewport="true">
+
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/activity_main"
@@ -46,8 +47,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/radioButtonMaleID"
             android:layout_alignBaseline="@+id/radioButtonFemaleID"
-            android:layout_alignBottom="@+id/radioButtonFemaleID"
-            android:layout_toStartOf="@+id/editText" />
+            android:layout_alignBottom="@+id/radioButtonFemaleID" />
 
         <RadioButton
             android:text="@string/radiobuttonfemale"
@@ -76,7 +76,9 @@
             android:ems="10"
             android:id="@+id/NameEditTextID"
             android:layout_alignParentStart="true"
-            android:layout_above="@+id/AgeEditTextID" />
+            android:layout_above="@+id/AgeEditTextID"
+            android:textSize="18sp"
+            android:selectAllOnFocus="true" />
 
         <TextView
             android:text="@string/weighttextview"
