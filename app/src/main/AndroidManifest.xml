@@ -8,8 +8,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <meta-data android:name="android.app.searchlayout"
-            android:resource="@xml/searchlayout"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,8 +19,8 @@
         <activity android:name=".TheMeasurementActivity" />
 
         <meta-data
-            android:name="android.app.searchlayout"
-            android:resource="@xml/searchlayout" />
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
         <activity android:name=".DataListActivity"></activity>
     </application>

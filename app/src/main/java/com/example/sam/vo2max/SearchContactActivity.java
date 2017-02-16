@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -25,9 +26,8 @@ public class SearchContactActivity extends AppCompatActivity {
     @Override
     protected void onCreate (Bundle savedInstanceState)
     {
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.searchlayout);
+        setContentView(R.layout.searchlayout);8
 
         Search_Name = (EditText)findViewById(R.id.search_name);
         Display_Age = (TextView)findViewById(R.id.display_age);
