@@ -13,6 +13,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    public final static String EXTRA_MESSAGE = "com.example.sam.vo2max";
+
     EditText ContactName, ContactAge, ContactWeight;
     Context context = this;
     UserDbHelper userDbHelper;
@@ -90,12 +93,19 @@ public class MainActivity extends AppCompatActivity {
        // userDbHelper.addInformations(name, age, weight, sqLiteDatabase);
      //   Toast.makeText(getBaseContext(),"Data Saved",Toast.LENGTH_LONG).show();
    //     userDbHelper.close();
- //   }
+ //   }//TODO ta bort denna kodsnutt när den ej behövs längre
 
     public void viewContact(View view)
     {
         Intent intent = new Intent(this, DataListActivity.class);
         startActivity(intent);
     }
+
+    public void search_contact(View view)
+    {
+        Intent intent3 = new Intent(MainActivity.this, SearchContactActivity.class);
+        startActivity(intent3);
+    }
+
 
 }

@@ -115,15 +115,15 @@
             android:onClick="viewContact"/>
 
         <Button
-            android:text="@string/Submit_Btn"
+            android:text="@string/btnSearch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/StartNewMeasurementID"
             android:layout_alignStart="@+id/Statistic_Btn"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="35dp"
-            android:onClick="addContact"
-            android:id="@+id/SubmitBtn" />
+            android:onClick="search_contact"
+            android:id="@+id/button" />
 
     </RelativeLayout>
 </ScrollView>

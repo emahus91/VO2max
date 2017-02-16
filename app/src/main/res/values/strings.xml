@@ -42,6 +42,7 @@
     <string name="Statistic_Btn">Statistik</string>
     <string name="Submit_Btn">Submit</string>
     <string name="SearchBtn">Search</string>
+    <string name="btnSearch">Search</string>
 
 
 </resources>
