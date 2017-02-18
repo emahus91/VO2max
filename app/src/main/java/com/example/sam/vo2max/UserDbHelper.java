@@ -15,7 +15,14 @@ public class UserDbHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "USERINFO.DB";
     private static final int DATABASE_VERSION = 1;
-    private static final String CREATE_QUERY = "CREATE TABLE "+ UserContract.NewUserInfo.TABLE_NAME+"("+ UserContract.NewUserInfo.USER_NAME+" TEXT,"+ UserContract.NewUserInfo.USER_AGE+" TEXT,"+ UserContract.NewUserInfo.USER_WEIGHT+" TEXT);"; //Om ej fungerar flytta upp
+    private static final String CREATE_QUERY =
+            "CREATE TABLE "+ UserContract.NewUserInfo.TABLE_NAME+"" +
+                    "("+ UserContract.NewUserInfo.USER_NAME+" TEXT,"
+                    + UserContract.NewUserInfo.USER_AGE+" TEXT,"
+                    + UserContract.NewUserInfo.USER_WEIGHT+" TEXT,"
+                    + UserContract.NewUserInfo.POWER_VALUE5+" TEXT,"
+                    + UserContract.NewUserInfo.VO2_MAX5+" TEXT);"; //Om ej fungerar flytta upp
+
 
     public UserDbHelper(Context context)
     {
@@ -30,25 +37,32 @@ public class UserDbHelper extends SQLiteOpenHelper {
             Log.e("DATABASE OPERATIONS", "Table created...");
     }
 
-    public void addInformations(String name, String age, String weight, SQLiteDatabase db)
+    public void addInformations(String name, String age, String weight,String power5, String vo2max5, SQLiteDatabase db)
     {
         ContentValues contentValues = new ContentValues();
         contentValues.put(UserContract.NewUserInfo.USER_NAME,name);
         contentValues.put(UserContract.NewUserInfo.USER_AGE,age);
         contentValues.put(UserContract.NewUserInfo.USER_WEIGHT,weight);
+        contentValues.put(UserContract.NewUserInfo.POWER_VALUE5,power5);
+        contentValues.put(UserContract.NewUserInfo.VO2_MAX5,vo2max5);
         db.insert(UserContract.NewUserInfo.TABLE_NAME, null, contentValues);  //null ar till for att ej skapa en ny rad om de ej behovs
-        Log.e("DATABASE OPERATIONS", "One row inserted...");
+        Log.e("DATABASE OPERATIONS","One row inserted...");
     }
 
     public Cursor getInformations(SQLiteDatabase db)
     {
         Cursor cursor;
-            String[] projections = {UserContract.NewUserInfo.USER_NAME, UserContract.NewUserInfo.USER_AGE, UserContract.NewUserInfo.USER_WEIGHT};
+            String[] projections = {UserContract.NewUserInfo.USER_NAME,
+                                    UserContract.NewUserInfo.USER_AGE,
+                                    UserContract.NewUserInfo.USER_WEIGHT,
+                                    UserContract.NewUserInfo.POWER_VALUE5,
+                                    UserContract.NewUserInfo.VO2_MAX5};
         cursor = db.query(UserContract.NewUserInfo.TABLE_NAME,projections,null,null,null,null,null);
         return cursor;
     }
 
     //code for the search-function/class
+    //TODO lägga till andra variabler
     public Cursor getContact(String user_name, SQLiteDatabase sqLiteDatabase)
     {
         String[] projections = {UserContract.NewUserInfo.USER_AGE, UserContract.NewUserInfo.USER_WEIGHT};

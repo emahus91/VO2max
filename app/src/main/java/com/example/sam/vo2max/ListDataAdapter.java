@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by aranrashid on 2017-02-11.
+ * Created by Aran & Samuel on 2017-02-11.
  */
 
 public class ListDataAdapter extends ArrayAdapter {
@@ -25,7 +25,7 @@ public class ListDataAdapter extends ArrayAdapter {
 
     static class LayoutHandler
     {
-        TextView NAME, AGE, WEIGHT;
+        TextView NAME, AGE, WEIGHT, POWER5,VO2MAX5;
     }
 
     @Override
@@ -59,6 +59,9 @@ public class ListDataAdapter extends ArrayAdapter {
             layoutHandler.NAME = (TextView)row.findViewById(R.id.text_user_name);
             layoutHandler.AGE = (TextView)row.findViewById(R.id.text_user_age);
             layoutHandler.WEIGHT = (TextView)row.findViewById(R.id.text_user_weight);
+            layoutHandler.POWER5 = (TextView)row.findViewById(R.id.text_user_power5);
+            layoutHandler.VO2MAX5 = (TextView)row.findViewById(R.id.text_user_vo2max5);
+
             row.setTag(layoutHandler);
         }
         else
@@ -69,7 +72,8 @@ public class ListDataAdapter extends ArrayAdapter {
         layoutHandler.NAME.setText(dataProvider.getName());
         layoutHandler.AGE.setText(dataProvider.getAge());
         layoutHandler.WEIGHT.setText(dataProvider.getWeight());
-
+        layoutHandler.POWER5.setText(dataProvider.getPower5());
+        layoutHandler.VO2MAX5.setText(dataProvider.getVo2max5());
         return row;
     }
 }

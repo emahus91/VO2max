@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 /**
- * Created by aranrashid on 2017-02-15.
+ * Created by Aran & Samuel on 2017-02-15.
  */
 
 public class SearchContactActivity extends AppCompatActivity {
@@ -27,7 +27,7 @@ public class SearchContactActivity extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.searchlayout);8
+        setContentView(R.layout.searchlayout);
 
         Search_Name = (EditText)findViewById(R.id.search_name);
         Display_Age = (TextView)findViewById(R.id.display_age);
