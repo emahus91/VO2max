@@ -3,9 +3,7 @@
     android:id="@+id/data_list_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context="com.example.sam.vo2max.DataListActivity"
-
     android:background="@color/blue"
     >
 
@@ -13,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/list_view"
-
         ></ListView>
 
 </RelativeLayout>

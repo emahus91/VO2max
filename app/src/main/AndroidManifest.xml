@@ -16,11 +16,11 @@
         </activity>
         <activity android:name=".SecondActivity" />
         <activity android:name=".TheMeasurementActivity" />
-        <activity android:name=".DataListActivity">
+        <activity android:name=".DataListActivity"/>
+        <activity android:name=".SearchContactActivity">
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-
         </activity>
     </application>
 
