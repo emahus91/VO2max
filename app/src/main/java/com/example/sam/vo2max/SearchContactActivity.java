@@ -11,10 +11,6 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
-/**
- * Created by Aran & Samuel on 2017-02-15.
- */
-
 public class SearchContactActivity extends AppCompatActivity {
 
     TextView Display_Age, Display_Weight;
@@ -34,7 +30,6 @@ public class SearchContactActivity extends AppCompatActivity {
         Display_Weight = (TextView)findViewById(R.id.display_weight);
         Display_Age.setVisibility(View.GONE);
         Display_Weight.setVisibility(View.GONE);
-
     }
 
     public void searchContact(View view)
@@ -55,3 +50,4 @@ public class SearchContactActivity extends AppCompatActivity {
         }
     }
 }
+

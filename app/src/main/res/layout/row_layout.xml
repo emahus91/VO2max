@@ -11,7 +11,7 @@
     android:background="@color/orange">
 
     <TextView
-        android:layout_width="60dp"
+        android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:id="@+id/text_user_name"
         android:text="@string/namn"
@@ -23,23 +23,21 @@
     <TextView
         android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:id="@+id/text_user_age"
-        android:text="@string/alder"
+        android:id="@+id/text_user_power3"
+        android:text="@string/power3MPT"
         android:gravity="center"
         android:textColor="@color/black"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/text_user_name" />
-
     <TextView
-    android:layout_width="60dp"
-    android:layout_height="wrap_content"
-    android:id="@+id/text_user_weight"
-    android:text="@string/vikt"
-    android:gravity="center"
-    android:textColor="@color/black"
-    android:layout_alignParentTop="true"
-    android:layout_toEndOf="@+id/text_user_age" />
-
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_user_power4"
+        android:text="@string/power4MPT"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/text_user_power3" />
     <TextView
         android:layout_width="60dp"
         android:layout_height="wrap_content"
@@ -48,17 +46,36 @@
         android:gravity="center"
         android:textColor="@color/black"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/text_user_weight" />
+        android:layout_toEndOf="@+id/text_user_power4" />
 
     <TextView
         android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_user_vo2max3"
+        android:text="@string/vo2max3"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/text_user_power5" />
+    <TextView
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_user_vo2max4"
+        android:text="@string/vo2max4"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/text_user_vo2max3" />
+
+    <TextView
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:id="@+id/text_user_vo2max5"
         android:text="@string/V02max5"
         android:gravity="center"
         android:textColor="@color/black"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/text_user_power5" />
+        android:layout_toEndOf="@+id/text_user_vo2max4" />
 
 
 </RelativeLayout>

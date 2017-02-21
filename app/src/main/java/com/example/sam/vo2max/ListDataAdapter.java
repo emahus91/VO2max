@@ -25,7 +25,7 @@ public class ListDataAdapter extends ArrayAdapter {
 
     static class LayoutHandler
     {
-        TextView NAME, AGE, WEIGHT, POWER5,VO2MAX5;
+        TextView NAME, AGE, WEIGHT, POWER3, POWER4, POWER5, VO2MAX3, VO2MAX4, VO2MAX5;
     }
 
     @Override
@@ -57,9 +57,11 @@ public class ListDataAdapter extends ArrayAdapter {
             row = layoutInflater.inflate(R.layout.row_layout, parent, false);
             layoutHandler = new LayoutHandler();
             layoutHandler.NAME = (TextView)row.findViewById(R.id.text_user_name);
-            layoutHandler.AGE = (TextView)row.findViewById(R.id.text_user_age);
-            layoutHandler.WEIGHT = (TextView)row.findViewById(R.id.text_user_weight);
+            layoutHandler.POWER3 = (TextView)row.findViewById(R.id.text_user_power3);
+            layoutHandler.POWER4 = (TextView)row.findViewById(R.id.text_user_power4);
             layoutHandler.POWER5 = (TextView)row.findViewById(R.id.text_user_power5);
+            layoutHandler.VO2MAX3 = (TextView)row.findViewById(R.id.text_user_vo2max3);
+            layoutHandler.VO2MAX4 = (TextView)row.findViewById(R.id.text_user_vo2max4);
             layoutHandler.VO2MAX5 = (TextView)row.findViewById(R.id.text_user_vo2max5);
 
             row.setTag(layoutHandler);
@@ -70,9 +72,11 @@ public class ListDataAdapter extends ArrayAdapter {
         }
         DataProvider dataProvider = (DataProvider)this.getItem(position);
         layoutHandler.NAME.setText(dataProvider.getName());
-        layoutHandler.AGE.setText(dataProvider.getAge());
-        layoutHandler.WEIGHT.setText(dataProvider.getWeight());
+        layoutHandler.POWER3.setText(dataProvider.getPower3());
+        layoutHandler.POWER4.setText(dataProvider.getPower4());
         layoutHandler.POWER5.setText(dataProvider.getPower5());
+        layoutHandler.VO2MAX3.setText(dataProvider.getVo2max5());
+        layoutHandler.VO2MAX4.setText(dataProvider.getVo2max5());
         layoutHandler.VO2MAX5.setText(dataProvider.getVo2max5());
         return row;
     }
