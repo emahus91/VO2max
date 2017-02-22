@@ -18,16 +18,18 @@ public class SecondActivity extends AppCompatActivity {
 
     public final static String POWER_KEY ="com.example.sam.vo2max.POWER_KEY ";
     public final static String USER_KEY2 ="com.example.sam.vo2max.USER_KEY2";
-    public final static String VO2MAX_KEY ="com.example.sam.vo2max.VO2MAX_KEY";
+    public final static String VO2MAX_LITER_KEY ="com.example.sam.vo2max.VO2MAX_LITER_KEY";
+    public final static String VO2MAX_MLITER_KEY ="com.example.sam.vo2max.VO2MAX_MLITER_KEY";
+    public final static String ANTAL_VANDOR_KEY ="com.example.sam.vo2max.ANTAL_VANDOR_KEY";
 
     Context context = this;
     UserDbHelper userDbHelper;
     SQLiteDatabase sqLiteDatabase;
 
+    //Declaration and initialization of the variables used in the activity
     private long timeWhenStopped = 0;
-
-    private String[] userInfo;
-    private double[] powerValues, vo2maxValues;
+    private String[] userInfo= new String [3];
+    private double[] powerValues= new double[3], vo2max_liter_Values= new double[3], vo2max_mliter_Values= new double[3], antalVandor=new double[3]; // Array wich holds three elements valued 0.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) { // TODO behöver all metoder skrivas inom onCreate metoden?
@@ -101,7 +103,7 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
 
-        //calculatePower(view);
+        //TODO calculatePower(view);
 
         // Update knappen
         btnUpdate.setOnClickListener(new View.OnClickListener() { // TODO ersätts av onchronometerticklistener efter test
@@ -114,77 +116,83 @@ public class SecondActivity extends AppCompatActivity {
                     Toast.makeText(SecondActivity.this, "Ange antal vändor!",Toast.LENGTH_LONG).show();
                     return;}
                 if (etVandor4.getText().toString().length() == 0 || etVandor4.getText().toString().equals("")){
-                    //etName.setBackgroundColor(Color.RED);
                     etVandor4.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_ATOP);
                     Toast.makeText(SecondActivity.this, "Ange antal vändor!",Toast.LENGTH_LONG).show();
                     return;}
                 if (etVandor5.getText().toString().length() == 0 || etVandor5.getText().toString().equals("")){
-                    //etName.setBackgroundColor(Color.RED);
                     etVandor5.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_ATOP);
                     Toast.makeText(SecondActivity.this, "Ange antal vändor!",Toast.LENGTH_LONG).show();
                     return;}
-
 
                 // skapar lokala variabler inför beräkningen
                 double power5MPT_3=0, power5MPT_4=0, power5MPT_5=0,vo2Max_3=0,vo2Max_4=0,vo2Max_5=0; //[W]
                 final double tid_3min =180, tid_4min =240 , tid_5min =300, Height =0.62, tA =9.82; //[s],[l/min], ,[m], [m/s²]
 
-                //initiating the powerValues & vo2maxValues arrays declared above
-                powerValues=new double[]{power5MPT_3, power5MPT_4, power5MPT_5};
-                vo2maxValues=new double[]{vo2Max_3, vo2Max_4, vo2Max_5};
 
                 //Recieving user information från Main activity
                 Intent intent = getIntent();
-                Bundle user_Info=intent.getExtras();
+                Bundle user_info =intent.getExtras();
 
-                userInfo= user_Info.getStringArray(MainActivity.USER_KEY); // userInfo is a string array already declared above
+                userInfo= user_info.getStringArray(MainActivity.USER_KEY); // userInfo is a string array already declared above
 
                 //3 ekvationer för beräkning av Power(utförd arbete) vid minut 3 4 och 5.
                 assert userInfo != null;
-                powerValues[0]= (((Double.valueOf(userInfo[2]) * tA) * (Double.valueOf(etVandor3.getText().toString())* Height)) / tid_3min);//userInfo[0]= sName , userInfo[1]= sAge, userInfo[2]= sWeight
-                powerValues[1]= (((Double.valueOf(userInfo[2]) * tA) * (Double.valueOf(etVandor4.getText().toString())* Height)) / tid_4min);
-                powerValues[2]= (((Double.valueOf(userInfo[2]) * tA) * (Double.valueOf(etVandor5.getText().toString())* Height)) / tid_5min);
+                antalVandor[0]=Double.valueOf(etVandor3.getText().toString());
+                antalVandor[1]=Double.valueOf(etVandor4.getText().toString());
+                antalVandor[2]=Double.valueOf(etVandor5.getText().toString());
+                powerValues[0]= (((Double.valueOf(userInfo[2]) * tA) * (antalVandor[0]* Height)) / tid_3min); //userInfo[2]= User Weight
+                powerValues[1]= (((Double.valueOf(userInfo[2]) * tA) * (antalVandor[1]* Height)) / tid_4min); // powerValues[0]=Power3min[W], powerValues[1]=Power4min[W], powerValues[2]=Power5min[W]
+                powerValues[2]= (((Double.valueOf(userInfo[2]) * tA) * (antalVandor[2]* Height)) / tid_5min);
+
 
                 //TODO if förtest 1 multiplicera med 1.03
                 // while(power5MPT_5!=0) {}
-                 if ((Double.valueOf(userInfo[1])) >= 18 && (Double.valueOf(userInfo[1])) <= 59) { //means old adults b/w 60 & 100 years old
-                     vo2maxValues[0]= (powerValues[0] - 11.026) / 40.816;
-                     vo2maxValues[1]= (powerValues[1] - 11.026) / 40.816;
-                     vo2maxValues[2]= (powerValues[2] - 11.026) / 40.816; //vo2maxValues[2]= Vo2max5min
-                    } else if ((Double.valueOf(userInfo[1])) >= 60 && (Double.valueOf(userInfo[1])) <= 100) { //means young adults b/w 18 & 59 years old
-                     vo2maxValues[0] = (powerValues[0] - 21.296) / 33.242;
-                     vo2maxValues[1] = (powerValues[1] - 21.296) / 33.242;
-                     vo2maxValues[2] = (powerValues[2] - 21.296) / 33.242;
+                 if ((Double.valueOf(userInfo[1])) >= 18 && (Double.valueOf(userInfo[1])) <= 59) { //means Young adults b/w 18 & 59 years old
+                     vo2max_liter_Values[0] = (powerValues[0] - 21.296) / 33.242;//vo2max_liter_Values[0]= Vo2max3min [l/min]
+                     vo2max_liter_Values[1] = (powerValues[1] - 21.296) / 33.242;//vo2max_liter_Values[1]= Vo2max4min [l/min]
+                     vo2max_liter_Values[2] = (powerValues[2] - 21.296) / 33.242;//vo2max_liter_Values[2]= Vo2max5min [l/min]
+
+                     vo2max_mliter_Values[0]= (vo2max_liter_Values[0]*1000)/(Double.valueOf(userInfo[1])); //vo2max_mliter_Values[0]= Vo2max3min [ml/kg/min]
+                     vo2max_mliter_Values[1]= (vo2max_liter_Values[1]*1000)/(Double.valueOf(userInfo[1])); //vo2max_mliter_Values[1]= Vo2max3min [ml/kg/min]
+                     vo2max_mliter_Values[2]= (vo2max_liter_Values[2]*1000)/(Double.valueOf(userInfo[1])); //vo2max_mliter_Values[2]= Vo2max3min [ml/kg/min]
+
+                    }else if ((Double.valueOf(userInfo[1])) >= 60 && (Double.valueOf(userInfo[1])) <= 100) { //means Old adults b/w 60 & 100 years old
+                     vo2max_liter_Values[0]= (powerValues[0] - 11.026) / 40.816;
+                     vo2max_liter_Values[1]= (powerValues[1] - 11.026) / 40.816;
+                     vo2max_liter_Values[2]= (powerValues[2] - 11.026) / 40.816;
+
+                     vo2max_mliter_Values[0]= (vo2max_liter_Values[0]*1000)/(Double.valueOf(userInfo[1])); //userInfo[1]= user Age
+                     vo2max_mliter_Values[1]= (vo2max_liter_Values[1]*1000)/(Double.valueOf(userInfo[1]));
+                     vo2max_mliter_Values[2]= (vo2max_liter_Values[2]*1000)/(Double.valueOf(userInfo[1]));
                          }// else if (power5MPT_5==0){vo2Max_5= 0;} //TODO denna rad funkar inte just nu, lägg in det som en while argument
 
                 //Skickar all data till 3dje aktivitet för analys
                 Intent intent2 = new Intent(SecondActivity.this,TheMeasurementActivity.class);
-                Bundle user_Info2 = new Bundle(), power_Values =new Bundle(),vo2max_Values =new Bundle();
+                Bundle user_info2 = new Bundle(), power_values =new Bundle(), vo2max_liter_values =new Bundle(), vo2max_mliter_values =new Bundle(), antal_vandor= new Bundle();
 
-                user_Info2.putStringArray(USER_KEY2, userInfo);
+                user_info2.putStringArray(USER_KEY2, userInfo);
 
                 //powerValues=new double[]{power5MPT_3, power5MPT_4, power5MPT_5};
-                //vo2maxValues=new double[]{vo2Max_3, vo2Max_4, vo2Max_5};
+                //vo2max_liter_Values=new double[]{vo2Max_3, vo2Max_4, vo2Max_5};
+                power_values.putDoubleArray(POWER_KEY, powerValues);
+                vo2max_liter_values.putDoubleArray(VO2MAX_LITER_KEY, vo2max_liter_Values);
+                vo2max_mliter_values.putDoubleArray(VO2MAX_MLITER_KEY, vo2max_mliter_Values);
+                antal_vandor.putDoubleArray(ANTAL_VANDOR_KEY,antalVandor);
 
-
-                power_Values.putDoubleArray(POWER_KEY, powerValues);
-                vo2max_Values.putDoubleArray(VO2MAX_KEY, vo2maxValues);
-
-                intent2.putExtras(user_Info2);  //intent2.putExtra(USER_NAME2, sName);  == för enskilda variabler
-                intent2.putExtras(power_Values); // intent2.putExtra(POWER_3, power5MPT_3)
-                intent2.putExtras(vo2max_Values);
-                //intent2.putExtra(VO2_MAX, vo2maxValues[2]);//TODO Send the whole vo2maxValues varray after caculating
-                //intent2.putExtra(vo2max_Values);
+                intent2.putExtras(user_info2);  //intent2.putExtra(USER_NAME2, sName);  == för enskilda variabler
+                intent2.putExtras(power_values); // intent2.putExtra(POWER_3, power5MPT_3)
+                intent2.putExtras(vo2max_liter_values);
+                intent2.putExtras(vo2max_mliter_values);
+                intent2.putExtras(antal_vandor);
                 startActivity(intent2);
-
 
                 addContact();
             }
         });
-
     }
 
     //TODO RENSA DATABASEN EFTER VISS ANTALL USERINFORMATION
+    //TODO CHECK THAT THE USER IONFORMATION IS NOT BEING SAVED AGAIN(VIKTIGT), (if null/empty dont save)
      public void addContact()
       {
         DecimalFormat formatVal= new DecimalFormat("##.##");
@@ -192,15 +200,25 @@ public class SecondActivity extends AppCompatActivity {
         String power3= String.valueOf(formatVal.format(powerValues[0]));
         String power4= String.valueOf(formatVal.format(powerValues[1]));
         String power5= String.valueOf(formatVal.format(powerValues[2]));
-        String vo2max3= String.valueOf(formatVal.format(vo2maxValues[0]));
-        String vo2max4= String.valueOf(formatVal.format(vo2maxValues[1]));
-        String vo2max5= String.valueOf(formatVal.format(vo2maxValues[2]));
+        String vo2max_liter_3 = String.valueOf(formatVal.format(vo2max_liter_Values[0]));
+        String vo2max_liter_4 = String.valueOf(formatVal.format(vo2max_liter_Values[1]));
+        String vo2max_liter_5 = String.valueOf(formatVal.format(vo2max_liter_Values[2]));
+        String vo2max_mliter_3 = String.valueOf(formatVal.format(vo2max_mliter_Values[0]));
+        String vo2max_mliter_4 = String.valueOf(formatVal.format(vo2max_mliter_Values[1]));
+        String vo2max_mliter_5 = String.valueOf(formatVal.format(vo2max_mliter_Values[2]));
+        String antal_vandor_3 = String.valueOf(formatVal.format(antalVandor[0]));
+        String antal_vandor_4 = String.valueOf(formatVal.format(antalVandor[1]));
+        String antal_vandor_5 = String.valueOf(formatVal.format(antalVandor[2]));
+
 
        userDbHelper = new UserDbHelper(context);
-        sqLiteDatabase = userDbHelper.getWritableDatabase();
-         userDbHelper.addInformations(name,power3,power4,power5,vo2max3,vo2max4,vo2max5, sqLiteDatabase);
+       sqLiteDatabase = userDbHelper.getWritableDatabase();
+       userDbHelper.addInformations(name, power3, power4, power5, vo2max_liter_3,
+                                    vo2max_liter_4, vo2max_liter_5, vo2max_mliter_3,
+                                    vo2max_mliter_4, vo2max_mliter_5, antal_vandor_3,
+                                    antal_vandor_4,antal_vandor_5,sqLiteDatabase);
        Toast.makeText(getBaseContext(),"Data Saved",Toast.LENGTH_LONG).show();
-        userDbHelper.close();
+       userDbHelper.close();
      }
 
     public void calculatePower(View view){

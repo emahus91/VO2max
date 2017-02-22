@@ -12,8 +12,6 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     public final static String USER_KEY = "com.example.sam.vo2max.USER_KEY";
-//TODO fixa datatbas överskrift
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
                 EditText etAge = (EditText) findViewById(R.id.AgeEditTextID);
                 EditText etWeight = (EditText) findViewById(R.id.WeightEditTextID);
 
-                String sName = etName.getText().toString(); //
-                String sAge = etAge.getText().toString(); // TODO Must put in field(toast), for choosing the right Power formula
-                String sWeight = etWeight.getText().toString(); //TODO Must put in field(toast), to avoid crash when calculating(SecondActivity)
+                String sName = etName.getText().toString();
+                String sAge = etAge.getText().toString();
+                String sWeight = etWeight.getText().toString();
 
 
                 if (sName.length() == 0 || sName.equals("")){
@@ -49,8 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 }else if((Double.valueOf(sAge)) >= 100 || (Double.valueOf(sAge)) <18){
                     etAge.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_ATOP);
                     Toast.makeText(MainActivity.this,"Wrong Age range" ,Toast.LENGTH_LONG).show();
-                    return;
-                }
+                    return;}
 
                 if (sWeight.length() == 0){
                     etWeight.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_ATOP);
@@ -59,14 +56,13 @@ public class MainActivity extends AppCompatActivity {
                 }else if((Double.valueOf(sWeight)) >= 150 || (Double.valueOf(sWeight)) <10){
                     etAge.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_ATOP);
                     Toast.makeText(MainActivity.this, "Wrong Weight range",Toast.LENGTH_LONG).show();
-                    return;
-                }
+                    return;}
 
                 Intent intent1 = new Intent(MainActivity.this,SecondActivity.class);
-                Bundle user_Info= new Bundle();
+                Bundle user_info = new Bundle();
 
-                user_Info.putStringArray(USER_KEY, new String[]{sName, sAge,sWeight}); //String[0]= sName
-                intent1.putExtras(user_Info);
+                user_info.putStringArray(USER_KEY, new String[]{sName, sAge,sWeight}); //String[0]= sName
+                intent1.putExtras(user_info);
 
                 startActivity(intent1);
             }

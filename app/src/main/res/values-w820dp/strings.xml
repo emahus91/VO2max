@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vo2max_mliter_3">vo2max_mliter_3</string>
+    <string name="vo2max_mliter_4">vo2max_mliter_4</string>
+    <string name="vo2max_mliter_5">vo2max_mliter_5</string>
+    <string name="N3">antal_vandor_3</string>
+    <string name="N4">antal_vandor_4</string>
+    <string name="N5">antal_vandor_5</string>
+    <string name="antal_vandor_3">antal_vandor_3</string>
+    <string name="antal_vandor_5">antal_vandor_5</string>
+</resources>

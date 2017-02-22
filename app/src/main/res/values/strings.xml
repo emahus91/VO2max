@@ -43,14 +43,20 @@
     <string name="SearchBtn">Search</string>
     <string name="btnSearch">Search</string>
     <string name="power5MPT">5MPT</string>
-    <string name="V02max5">[l/m5]</string>
+    <string name="vo2max_liter_5">[l5]</string>
     <string name="namn">Namn</string>
     <string name="alder">Ålder</string>
     <string name="vikt">Vikt</string>
-    <string name="vo2max4">[l/m4]</string>
-    <string name="vo2max3">[l/m3</string>
+    <string name="vo2max_liter_4">[l4]</string>
+    <string name="vo2max_liter_3">[l3]</string>
     <string name="power3MPT">3MPT</string>
     <string name="power4MPT">4MPT</string>
+    <string name="vo2max_mliter_3">[ml3]</string>
+    <string name="vo2max_mliter_4">[ml4]</string>
+    <string name="vo2max_mliter_5">[ml5]</string>
+    <string name="antal_vandor_3">N3</string>
+    <string name="antal_vandor_4">N4</string>
+    <string name="antal_vandor_5">N5</string>
 
 
 </resources>

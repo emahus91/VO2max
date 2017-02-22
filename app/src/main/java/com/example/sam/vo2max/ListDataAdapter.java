@@ -1,8 +1,6 @@
 package com.example.sam.vo2max;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +23,8 @@ public class ListDataAdapter extends ArrayAdapter {
 
     static class LayoutHandler
     {
-        TextView NAME, AGE, WEIGHT, POWER3, POWER4, POWER5, VO2MAX3, VO2MAX4, VO2MAX5;
+        TextView NAME, POWER3, POWER4, POWER5, VO2MAX_LITER_3, VO2MAX_LITER_4, VO2MAX_LITER_5,
+                VO2MAX_MLITER_3, VO2MAX_MLITER_4, VO2MAX_MLITER_5,ANTAL_VANDOR_3,ANTAL_VANDOR_4,ANTAL_VANDOR_5;
     }
 
     @Override
@@ -60,9 +59,15 @@ public class ListDataAdapter extends ArrayAdapter {
             layoutHandler.POWER3 = (TextView)row.findViewById(R.id.text_user_power3);
             layoutHandler.POWER4 = (TextView)row.findViewById(R.id.text_user_power4);
             layoutHandler.POWER5 = (TextView)row.findViewById(R.id.text_user_power5);
-            layoutHandler.VO2MAX3 = (TextView)row.findViewById(R.id.text_user_vo2max3);
-            layoutHandler.VO2MAX4 = (TextView)row.findViewById(R.id.text_user_vo2max4);
-            layoutHandler.VO2MAX5 = (TextView)row.findViewById(R.id.text_user_vo2max5);
+            layoutHandler.VO2MAX_LITER_3 = (TextView)row.findViewById(R.id.text_user_vo2max_liter_3);
+            layoutHandler.VO2MAX_LITER_4 = (TextView)row.findViewById(R.id.text_user_vo2max_liter_4);
+            layoutHandler.VO2MAX_LITER_5 = (TextView)row.findViewById(R.id.text_user_vo2max_liter_5);
+            layoutHandler.VO2MAX_MLITER_3 = (TextView)row.findViewById(R.id.text_user_vo2max_mliter_3);
+            layoutHandler.VO2MAX_MLITER_4 = (TextView)row.findViewById(R.id.text_user_vo2max_mliter_4);
+            layoutHandler.VO2MAX_MLITER_5 = (TextView)row.findViewById(R.id.text_user_vo2max_mliter_5);
+            layoutHandler.ANTAL_VANDOR_3= (TextView)row.findViewById(R.id.text_user_antal_vandor_3);
+            layoutHandler.ANTAL_VANDOR_4 = (TextView)row.findViewById(R.id.text_user_antal_vandor_4 );
+            layoutHandler.ANTAL_VANDOR_5 = (TextView)row.findViewById(R.id.text_user_antal_vandor_5);
 
             row.setTag(layoutHandler);
         }
@@ -71,13 +76,20 @@ public class ListDataAdapter extends ArrayAdapter {
             layoutHandler = (LayoutHandler) row.getTag();
         }
         DataProvider dataProvider = (DataProvider)this.getItem(position);
+        assert dataProvider != null;
         layoutHandler.NAME.setText(dataProvider.getName());
         layoutHandler.POWER3.setText(dataProvider.getPower3());
         layoutHandler.POWER4.setText(dataProvider.getPower4());
         layoutHandler.POWER5.setText(dataProvider.getPower5());
-        layoutHandler.VO2MAX3.setText(dataProvider.getVo2max5());
-        layoutHandler.VO2MAX4.setText(dataProvider.getVo2max5());
-        layoutHandler.VO2MAX5.setText(dataProvider.getVo2max5());
+        layoutHandler.VO2MAX_LITER_3.setText(dataProvider.getVo2max_liter_3());
+        layoutHandler.VO2MAX_LITER_4.setText(dataProvider.getVo2max_liter_4());
+        layoutHandler.VO2MAX_LITER_5.setText(dataProvider.getVo2max_liter_5());
+        layoutHandler.VO2MAX_MLITER_3.setText(dataProvider.getVo2max_mliter_3());
+        layoutHandler.VO2MAX_MLITER_4.setText(dataProvider.getVo2max_mliter_4());
+        layoutHandler.VO2MAX_MLITER_5.setText(dataProvider.getVo2max_mliter_5());
+        layoutHandler.ANTAL_VANDOR_3.setText(dataProvider.getAntal_vandor_3());
+        layoutHandler.ANTAL_VANDOR_4.setText(dataProvider.getAntal_vandor_4());
+        layoutHandler.ANTAL_VANDOR_5.setText(dataProvider.getAntal_vandor_5());
         return row;
     }
 }
