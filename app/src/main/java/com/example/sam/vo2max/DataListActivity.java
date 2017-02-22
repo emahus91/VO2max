@@ -30,16 +30,26 @@ public class DataListActivity extends AppCompatActivity {
         {
             do{
 
-                String name, age, weight,power3,power4,power5,vo2max3,vo2max4,vo2max5;
+                String name,power3,power4,power5, vo2max_liter_3, vo2max_liter_4,
+                        vo2max_liter_5,vo2max_mliter_3, vo2max_mliter_4, vo2max_mliter_5,
+                        antal_vandor_3, antal_vandor_4, antal_vandor_5;
                 name = cursor.getString(0);
                 power3 = cursor.getString(1);
                 power4 = cursor.getString(2);
                 power5 = cursor.getString(3);
-                vo2max3 = cursor.getString(4);
-                vo2max4 = cursor.getString(5);
-                vo2max5 = cursor.getString(6);
+                vo2max_liter_3 = cursor.getString(4);
+                vo2max_liter_4 = cursor.getString(5);
+                vo2max_liter_5 = cursor.getString(6);
+                vo2max_mliter_3 = cursor.getString(7);
+                vo2max_mliter_4 = cursor.getString(8);
+                vo2max_mliter_5 = cursor.getString(9);
+                antal_vandor_3 = cursor.getString(10);
+                antal_vandor_4 = cursor.getString(11);
+                antal_vandor_5 = cursor.getString(12);
 
-                DataProvider dataProvider = new DataProvider(name,power3,power4,power5,vo2max3,vo2max4, vo2max5);
+                DataProvider dataProvider = new DataProvider(name,power3,power4,power5, vo2max_liter_3, vo2max_liter_4,
+                                                            vo2max_liter_5,vo2max_mliter_3, vo2max_mliter_4,
+                                                            vo2max_mliter_5,antal_vandor_3,antal_vandor_4,antal_vandor_5);
                 listDataAdapter.add(dataProvider);
 
             }while (cursor.moveToNext());
