@@ -49,15 +49,6 @@
             android:layout_alignBaseline="@+id/radioButtonFemaleID"
             android:layout_alignBottom="@+id/radioButtonFemaleID" />
 
-        <RadioButton
-            android:text="@string/radiobuttonfemale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/radioButtonFemaleID"
-            android:layout_marginBottom="29dp"
-            android:layout_above="@+id/NameTextView"
-            android:layout_toEndOf="@+id/NameTextView" />
-
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -120,12 +111,20 @@
             android:text="@string/btnSearch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/StartNewMeasurementID"
-            android:layout_alignStart="@+id/Statistic_Btn"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="35dp"
             android:onClick="search_contact"
-            android:id="@+id/button" />
+            android:id="@+id/button"
+            android:layout_below="@+id/WeightTextViewID"
+            android:layout_alignStart="@+id/Statistic_Btn" />
+
+        <RadioButton
+            android:text="@string/radiobuttonfemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButtonFemaleID"
+            android:layout_marginBottom="15dp"
+            android:layout_above="@+id/NameEditTextID"
+            android:layout_toEndOf="@+id/NameTextView" />
 
     </RelativeLayout>
 </ScrollView>

@@ -21,7 +21,7 @@
         android:layout_toRightOf="@id/search_name"
         android:layout_alignParentRight="true"
         android:onClick="searchContact"
-        />
+        android:id="@+id/button2" />
 
     <TextView
         android:layout_marginTop="100dp"
@@ -42,5 +42,15 @@
         android:textAppearance="?android:textAppearanceLarge"
         android:id="@+id/display_weight"
         />
+
+    <Button
+        android:text="@string/DeleteBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        android:id="@+id/delete_btn"
+        android:onClick="deleteContact"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/button2" />
 
 </RelativeLayout>

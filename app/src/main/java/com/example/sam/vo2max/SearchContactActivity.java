@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SearchContactActivity extends AppCompatActivity {
 
@@ -49,5 +50,14 @@ public class SearchContactActivity extends AppCompatActivity {
             Display_Weight.setVisibility(View.VISIBLE);
         }
     }
+
+    public void deleteContact (View view)
+    {
+        userDbHelper = new UserDbHelper(getApplicationContext());
+        sqLiteDatabase = userDbHelper.getReadableDatabase();
+        userDbHelper.deleteInformation(search_name,sqLiteDatabase);
+        Toast.makeText(getBaseContext(),"Contact deleted",Toast.LENGTH_LONG).show();
+    }
+
 }
 
