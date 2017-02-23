@@ -128,8 +128,8 @@ public class DataProvider {
         this.vo2max_mliter_3 = vo2max_mliter_3;
         this.vo2max_mliter_4 = vo2max_mliter_4;
         this.vo2max_mliter_5 = vo2max_mliter_5;
-        this.vo2max_mliter_3 = antal_vandor_3;
-        this.vo2max_mliter_3 = antal_vandor_4;
-        this.vo2max_mliter_3 = antal_vandor_5;
+        this.antal_vandor_3 = antal_vandor_3;
+        this.antal_vandor_4 = antal_vandor_4;
+        this.antal_vandor_5 = antal_vandor_5;
     }
 }

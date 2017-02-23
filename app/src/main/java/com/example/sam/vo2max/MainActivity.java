@@ -76,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+
     public void search_contact(View view)
     {
         Intent intent3 = new Intent(MainActivity.this, SearchContactActivity.class);

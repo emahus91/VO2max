@@ -29,7 +29,11 @@ public class SecondActivity extends AppCompatActivity {
     //Declaration and initialization of the variables used in the activity
     private long timeWhenStopped = 0;
     private String[] userInfo= new String [3];
-    private double[] powerValues= new double[3], vo2max_liter_Values= new double[3], vo2max_mliter_Values= new double[3], antalVandor=new double[3]; // Array wich holds three elements valued 0.
+
+
+    private double[] powerValues= new double[3], vo2max_liter_Values= new double[3],
+            vo2max_mliter_Values= new double[3], antalVandor=new double[3]; // Array wich holds three elements valued 0.
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) { // TODO behöver all metoder skrivas inom onCreate metoden?
@@ -125,7 +129,7 @@ public class SecondActivity extends AppCompatActivity {
                     return;}
 
                 // skapar lokala variabler inför beräkningen
-                double power5MPT_3=0, power5MPT_4=0, power5MPT_5=0,vo2Max_3=0,vo2Max_4=0,vo2Max_5=0; //[W]
+
                 final double tid_3min =180, tid_4min =240 , tid_5min =300, Height =0.62, tA =9.82; //[s],[l/min], ,[m], [m/s²]
 
 
@@ -145,7 +149,11 @@ public class SecondActivity extends AppCompatActivity {
                 powerValues[2]= (((Double.valueOf(userInfo[2]) * tA) * (antalVandor[2]* Height)) / tid_5min);
 
 
+
                 //TODO if förtest 1 multiplicera med 1.03
+
+                //TODO if förtest 1 multiplicera med 1.03(if F1 box is ticked *1.03 annars inte)
+
                 // while(power5MPT_5!=0) {}
                  if ((Double.valueOf(userInfo[1])) >= 18 && (Double.valueOf(userInfo[1])) <= 59) { //means Young adults b/w 18 & 59 years old
                      vo2max_liter_Values[0] = (powerValues[0] - 21.296) / 33.242;//vo2max_liter_Values[0]= Vo2max3min [l/min]
@@ -171,9 +179,6 @@ public class SecondActivity extends AppCompatActivity {
                 Bundle user_info2 = new Bundle(), power_values =new Bundle(), vo2max_liter_values =new Bundle(), vo2max_mliter_values =new Bundle(), antal_vandor= new Bundle();
 
                 user_info2.putStringArray(USER_KEY2, userInfo);
-
-                //powerValues=new double[]{power5MPT_3, power5MPT_4, power5MPT_5};
-                //vo2max_liter_Values=new double[]{vo2Max_3, vo2Max_4, vo2Max_5};
                 power_values.putDoubleArray(POWER_KEY, powerValues);
                 vo2max_liter_values.putDoubleArray(VO2MAX_LITER_KEY, vo2max_liter_Values);
                 vo2max_mliter_values.putDoubleArray(VO2MAX_MLITER_KEY, vo2max_mliter_Values);
@@ -190,9 +195,16 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
     }
-
+    //TODO if förtest 1 multiplicera med 1.03(if F1 box is ticked *1.03 annars inte)
+    //TODO läggtill F1 kryssrutan(byt befintliga man/kvinna kryssrutorna)
+    //TODO Fixa Search funktionen, förbättra aktivitet 3 layout
+    //TODO fixa så att chronometern fortsätter räkna även vid landscape, gömma tangentbordet vid aktivitetbyte, göra calculate/intent funktion
     //TODO RENSA DATABASEN EFTER VISS ANTALL USERINFORMATION
-    //TODO CHECK THAT THE USER IONFORMATION IS NOT BEING SAVED AGAIN(VIKTIGT), (if null/empty dont save)
+    //TODO CHECK THAT THE USER IONFORMATION IS BEING SAVED AGAIN(VIKTIGT), (if null/empty dont save)
+    //TODO when switching between activities? (ex när användaren trycker tillbaka(till main activity/second activity) hur hantera chronometern?)
+    //Todo onResume();  ex Chronometern? userinformation från Second/ThirdActivity
+    //Todo onPause();  ex Chronometern? userinformation från Second/ThirdActivity
+    //Todo onDestroy(); finns det värden som behöver sparas?
      public void addContact()
       {
         DecimalFormat formatVal= new DecimalFormat("##.##");
@@ -224,10 +236,4 @@ public class SecondActivity extends AppCompatActivity {
     public void calculatePower(View view){
 
     }
-
-    //TODO when switching between activities? (ex när användaren trycker tillbaka(till main activity/second activity) hur hantera chronometern?)
-    //Todo onResume();  ex Chronometern? userinformation från Second/ThirdActivity
-    //Todo onPause();  ex Chronometern? userinformation från Second/ThirdActivity
-    //Todo onDestroy(); finns det värden som behöver sparas?
-
 }

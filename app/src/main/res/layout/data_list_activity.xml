@@ -25,7 +25,7 @@
             android:textAlignment="center" />
 
         <TextView
-            android:layout_width="45dp"
+            android:layout_width="41dp"
             android:layout_height="wrap_content"
             android:id="@+id/text_user_power3"
             android:text="@string/power3MPT"
@@ -35,7 +35,7 @@
             android:layout_toEndOf="@+id/text_user_name" />
 
         <TextView
-            android:layout_width="42dp"
+            android:layout_width="41dp"
             android:layout_height="wrap_content"
             android:id="@+id/text_user_power4"
             android:text="@string/power4MPT"
@@ -44,7 +44,7 @@
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/text_user_power3" />
         <TextView
-            android:layout_width="42dp"
+            android:layout_width="41dp"
             android:layout_height="wrap_content"
             android:id="@+id/text_user_power5"
             android:text="@string/power5MPT"
@@ -83,7 +83,7 @@
             android:layout_toEndOf="@+id/text_user_vo2max_liter_4" />
 
         <TextView
-            android:layout_width="40dp"
+            android:layout_width="39dp"
             android:layout_height="wrap_content"
             android:id="@+id/text_user_vo2max_mliter_3"
             android:text="@string/vo2max_mliter_3"
@@ -92,7 +92,7 @@
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/text_user_vo2max_liter_5" />
         <TextView
-            android:layout_width="40dp"
+            android:layout_width="39dp"
             android:layout_height="wrap_content"
             android:id="@+id/text_user_vo2max_mliter_4"
             android:text="@string/vo2max_mliter_4"
@@ -101,7 +101,7 @@
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/text_user_vo2max_mliter_3" />
         <TextView
-            android:layout_width="40dp"
+            android:layout_width="39dp"
             android:layout_height="wrap_content"
             android:id="@+id/text_user_vo2max_mliter_5"
             android:text="@string/vo2max_mliter_5"
@@ -111,7 +111,7 @@
             android:layout_toEndOf="@+id/text_user_vo2max_mliter_4" />
 
         <TextView
-            android:layout_width="35dp"
+            android:layout_width="23dp"
             android:layout_height="wrap_content"
             android:id="@+id/text_user_antal_vandor_3"
             android:text="@string/antal_vandor_3"
@@ -121,7 +121,7 @@
             android:layout_toEndOf="@+id/text_user_vo2max_mliter_5" />
 
         <TextView
-            android:layout_width="35dp"
+            android:layout_width="23dp"
             android:layout_height="wrap_content"
             android:id="@+id/text_user_antal_vandor_4"
             android:text="@string/antal_vandor_4"
@@ -131,7 +131,7 @@
             android:layout_toEndOf="@+id/text_user_antal_vandor_3" />
 
         <TextView
-            android:layout_width="35dp"
+            android:layout_width="23dp"
             android:layout_height="wrap_content"
             android:id="@+id/text_user_antal_vandor_5"
             android:text="@string/antal_vandor_5"
