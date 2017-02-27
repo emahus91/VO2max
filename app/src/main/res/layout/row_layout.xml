@@ -13,131 +13,145 @@
         android:id="@+id/relativeLayout">
 
         <TextView
-            android:layout_width="55dp"
+            android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:id="@+id/text_user_name"
             android:text="@string/namn"
             android:gravity="center"
+            android:background = "@drawable/cell_shape"
             android:textColor="@color/black"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
             android:textAlignment="center" />
 
         <TextView
-            android:layout_width="41dp"
+            android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:id="@+id/text_user_power3"
             android:text="@string/power3MPT"
             android:gravity="center"
+            android:background = "@drawable/cell_shape"
             android:textColor="@color/black"
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/text_user_name" />
 
         <TextView
-            android:layout_width="41dp"
+            android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:id="@+id/text_user_power4"
             android:text="@string/power4MPT"
             android:gravity="center"
+            android:background = "@drawable/cell_shape"
             android:textColor="@color/black"
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/text_user_power3" />
         <TextView
-            android:layout_width="41dp"
+            android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:id="@+id/text_user_power5"
             android:text="@string/power5MPT"
             android:gravity="center"
+            android:background = "@drawable/cell_shape"
             android:textColor="@color/black"
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/text_user_power4" />
 
         <TextView
-            android:layout_width="38dp"
+            android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:id="@+id/text_user_vo2max_liter_3"
             android:text="@string/vo2max_liter_3"
             android:gravity="center"
+            android:background = "@drawable/cell_shape"
             android:textColor="@color/black"
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/text_user_power5" />
         <TextView
-            android:layout_width="38dp"
+            android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:id="@+id/text_user_vo2max_liter_4"
             android:text="@string/vo2max_liter_4"
             android:gravity="center"
+            android:background = "@drawable/cell_shape"
             android:textColor="@color/black"
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/text_user_vo2max_liter_3" />
 
         <TextView
-            android:layout_width="38dp"
+            android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:id="@+id/text_user_vo2max_liter_5"
             android:text="@string/vo2max_liter_5"
             android:gravity="center"
+            android:background = "@drawable/cell_shape"
             android:textColor="@color/black"
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/text_user_vo2max_liter_4" />
 
         <TextView
-            android:layout_width="39dp"
+            android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:id="@+id/text_user_vo2max_mliter_3"
             android:text="@string/vo2max_mliter_3"
             android:gravity="center"
+            android:background = "@drawable/cell_shape"
             android:textColor="@color/black"
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/text_user_vo2max_liter_5" />
         <TextView
-            android:layout_width="39dp"
+            android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:id="@+id/text_user_vo2max_mliter_4"
             android:text="@string/vo2max_mliter_4"
             android:gravity="center"
+            android:background = "@drawable/cell_shape"
             android:textColor="@color/black"
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/text_user_vo2max_mliter_3" />
         <TextView
-            android:layout_width="39dp"
+            android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:id="@+id/text_user_vo2max_mliter_5"
             android:text="@string/vo2max_mliter_5"
             android:gravity="center"
+            android:background = "@drawable/cell_shape"
             android:textColor="@color/black"
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/text_user_vo2max_mliter_4" />
 
         <TextView
-            android:layout_width="23dp"
+            android:layout_width="25dp"
             android:layout_height="wrap_content"
             android:id="@+id/text_user_antal_vandor_3"
             android:text="@string/antal_vandor_3"
             android:gravity="center"
+            android:background = "@drawable/cell_shape"
             android:textColor="@color/black"
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/text_user_vo2max_mliter_5" />
 
         <TextView
-            android:layout_width="23dp"
+            android:layout_width="25dp"
             android:layout_height="wrap_content"
             android:id="@+id/text_user_antal_vandor_4"
             android:text="@string/antal_vandor_4"
             android:gravity="center"
+            android:background = "@drawable/cell_shape"
             android:textColor="@color/black"
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/text_user_antal_vandor_3" />
 
         <TextView
-            android:layout_width="23dp"
+            android:layout_width="25dp"
             android:layout_height="wrap_content"
             android:id="@+id/text_user_antal_vandor_5"
             android:text="@string/antal_vandor_5"
             android:gravity="center"
+            android:background = "@drawable/cell_shape"
             android:textColor="@color/black"
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/text_user_antal_vandor_4" />
 
     </RelativeLayout>
+
 </ScrollView>
