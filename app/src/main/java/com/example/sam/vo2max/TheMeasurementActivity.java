@@ -1,9 +1,13 @@
 package com.example.sam.vo2max;
 
+
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
@@ -14,6 +18,14 @@ public class TheMeasurementActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //setTitle("HOME");
+        //ActionBar actionBar = getSupportActionBar();
+        //actionBar.setLogo(R.drawable.ic_home);
+        //actionBar.setDisplayUseLogoEnabled(true);
+        //actionBar.setDisplayShowHomeEnabled(true);
+
+
 
 //TODO Presenting temporarly the user information in a more userfriendly way(Tableview)
         Intent intent= getIntent();
@@ -37,14 +49,31 @@ public class TheMeasurementActivity extends AppCompatActivity {
 
         assert userInfo != null; assert powerValues != null; assert vo2max_liter_Values != null; assert vo2max_mliter_Values != null;
         assert antalVandor != null;
-        textView.setText("NAME:  " + userInfo[0] + "\nN1:  " + antalVandor[0] +"\nN2:  " + antalVandor[1] +"\nN3:  "
-                + antalVandor[2] + "\nP3: "+ formatVal.format(powerValues[0]) + " \nP4:  "+ formatVal.format(powerValues[1])
-                + "\nP5:  "+ formatVal.format(powerValues[2]) + "\n[L3]: " +formatVal.format(vo2max_liter_Values[0])
-                + "\n[L4]: " +formatVal.format(vo2max_liter_Values[1])+ "\n[L5]: " +formatVal.format(vo2max_liter_Values[2])+ "\n[ML3]: "
-                + formatVal.format(vo2max_mliter_Values[0]) + "\n[ML4]: " + formatVal.format(vo2max_mliter_Values[1]) +"\n[ML5]: " + formatVal.format(vo2max_mliter_Values[2]));
+        textView.setText("Test Personens ID:  " + userInfo[0] + "\nAntal Vändor(3 min):  " + antalVandor[0] +"\nAntal Vändor(4 min):  " + antalVandor[1] +"\nAntal Vändor(5 min):  "
+                + antalVandor[2] + "\nPower (3MPT): "+ formatVal.format(powerValues[0])+ " [W] " + " \nPower (4MPT):  "+ formatVal.format(powerValues[1]) + " [W]"
+                + "\nPower (5MPT):  "+ formatVal.format(powerValues[2])+ " [W]" + "\nV02max(3 min): " +formatVal.format(vo2max_liter_Values[0]) +" [l/min]"
+                + "\nV02max(4 min): " +formatVal.format(vo2max_liter_Values[1])+ "[ l/min]"+ "\nV02max(5 min): " +formatVal.format(vo2max_liter_Values[2])+ " [l/min]" + "\nV02max(3 min): "
+                +" [ml/kg/min]" + formatVal.format(vo2max_mliter_Values[0]) + "\nV02max(4 min): " + formatVal.format(vo2max_mliter_Values[1]) +" [ml/kg/min]" +"\nV02max(4 min): " + formatVal.format(vo2max_mliter_Values[2])+" [ml/kg/min]");
         setContentView(textView);
 
 
+
+    }
+   // public boolean onOptionsItemSelected(MenuItem item) {
+    //    switch (item.getItemId()) {
+    //        case android.R.id.home:
+     //           Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
+     //           startActivityForResult(myIntent, 0);
+       //         return true;
+     //       default:
+         //       return super.onOptionsItemSelected(item);
+     //   }
+    //}
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivityForResult(myIntent, 0);
+        return true;
 
     }
 }

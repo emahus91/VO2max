@@ -2,6 +2,7 @@ package com.example.sam.vo2max;
 
 import android.content.Intent;
 import android.graphics.PorterDuff;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +18,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//TODO att skapa Actionbar här gör appen långsammare(görs i manifestfilem, preloads)
+        ActionBar actionBar = getSupportActionBar();
+        //setTitle("   Pyramid Test- VO2max");
+        actionBar.setLogo(R.mipmap.ic_launcher);
+        actionBar.setDisplayUseLogoEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
 
         Button btnNewMeasurement = (Button) findViewById(R.id.StartNewMeasurementID);
         btnNewMeasurement.setOnClickListener(new View.OnClickListener() {

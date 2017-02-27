@@ -5,6 +5,7 @@ package com.example.sam.vo2max;
         import android.os.Bundle;
         import android.os.SystemClock;
         import android.support.v7.app.AppCompatActivity;
+        import android.view.MenuItem;
         import android.view.View;
         import android.widget.Button;
         import android.widget.Chronometer;
@@ -39,6 +40,7 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) { // TODO behöver all metoder skrivas inom onCreate metoden?
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second_activity_main);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         final ValueSelector valueSelector = (ValueSelector) findViewById(R.id.valueSelector);
         valueSelector.setMinValue(0);
@@ -195,6 +197,7 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
     }
+
     //TODO if förtest 1 multiplicera med 1.03(if F1 box is ticked *1.03 annars inte)
     //TODO läggtill F1 kryssrutan(byt befintliga man/kvinna kryssrutorna)
     //TODO Fixa Search funktionen, förbättra aktivitet 3 layout
@@ -202,9 +205,12 @@ public class SecondActivity extends AppCompatActivity {
     //TODO RENSA DATABASEN EFTER VISS ANTALL USERINFORMATION
     //TODO CHECK THAT THE USER IONFORMATION IS BEING SAVED AGAIN(VIKTIGT), (if null/empty dont save)
     //TODO when switching between activities? (ex när användaren trycker tillbaka(till main activity/second activity) hur hantera chronometern?)
+
     //Todo onResume();  ex Chronometern? userinformation från Second/ThirdActivity
     //Todo onPause();  ex Chronometern? userinformation från Second/ThirdActivity
     //Todo onDestroy(); finns det värden som behöver sparas?
+
+    //Todo hide keyboard when an activity starts, optimized Datbase layout(added horizontalscrollview and made cells);
      public void addContact()
       {
         DecimalFormat formatVal= new DecimalFormat("##.##");
@@ -229,11 +235,18 @@ public class SecondActivity extends AppCompatActivity {
                                     vo2max_liter_4, vo2max_liter_5, vo2max_mliter_3,
                                     vo2max_mliter_4, vo2max_mliter_5, antal_vandor_3,
                                     antal_vandor_4,antal_vandor_5,sqLiteDatabase);
-       Toast.makeText(getBaseContext(),"Data Saved",Toast.LENGTH_LONG).show();
+       Toast.makeText(getBaseContext(),"Data Saved",Toast.LENGTH_SHORT).show();
        userDbHelper.close();
      }
 
     public void calculatePower(View view){
+
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivityForResult(myIntent, 0);
+        return true;
 
     }
 }

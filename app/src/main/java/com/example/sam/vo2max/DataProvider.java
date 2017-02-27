@@ -19,6 +19,26 @@ public class DataProvider {
     private String antal_vandor_4;
     private String antal_vandor_5;
 
+    public DataProvider(String name, String power3, String power4,
+                        String power5, String vo2max_liter_3, String vo2max_liter_4,
+                        String vo2max_liter_5,String vo2max_mliter_3, String vo2max_mliter_4,
+                        String vo2max_mliter_5, String antal_vandor_3,String antal_vandor_4,String antal_vandor_5)
+    {
+        this.name = name;
+        this.power3=power3;
+        this.power4=power4;
+        this.power5=power5;
+        this.vo2max_liter_3 = vo2max_liter_3;
+        this.vo2max_liter_4 = vo2max_liter_4;
+        this.vo2max_liter_5 = vo2max_liter_5;
+        this.vo2max_mliter_3 = vo2max_mliter_3;
+        this.vo2max_mliter_4 = vo2max_mliter_4;
+        this.vo2max_mliter_5 = vo2max_mliter_5;
+        this.antal_vandor_3 = antal_vandor_3;
+        this.antal_vandor_4 = antal_vandor_4;
+        this.antal_vandor_5 = antal_vandor_5;
+    }
+
 
     public String getName() {
         return name;
@@ -113,23 +133,4 @@ public class DataProvider {
         this.antal_vandor_5 = antal_vandor_5;
     }
 
-    public DataProvider(String name, String power3, String power4,
-                        String power5, String vo2max_liter_3, String vo2max_liter_4,
-                        String vo2max_liter_5,String vo2max_mliter_3, String vo2max_mliter_4,
-                        String vo2max_mliter_5, String antal_vandor_3,String antal_vandor_4,String antal_vandor_5)
-    {
-        this.name = name;
-        this.power3=power3;
-        this.power4=power4;
-        this.power5=power5;
-        this.vo2max_liter_3 = vo2max_liter_3;
-        this.vo2max_liter_4 = vo2max_liter_4;
-        this.vo2max_liter_5 = vo2max_liter_5;
-        this.vo2max_mliter_3 = vo2max_mliter_3;
-        this.vo2max_mliter_4 = vo2max_mliter_4;
-        this.vo2max_mliter_5 = vo2max_mliter_5;
-        this.antal_vandor_3 = antal_vandor_3;
-        this.antal_vandor_4 = antal_vandor_4;
-        this.antal_vandor_5 = antal_vandor_5;
-    }
 }
