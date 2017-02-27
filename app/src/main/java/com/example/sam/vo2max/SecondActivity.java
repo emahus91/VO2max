@@ -152,8 +152,6 @@ public class SecondActivity extends AppCompatActivity {
 
 
 
-                //TODO if förtest 1 multiplicera med 1.03
-
                 //TODO if förtest 1 multiplicera med 1.03(if F1 box is ticked *1.03 annars inte)
 
                 // while(power5MPT_5!=0) {}
@@ -198,7 +196,6 @@ public class SecondActivity extends AppCompatActivity {
         });
     }
 
-    //TODO if förtest 1 multiplicera med 1.03(if F1 box is ticked *1.03 annars inte)
     //TODO läggtill F1 kryssrutan(byt befintliga man/kvinna kryssrutorna)
     //TODO Fixa Search funktionen, förbättra aktivitet 3 layout
     //TODO fixa så att chronometern fortsätter räkna även vid landscape, gömma tangentbordet vid aktivitetbyte, göra calculate/intent funktion
@@ -210,7 +207,7 @@ public class SecondActivity extends AppCompatActivity {
     //Todo onPause();  ex Chronometern? userinformation från Second/ThirdActivity
     //Todo onDestroy(); finns det värden som behöver sparas?
 
-    //Todo hide keyboard when an activity starts, optimized Datbase layout(added horizontalscrollview and made cells);
+
      public void addContact()
       {
         DecimalFormat formatVal= new DecimalFormat("##.##");
