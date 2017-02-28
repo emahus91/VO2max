@@ -199,10 +199,9 @@ public class SecondActivity extends AppCompatActivity {
     //TODO läggtill F1 kryssrutan(byt befintliga man/kvinna kryssrutorna)
     //TODO Fixa Search funktionen, förbättra aktivitet 3 layout
     //TODO fixa så att chronometern fortsätter räkna även vid landscape, gömma tangentbordet vid aktivitetbyte, göra calculate/intent funktion
-    //TODO RENSA DATABASEN EFTER VISS ANTALL USERINFORMATION
-    //TODO CHECK THAT THE USER IONFORMATION IS BEING SAVED AGAIN(VIKTIGT), (if null/empty dont save)
-    //TODO when switching between activities? (ex när användaren trycker tillbaka(till main activity/second activity) hur hantera chronometern?)
-
+    //TODO RENSA DATABASEN EFTER VISS ANTAL USERINFORMATION
+    //TODO IF back button is pressed delete the data of the recent activity and CHECK THAT THE USER IONFORMATION IS NOT BEING SAVED AGAIN(VIKTIGT)(if null/empty dontsave)
+    //TODO fixa naming conventions för datalist/row XML fil så det blir samma logit som i alla XML filer
     //Todo onResume();  ex Chronometern? userinformation från Second/ThirdActivity
     //Todo onPause();  ex Chronometern? userinformation från Second/ThirdActivity
     //Todo onDestroy(); finns det värden som behöver sparas?
