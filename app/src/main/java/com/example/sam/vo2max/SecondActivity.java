@@ -195,7 +195,7 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
     }
-
+     //TODO Disable horizontalview in all activities except database(troubling and not useful)
     //TODO läggtill F1 kryssrutan(byt befintliga man/kvinna kryssrutorna)
     //TODO Fixa Search funktionen, förbättra aktivitet 3 layout
     //TODO fixa så att chronometern fortsätter räkna även vid landscape, gömma tangentbordet vid aktivitetbyte, göra calculate/intent funktion

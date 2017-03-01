@@ -1,10 +1,7 @@
 package com.example.sam.vo2max;
 
 
-import android.content.DialogInterface;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.view.MenuItem;
@@ -28,19 +25,19 @@ public class TheMeasurementActivity extends AppCompatActivity {
         //actionBar.setDisplayUseLogoEnabled(true);
         //actionBar.setDisplayShowHomeEnabled(true);
 
-        TextView etUserID = (TextView) findViewById(R.id.UserTextViewID);
-        TextView etLaps3 =  (TextView) findViewById(R.id.Laps3TextViewID);
-        TextView etLaps4 =  (TextView) findViewById(R.id.Laps4TextViewID);
-        TextView etLaps5 =  (TextView) findViewById(R.id.Laps5TextViewID);
-        TextView etPower3= (TextView) findViewById(R.id.Power3TextViewID);
-        TextView etPower4= (TextView) findViewById(R.id.Power4TextViewID);
-        TextView etPower5= (TextView) findViewById(R.id.Power5TextViewID);
-        TextView etVo2maxl3 = (TextView) findViewById(R.id.Vo2maxl3TextViewID);
-        TextView etVo2maxl4 = (TextView) findViewById(R.id.Vo2maxl4TextViewID);
-        TextView etVo2maxl5 = (TextView) findViewById(R.id.Vo2maxl5TextViewID);
-        TextView etVo2maxml3 = (TextView) findViewById(R.id.Vo2maxml3TextViewID);
-        TextView etVo2maxml4 = (TextView) findViewById(R.id.Vo2maxml4TextViewID);
-        TextView etVo2maxml5 = (TextView) findViewById(R.id.Vo2maxml5TextViewID);
+        TextView tvUserID = (TextView) findViewById(R.id.UserTextViewID);
+        TextView tvLaps3 =  (TextView) findViewById(R.id.Laps3TextViewID);
+        TextView tvLaps4 =  (TextView) findViewById(R.id.Laps4TextViewID);
+        TextView tvLaps5 =  (TextView) findViewById(R.id.Laps5TextViewID);
+        TextView tvPower3 = (TextView) findViewById(R.id.Power3TextViewID);
+        TextView tvPower4 = (TextView) findViewById(R.id.Power4TextViewID);
+        TextView tvPower5 = (TextView) findViewById(R.id.Power5TextViewID);
+        TextView tvVo2maxl3 = (TextView) findViewById(R.id.Vo2maxl3TextViewID);
+        TextView tvVo2maxl4 = (TextView) findViewById(R.id.Vo2maxl4TextViewID);
+        TextView tvVo2maxl5 = (TextView) findViewById(R.id.Vo2maxl5TextViewID);
+        TextView tvVo2maxml3 = (TextView) findViewById(R.id.Vo2maxml3TextViewID);
+        TextView tvVo2maxml4 = (TextView) findViewById(R.id.Vo2maxml4TextViewID);
+        TextView tvVo2maxml5 = (TextView) findViewById(R.id.Vo2maxml5TextViewID);
 
         Intent intent= getIntent();
         Bundle user_info = intent.getExtras(), power_values =intent.getExtras(),vo2max_liter_values =intent.getExtras(),
@@ -61,23 +58,23 @@ public class TheMeasurementActivity extends AppCompatActivity {
         DecimalFormat formatVal= new DecimalFormat("##.##");//textView.setText(formatVal.format(powerValues[0]));
 
         assert userInfo != null; assert powerValues != null; assert vo2max_liter_Values != null; assert vo2max_mliter_Values != null; assert antalVandor != null;
-        etUserID.setText(" ID:  "+ userInfo[0]);
-        etLaps3.setText(" #Laps (3 min):  " + antalVandor[0]);
-        etLaps4.setText(" #Laps (4 min):  " + antalVandor[1]);
-        etLaps5.setText(" #Laps (5 min):  " + antalVandor[2]);
+        tvUserID.setText(" ID:  "+ userInfo[0]);
+        tvLaps3.setText(" #Laps (3 min):  " + antalVandor[0]);
+        tvLaps4.setText(" #Laps (4 min):  " + antalVandor[1]);
+        tvLaps5.setText(" #Laps (5 min):  " + antalVandor[2]);
 
-        etPower3.setText(" Power (3MPT):  "+ formatVal.format(powerValues[0])+ " [W]");
-        etPower4.setText(" Power (4MPT):  "+ formatVal.format(powerValues[1])+ " [W]");
-        etPower5.setText(" Power (5MPT):  "+ formatVal.format(powerValues[2])+ " [W]");
+        tvPower3.setText(" Power (3MPT):  "+ formatVal.format(powerValues[0])+ " [W]");
+        tvPower4.setText(" Power (4MPT):  "+ formatVal.format(powerValues[1])+ " [W]");
+        tvPower5.setText(" Power (5MPT):  "+ formatVal.format(powerValues[2])+ " [W]");
 
 
-        etVo2maxl3.setText(" V02max (3 min): " + formatVal.format(vo2max_liter_Values[0]) + " [l/min]");
-        etVo2maxl4.setText(" V02max (4 min): " + formatVal.format(vo2max_liter_Values[1]) + " [l/min]");
-        etVo2maxl5.setText(" V02max (5 min): " + formatVal.format(vo2max_liter_Values[2]) + " [l/min]");
+        tvVo2maxl3.setText(" V02max (3 min): " + formatVal.format(vo2max_liter_Values[0]) + " [l/min]");
+        tvVo2maxl4.setText(" V02max (4 min): " + formatVal.format(vo2max_liter_Values[1]) + " [l/min]");
+        tvVo2maxl5.setText(" V02max (5 min): " + formatVal.format(vo2max_liter_Values[2]) + " [l/min]");
 
-        etVo2maxml3.setText(" V02max (3 min): " + formatVal.format(vo2max_mliter_Values[0]) +" [ml/kg/min]");
-        etVo2maxml4.setText(" V02max (4 min): " + formatVal.format(vo2max_mliter_Values[1]) +" [ml/kg/min]");
-        etVo2maxml5.setText(" V02max (5 min): " + formatVal.format(vo2max_mliter_Values[2]) +" [ml/kg/min]");
+        tvVo2maxml3.setText(" V02max (3 min): " + formatVal.format(vo2max_mliter_Values[0]) +" [ml/kg/min]");
+        tvVo2maxml4.setText(" V02max (4 min): " + formatVal.format(vo2max_mliter_Values[1]) +" [ml/kg/min]");
+        tvVo2maxml5.setText(" V02max (5 min): " + formatVal.format(vo2max_mliter_Values[2]) +" [ml/kg/min]");
 
     }
 

@@ -89,14 +89,21 @@ public class UserDbHelper extends SQLiteOpenHelper {
     }
 
     //code for the search-function/class
-    public Cursor getContact(String user_name, SQLiteDatabase sqLiteDatabase)
+    public Cursor getContact(String user_id, SQLiteDatabase sqLiteDatabase)
     {
-        String[] projections = {UserContract.NewUserInfo.POWER_3, UserContract.NewUserInfo.POWER_4};
-        String selection = UserContract.NewUserInfo.USER_NAME+" LIKE ?";
-        String[] selection_args = {user_name};
+        String[] projections = {UserContract.NewUserInfo.USER_NAME,UserContract.NewUserInfo.POWER_3,
+                UserContract.NewUserInfo.POWER_4, UserContract.NewUserInfo.POWER_5,
+                UserContract.NewUserInfo.VO2MAX_LITER_3,UserContract.NewUserInfo.VO2MAX_LITER_4,
+                UserContract.NewUserInfo.VO2MAX_LITER_5,UserContract.NewUserInfo.VO2MAX_MLITER_3,
+                UserContract.NewUserInfo.VO2MAX_MLITER_4,UserContract.NewUserInfo.VO2MAX_MLITER_5,
+                UserContract.NewUserInfo.ANTAL_VANDOR_3,UserContract.NewUserInfo.ANTAL_VANDOR_4,
+                UserContract.NewUserInfo.ANTAL_VANDOR_5};
+        String selection = UserContract.NewUserInfo.USER_NAME +" LIKE ?";
+        String[] selection_args = {user_id};
         Cursor cursor = sqLiteDatabase.query(UserContract.NewUserInfo.TABLE_NAME,projections,selection,selection_args,null,null,null);
         return cursor;
     }
+
 
     //code for the delete information function
     public void deleteInformation(String user_name, SQLiteDatabase sqLiteDatabase)
