@@ -7,160 +7,160 @@
     <HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="fill_parent">
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_the_measurement"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.sam.vo2max.TheMeasurementActivity">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/activity_the_measurement"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context="com.example.sam.vo2max.TheMeasurementActivity">
 
-    <TextView
-        android:text="ID"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textStyle="normal|bold"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:background = "@drawable/cell_shape2"
-        android:id="@+id/UserTextViewID"
-        android:textColor="@color/common_google_signin_btn_text_light_pressed"
-        android:typeface="normal"
-        android:fontFamily="serif" />
+            <TextView
+                android:text="ID"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textStyle="normal|bold"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:background = "@drawable/cell_shape3"
+                android:id="@+id/UserTextViewID"
+                android:textColor="@color/common_google_signin_btn_text_light_pressed"
+                android:typeface="normal"
+                android:fontFamily="serif" />
 
-    <TextView
-        android:text="Laps3"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textStyle="normal|bold"
-        android:textAlignment="viewStart"
-        android:textSize="22sp"
-        android:background = "@drawable/cell_shape2"
-        android:id="@+id/Laps3TextViewID"
-        android:textColor="@color/silver" />
+            <TextView
+                android:text="Laps3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textStyle="normal|bold"
+                android:textAlignment="viewStart"
+                android:textSize="22sp"
+                android:background = "@drawable/cell_shape2"
+                android:id="@+id/Laps3TextViewID"
+                android:textColor="@color/silver" />
 
-    <TextView
-        android:text="Laps4"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textStyle="normal|bold"
-        android:textAlignment="viewStart"
-        android:textSize="22sp"
-        android:background = "@drawable/cell_shape3"
-        android:textColor="@color/silver"
-        android:id="@+id/Laps4TextViewID" />
+            <TextView
+                android:text="Laps4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textStyle="normal|bold"
+                android:textAlignment="viewStart"
+                android:textSize="22sp"
+                android:background = "@drawable/cell_shape2"
+                android:textColor="@color/silver"
+                android:id="@+id/Laps4TextViewID" />
 
-    <TextView
-        android:text="Laps5"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textStyle="normal|bold"
-        android:textAlignment="viewStart"
-        android:textSize="22sp"
-        android:background = "@drawable/cell_shape2"
-        android:textColor="@color/silver"
-        android:id="@+id/Laps5TextViewID" />
+            <TextView
+                android:text="Laps5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textStyle="normal|bold"
+                android:textAlignment="viewStart"
+                android:textSize="22sp"
+                android:background = "@drawable/cell_shape2"
+                android:textColor="@color/silver"
+                android:id="@+id/Laps5TextViewID" />
 
-    <TextView
-        android:text="Power3"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textStyle="normal|bold"
-        android:textAlignment="viewStart"
-        android:background = "@drawable/cell_shape3"
-        android:textSize="22sp"
-        android:id="@+id/Power3TextViewID"
-        android:textColor="@color/orange" />
+            <TextView
+                android:text="Power3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textStyle="normal|bold"
+                android:textAlignment="viewStart"
+                android:background = "@drawable/cell_shape2"
+                android:textSize="22sp"
+                android:id="@+id/Power3TextViewID"
+                android:textColor="@color/orange" />
 
-    <TextView
-        android:text="Power4"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textStyle="normal|bold"
-        android:textAlignment="viewStart"
-        android:background = "@drawable/cell_shape2"
-        android:textSize="22sp"
-        android:textColor="@color/orange"
-        android:id="@+id/Power4TextViewID" />
+            <TextView
+                android:text="Power4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textStyle="normal|bold"
+                android:textAlignment="viewStart"
+                android:background = "@drawable/cell_shape2"
+                android:textSize="22sp"
+                android:textColor="@color/orange"
+                android:id="@+id/Power4TextViewID" />
 
-    <TextView
-        android:text="Power5"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textStyle="normal|bold"
-        android:textAlignment="viewStart"
-        android:background = "@drawable/cell_shape3"
-        android:textSize="22sp"
-        android:textColor="@color/orange"
-        android:id="@+id/Power5TextViewID" />
+            <TextView
+                android:text="Power5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textStyle="normal|bold"
+                android:textAlignment="viewStart"
+                android:background = "@drawable/cell_shape2"
+                android:textSize="22sp"
+                android:textColor="@color/orange"
+                android:id="@+id/Power5TextViewID" />
 
-    <TextView
-        android:text="Vo2maxl3"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textStyle="normal|bold"
-        android:textAlignment="viewStart"
-        android:background = "@drawable/cell_shape2"
-        android:textSize="22sp"
-        android:id="@+id/Vo2maxl3TextViewID"
-        android:textColor="@color/navy" />
+            <TextView
+                android:text="Vo2maxl3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textStyle="normal|bold"
+                android:textAlignment="viewStart"
+                android:background = "@drawable/cell_shape2"
+                android:textSize="22sp"
+                android:id="@+id/Vo2maxl3TextViewID"
+                android:textColor="@color/navy" />
 
-    <TextView
-        android:text="Vo2maxl4"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textStyle="normal|bold"
-        android:textAlignment="viewStart"
-        android:background = "@drawable/cell_shape3"
-        android:textSize="22sp"
-        android:id="@+id/Vo2maxl4TextViewID"
-        android:textColor="@color/navy" />
+            <TextView
+                android:text="Vo2maxl4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textStyle="normal|bold"
+                android:textAlignment="viewStart"
+                android:background = "@drawable/cell_shape2"
+                android:textSize="22sp"
+                android:id="@+id/Vo2maxl4TextViewID"
+                android:textColor="@color/navy" />
 
-    <TextView
-        android:text="Vo2maxl5"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textStyle="normal|bold"
-        android:textAlignment="viewStart"
-        android:background = "@drawable/cell_shape2"
-        android:textSize="22sp"
-        android:id="@+id/Vo2maxl5TextViewID"
-        android:textColor="@color/navy" />
+            <TextView
+                android:text="Vo2maxl5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textStyle="normal|bold"
+                android:textAlignment="viewStart"
+                android:background = "@drawable/cell_shape2"
+                android:textSize="22sp"
+                android:id="@+id/Vo2maxl5TextViewID"
+                android:textColor="@color/navy" />
 
-    <TextView
-        android:text="Vo2maxml3"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textStyle="normal|bold"
-        android:textAlignment="viewStart"
-        android:background = "@drawable/cell_shape3"
-        android:textSize="22sp"
-        android:id="@+id/Vo2maxml3TextViewID"
-        android:textColor="@color/colorPrimary"
-        android:fontFamily="sans-serif" />
+            <TextView
+                android:text="Vo2maxml3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textStyle="normal|bold"
+                android:textAlignment="viewStart"
+                android:background = "@drawable/cell_shape2"
+                android:textSize="22sp"
+                android:id="@+id/Vo2maxml3TextViewID"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="sans-serif" />
 
-    <TextView
-        android:text="Vo2maxml4"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textStyle="normal|bold"
-        android:textAlignment="viewStart"
-        android:background = "@drawable/cell_shape2"
-        android:textSize="22sp"
-        android:id="@+id/Vo2maxml4TextViewID"
-        android:textColor="@color/colorPrimary" />
+            <TextView
+                android:text="Vo2maxml4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textStyle="normal|bold"
+                android:textAlignment="viewStart"
+                android:background = "@drawable/cell_shape2"
+                android:textSize="22sp"
+                android:id="@+id/Vo2maxml4TextViewID"
+                android:textColor="@color/colorPrimary" />
 
-    <TextView
-        android:text="Vo2maxml5"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textStyle="normal|bold"
-        android:textAlignment="viewStart"
-        android:background = "@drawable/cell_shape3"
-        android:textSize="22sp"
-        android:id="@+id/Vo2maxml5TextViewID"
-        android:textColor="@color/colorPrimary" />
+            <TextView
+                android:text="Vo2maxml5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textStyle="normal|bold"
+                android:textAlignment="viewStart"
+                android:background = "@drawable/cell_shape2"
+                android:textSize="22sp"
+                android:id="@+id/Vo2maxml5TextViewID"
+                android:textColor="@color/colorPrimary" />
 
-</LinearLayout>
+        </LinearLayout>
     </HorizontalScrollView>
 </ScrollView>
