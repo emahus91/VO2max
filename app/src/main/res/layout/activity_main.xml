@@ -22,6 +22,16 @@
             android:text="@string/greeting"
             android:id="@+id/GreetingTextViewID" />
 
+
+        <CheckBox
+            android:text="@string/Pretest1"
+            android:id ="@+id/PretestCheckBoxID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_below="@+id/GreetingTextViewID"
+  />
+
         <Button
             android:text="@string/NewMeasurement"
             android:layout_width="wrap_content"
@@ -29,7 +39,7 @@
             android:layout_alignParentStart="true"
             android:layout_marginStart="120dp"
             android:layout_marginTop="330dp"
-            android:id="@+id/StartNewMeasurementID" />
+            android:id="@+id/NewMeasurementButtonID" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -41,13 +51,6 @@
             android:layout_alignBottom="@+id/AgeEditTextID"
             android:layout_toEndOf="@+id/WeightTextViewID" />
 
-        <RadioButton
-            android:text="@string/radiobuttonman"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/radioButtonMaleID"
-            android:layout_alignBaseline="@+id/radioButtonFemaleID"
-            android:layout_alignBottom="@+id/radioButtonFemaleID" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -76,7 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/WeightTextViewID"
-            android:layout_alignBottom="@+id/StartNewMeasurementID"
+            android:layout_alignBottom="@+id/NewMeasurementButtonID"
             android:layout_alignParentStart="true"
             android:layout_marginBottom="148dp" />
 
@@ -89,7 +92,7 @@
             android:layout_alignParentStart="true" />
 
         <TextView
-            android:text="@string/agetextviewstring"
+            android:text="@string/agetextview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/AgeTextView"
@@ -101,7 +104,7 @@
             android:text="@string/Statistic_Btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/StartNewMeasurementID"
+            android:layout_alignBottom="@+id/NewMeasurementButtonID"
             android:layout_alignStart="@+id/AgeTextView"
             android:layout_marginBottom="33dp"
             android:id="@+id/Statistic_Btn"
@@ -117,14 +120,15 @@
             android:layout_below="@+id/WeightTextViewID"
             android:layout_alignStart="@+id/Statistic_Btn" />
 
-        <RadioButton
-            android:text="@string/radiobuttonfemale"
+        <CheckBox
+            android:text="Other tests"
+            android:id ="@+id/OtherTestsCheckBoxID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButtonFemaleID"
-            android:layout_marginBottom="15dp"
-            android:layout_above="@+id/NameEditTextID"
+            android:textAlignment="center"
+            android:layout_below="@+id/GreetingTextViewID"
             android:layout_toEndOf="@+id/NameTextView" />
+
 
     </RelativeLayout>
 </ScrollView>

@@ -1,11 +1,10 @@
 <resources>
     <string name="app_name">Pyramid Test - V02max</string>
     <string name="greeting">Welcome to the swedish school of sport and health sciences (GIH) VO2max mobile application!</string>
-    <string name="NewMeasurement">Start a new measurement</string>
-    <string name="textview">Hello to world 2!</string>
-    <string name="agetextviewstring">Enter the persons age:</string>
-    <string name="radiobuttonman">Man</string>
-    <string name="radiobuttonfemale">Kvinna</string>
+    <string name="NewMeasurement">New measurement</string>
+    <string name="agetextview">Enter the persons age:</string>
+    <string name="Pretest1">Pretest 1</string>
+    <string name="othertest">Other test?</string>
     <string name="weighttextview">Enter the persons weight:</string>
     <string name="idtextview">Enter the persons ID:</string>
     <string name="button">View Data</string>

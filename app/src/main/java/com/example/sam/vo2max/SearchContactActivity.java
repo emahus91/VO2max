@@ -41,11 +41,6 @@ public class SearchContactActivity extends AppCompatActivity {
         btnShowUser.setVisibility(View.GONE);
         btnDeleteUser.setVisibility(View.GONE); //Hide button
 
-
-//TODO if search buttopn is clicked and user is found show user name and make buttons visible  else make a toas(user not founnd)
-
-
-
     }
 
     public void searchContact(View view)
@@ -130,6 +125,8 @@ public class SearchContactActivity extends AppCompatActivity {
         userDbHelper = new UserDbHelper(getApplicationContext());
         sqLiteDatabase = userDbHelper.getReadableDatabase();
         userDbHelper.deleteInformation(search_name,sqLiteDatabase);
+        tvUserId.setText("User ID Succefuly Deleted!");
+        btnShowUser.setVisibility((View.GONE));
         Toast.makeText(getBaseContext(),"Contact deleted",Toast.LENGTH_LONG).show();
     }
 

@@ -30,8 +30,7 @@ public class SecondActivity extends AppCompatActivity {
     //Declaration and initialization of the variables used in the activity
     private long timeWhenStopped = 0;
     private String[] userInfo= new String [3];
-
-
+    private Boolean  boxChecked;
     private double[] powerValues= new double[3], vo2max_liter_Values= new double[3],
             vo2max_mliter_Values= new double[3], antalVandor=new double[3]; // Array wich holds three elements valued 0.
 
@@ -112,7 +111,7 @@ public class SecondActivity extends AppCompatActivity {
         //TODO calculatePower(view);
 
         // Update knappen
-        btnUpdate.setOnClickListener(new View.OnClickListener() { // TODO ersätts av onchronometerticklistener efter test
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -140,6 +139,8 @@ public class SecondActivity extends AppCompatActivity {
                 Bundle user_info =intent.getExtras();
 
                 userInfo= user_info.getStringArray(MainActivity.USER_KEY); // userInfo is a string array already declared above
+                boxChecked = getIntent().getExtras().getBoolean(MainActivity.CHECKBOX_KEY);
+
 
                 //3 ekvationer för beräkning av Power(utförd arbete) vid minut 3 4 och 5.
                 assert userInfo != null;
@@ -150,9 +151,6 @@ public class SecondActivity extends AppCompatActivity {
                 powerValues[1]= (((Double.valueOf(userInfo[2]) * tA) * (antalVandor[1]* Height)) / tid_4min); // powerValues[0]=Power3min[W], powerValues[1]=Power4min[W], powerValues[2]=Power5min[W]
                 powerValues[2]= (((Double.valueOf(userInfo[2]) * tA) * (antalVandor[2]* Height)) / tid_5min);
 
-
-
-                //TODO if förtest 1 multiplicera med 1.03(if F1 box is ticked *1.03 annars inte)
 
                 // while(power5MPT_5!=0) {}
                  if ((Double.valueOf(userInfo[1])) >= 18 && (Double.valueOf(userInfo[1])) <= 59) { //means Young adults b/w 18 & 59 years old
@@ -172,7 +170,15 @@ public class SecondActivity extends AppCompatActivity {
                      vo2max_mliter_Values[0]= (vo2max_liter_Values[0]*1000)/(Double.valueOf(userInfo[1])); //userInfo[1]= user Age
                      vo2max_mliter_Values[1]= (vo2max_liter_Values[1]*1000)/(Double.valueOf(userInfo[1]));
                      vo2max_mliter_Values[2]= (vo2max_liter_Values[2]*1000)/(Double.valueOf(userInfo[1]));
-                         }// else if (power5MPT_5==0){vo2Max_5= 0;} //TODO denna rad funkar inte just nu, lägg in det som en while argument
+                         }// else if (power5MPT_5==0){vo2Max_5= 0;} //TODO denna rad funkar inte just nu, lägg in det som en while argument(syftet är att inte få negativ resultat för V02max)
+
+               // Multiply all the VO2max values by 1.03 if pretest1 box has been ticked
+                if(boxChecked){
+                    arrayMultiply(vo2max_liter_Values);
+                    Toast.makeText(SecondActivity.this, "Pretest box Ticked!",Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(SecondActivity.this, "Pretest box NOT Ticked!",Toast.LENGTH_LONG).show();
+                }
 
                 //Skickar all data till 3dje aktivitet för analys
                 Intent intent2 = new Intent(SecondActivity.this,TheMeasurementActivity.class);
@@ -184,30 +190,30 @@ public class SecondActivity extends AppCompatActivity {
                 vo2max_mliter_values.putDoubleArray(VO2MAX_MLITER_KEY, vo2max_mliter_Values);
                 antal_vandor.putDoubleArray(ANTAL_VANDOR_KEY,antalVandor);
 
-                intent2.putExtras(user_info2);  //intent2.putExtra(USER_NAME2, sName);  == för enskilda variabler
-                intent2.putExtras(power_values); // intent2.putExtra(POWER_3, power5MPT_3)
+                intent2.putExtras(user_info2);
+                intent2.putExtras(power_values);
                 intent2.putExtras(vo2max_liter_values);
                 intent2.putExtras(vo2max_mliter_values);
                 intent2.putExtras(antal_vandor);
                 startActivity(intent2);
 
-                addContact();
+                addUserInformation();
             }
         });
     }
-     //TODO Disable horizontalview in all activities except database(troubling and not useful)
-    //TODO läggtill F1 kryssrutan(byt befintliga man/kvinna kryssrutorna)
-    //TODO Fixa Search funktionen, förbättra aktivitet 3 layout
-    //TODO fixa så att chronometern fortsätter räkna även vid landscape, gömma tangentbordet vid aktivitetbyte, göra calculate/intent funktion
-    //TODO RENSA DATABASEN EFTER VISS ANTAL USERINFORMATION
-    //TODO IF back button is pressed delete the data of the recent activity and CHECK THAT THE USER IONFORMATION IS NOT BEING SAVED AGAIN(VIKTIGT)(if null/empty dontsave)
-    //TODO fixa naming conventions för datalist/row XML fil så det blir samma logit som i alla XML filer
+
+
+    //TODO IF back button is pressed delete the data of the recent activity and CHECK THAT THE USER IONFORMATION IS NOT BEING SAVED AGAIN(VIKTIGT)(if null/empty dont save)
+    //TODO Omskrivning av kod för secondactivity
+    //TODO Avoid saving same information twice, RENSA DATABASEN EFTER VISS ANTAL USERINFORMATION
+    //TODO fixa naming conventions för datalist/row XML fil så det blir samma logik som i alla XML filer
+
     //Todo onResume();  ex Chronometern? userinformation från Second/ThirdActivity
     //Todo onPause();  ex Chronometern? userinformation från Second/ThirdActivity
     //Todo onDestroy(); finns det värden som behöver sparas?
 
 
-     public void addContact()
+     public void addUserInformation()
       {
         DecimalFormat formatVal= new DecimalFormat("##.##");
         String name = userInfo[0];
@@ -237,6 +243,13 @@ public class SecondActivity extends AppCompatActivity {
 
     public void calculatePower(View view){
 
+    }
+
+    public  void arrayMultiply(double[] array){
+
+        for (int i=0; i<array.length; i++) {
+            array[i] = array[i] * 1.03;
+        }
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
