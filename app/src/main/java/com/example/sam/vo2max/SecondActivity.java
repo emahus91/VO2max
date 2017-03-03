@@ -30,8 +30,7 @@ public class SecondActivity extends AppCompatActivity {
     //Declaration and initialization of the variables used in the activity
     private long timeWhenStopped = 0;
     private String[] userInfo= new String [3];
-
-
+    private Boolean  boxChecked;
     private double[] powerValues= new double[3], vo2max_liter_Values= new double[3],
             vo2max_mliter_Values= new double[3], antalVandor=new double[3]; // Array wich holds three elements valued 0.
 
@@ -140,6 +139,8 @@ public class SecondActivity extends AppCompatActivity {
                 Bundle user_info =intent.getExtras();
 
                 userInfo= user_info.getStringArray(MainActivity.USER_KEY); // userInfo is a string array already declared above
+                boxChecked = getIntent().getExtras().getBoolean(MainActivity.CHECKBOX_KEY);
+
 
                 //3 ekvationer för beräkning av Power(utförd arbete) vid minut 3 4 och 5.
                 assert userInfo != null;
@@ -174,6 +175,14 @@ public class SecondActivity extends AppCompatActivity {
                      vo2max_mliter_Values[2]= (vo2max_liter_Values[2]*1000)/(Double.valueOf(userInfo[1]));
                          }// else if (power5MPT_5==0){vo2Max_5= 0;} //TODO denna rad funkar inte just nu, lägg in det som en while argument
 
+               // Multiply all the VO2max values by 1.03 if pretest1 box has been ticked
+                if(boxChecked){
+                    arrayMultiply(vo2max_liter_Values);
+                    Toast.makeText(SecondActivity.this, "Pretest box Ticked!",Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(SecondActivity.this, "Pretest box NOT Ticked!",Toast.LENGTH_LONG).show();
+                }
+
                 //Skickar all data till 3dje aktivitet för analys
                 Intent intent2 = new Intent(SecondActivity.this,TheMeasurementActivity.class);
                 Bundle user_info2 = new Bundle(), power_values =new Bundle(), vo2max_liter_values =new Bundle(), vo2max_mliter_values =new Bundle(), antal_vandor= new Bundle();
@@ -184,21 +193,21 @@ public class SecondActivity extends AppCompatActivity {
                 vo2max_mliter_values.putDoubleArray(VO2MAX_MLITER_KEY, vo2max_mliter_Values);
                 antal_vandor.putDoubleArray(ANTAL_VANDOR_KEY,antalVandor);
 
-                intent2.putExtras(user_info2);  //intent2.putExtra(USER_NAME2, sName);  == för enskilda variabler
-                intent2.putExtras(power_values); // intent2.putExtra(POWER_3, power5MPT_3)
+                intent2.putExtras(user_info2);
+                intent2.putExtras(power_values);
                 intent2.putExtras(vo2max_liter_values);
                 intent2.putExtras(vo2max_mliter_values);
                 intent2.putExtras(antal_vandor);
                 startActivity(intent2);
 
-                addContact();
+                addUserInformation();
             }
         });
     }
-     //TODO Disable horizontalview in all activities except database(troubling and not useful)
-    //TODO läggtill F1 kryssrutan(byt befintliga man/kvinna kryssrutorna)
-    //TODO Fixa Search funktionen, förbättra aktivitet 3 layout
-    //TODO fixa så att chronometern fortsätter räkna även vid landscape, gömma tangentbordet vid aktivitetbyte, göra calculate/intent funktion
+
+
+    //TODO Disable horizontalview in all activities except database(troubling and not useful)
+    //TODO Omskrivning av kod för secondactivity
     //TODO RENSA DATABASEN EFTER VISS ANTAL USERINFORMATION
     //TODO IF back button is pressed delete the data of the recent activity and CHECK THAT THE USER IONFORMATION IS NOT BEING SAVED AGAIN(VIKTIGT)(if null/empty dontsave)
     //TODO fixa naming conventions för datalist/row XML fil så det blir samma logit som i alla XML filer
@@ -207,7 +216,7 @@ public class SecondActivity extends AppCompatActivity {
     //Todo onDestroy(); finns det värden som behöver sparas?
 
 
-     public void addContact()
+     public void addUserInformation()
       {
         DecimalFormat formatVal= new DecimalFormat("##.##");
         String name = userInfo[0];
@@ -236,6 +245,14 @@ public class SecondActivity extends AppCompatActivity {
      }
 
     public void calculatePower(View view){
+
+    }
+
+    public  void arrayMultiply(double[] array){
+
+        for (int i=0; i<array.length; i++) {
+            array[i] = array[i] * 1.03;
+        }
 
     }
 

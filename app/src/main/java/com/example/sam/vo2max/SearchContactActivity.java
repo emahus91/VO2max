@@ -130,6 +130,8 @@ public class SearchContactActivity extends AppCompatActivity {
         userDbHelper = new UserDbHelper(getApplicationContext());
         sqLiteDatabase = userDbHelper.getReadableDatabase();
         userDbHelper.deleteInformation(search_name,sqLiteDatabase);
+        tvUserId.setText("User ID Succefuly Deleted!");
+        btnShowUser.setVisibility((View.GONE));
         Toast.makeText(getBaseContext(),"Contact deleted",Toast.LENGTH_LONG).show();
     }
 
