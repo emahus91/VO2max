@@ -118,6 +118,4 @@ public class ValueSelector extends RelativeLayout {
         }
     }
 
-// TODO method som nollställer räknaren vid tryckning av restart knappen
-
 }

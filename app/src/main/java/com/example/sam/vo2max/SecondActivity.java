@@ -111,7 +111,7 @@ public class SecondActivity extends AppCompatActivity {
         //TODO calculatePower(view);
 
         // Update knappen
-        btnUpdate.setOnClickListener(new View.OnClickListener() { // TODO ersätts av onchronometerticklistener efter test
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -170,7 +170,7 @@ public class SecondActivity extends AppCompatActivity {
                      vo2max_mliter_Values[0]= (vo2max_liter_Values[0]*1000)/(Double.valueOf(userInfo[1])); //userInfo[1]= user Age
                      vo2max_mliter_Values[1]= (vo2max_liter_Values[1]*1000)/(Double.valueOf(userInfo[1]));
                      vo2max_mliter_Values[2]= (vo2max_liter_Values[2]*1000)/(Double.valueOf(userInfo[1]));
-                         }// else if (power5MPT_5==0){vo2Max_5= 0;} //TODO denna rad funkar inte just nu, lägg in det som en while argument
+                         }// else if (power5MPT_5==0){vo2Max_5= 0;} //TODO denna rad funkar inte just nu, lägg in det som en while argument(syftet är att inte få negativ resultat för V02max)
 
                // Multiply all the VO2max values by 1.03 if pretest1 box has been ticked
                 if(boxChecked){
@@ -202,10 +202,10 @@ public class SecondActivity extends AppCompatActivity {
         });
     }
 
-    //TODO Disable horizontalview in all activities except database(troubling and not useful)
+
     //TODO IF back button is pressed delete the data of the recent activity and CHECK THAT THE USER IONFORMATION IS NOT BEING SAVED AGAIN(VIKTIGT)(if null/empty dont save)
     //TODO Omskrivning av kod för secondactivity
-    //TODO RENSA DATABASEN EFTER VISS ANTAL USERINFORMATION
+    //TODO Avoid saving same information twice, RENSA DATABASEN EFTER VISS ANTAL USERINFORMATION
     //TODO fixa naming conventions för datalist/row XML fil så det blir samma logik som i alla XML filer
 
     //Todo onResume();  ex Chronometern? userinformation från Second/ThirdActivity

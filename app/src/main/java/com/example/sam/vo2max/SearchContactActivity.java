@@ -41,11 +41,6 @@ public class SearchContactActivity extends AppCompatActivity {
         btnShowUser.setVisibility(View.GONE);
         btnDeleteUser.setVisibility(View.GONE); //Hide button
 
-
-//TODO if search buttopn is clicked and user is found show user name and make buttons visible  else make a toas(user not founnd)
-
-
-
     }
 
     public void searchContact(View view)

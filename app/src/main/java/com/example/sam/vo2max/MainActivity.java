@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        showActionBar(); //TODO att skapa Actionbar här gör appen långsammare(görs i manifestfilem, preloads)
-        addListnerOnCheckBox(); //onCheckListnerRadioButton
+        showActionBar();
+        addListnerOnCheckBox(); //onCheckListnerCheckBox
         addListnerOnMeasurmentButton(); //onClickListnerMeasurmentButton
 
     }
@@ -115,8 +115,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent1 = new Intent(MainActivity.this,SecondActivity.class);
         Bundle user_info = new Bundle();
 
-
-        //TODO send over boxCecked to secondactivity
         user_info.putStringArray(USER_KEY, new String[]{sName, sAge,sWeight}); //String[0]= sName
         intent1.putExtra(CHECKBOX_KEY,boxChecked);
         intent1.putExtras(user_info);
