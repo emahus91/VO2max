@@ -152,9 +152,6 @@ public class SecondActivity extends AppCompatActivity {
                 powerValues[2]= (((Double.valueOf(userInfo[2]) * tA) * (antalVandor[2]* Height)) / tid_5min);
 
 
-
-                //TODO if förtest 1 multiplicera med 1.03(if F1 box is ticked *1.03 annars inte)
-
                 // while(power5MPT_5!=0) {}
                  if ((Double.valueOf(userInfo[1])) >= 18 && (Double.valueOf(userInfo[1])) <= 59) { //means Young adults b/w 18 & 59 years old
                      vo2max_liter_Values[0] = (powerValues[0] - 21.296) / 33.242;//vo2max_liter_Values[0]= Vo2max3min [l/min]
@@ -205,12 +202,12 @@ public class SecondActivity extends AppCompatActivity {
         });
     }
 
-
     //TODO Disable horizontalview in all activities except database(troubling and not useful)
+    //TODO IF back button is pressed delete the data of the recent activity and CHECK THAT THE USER IONFORMATION IS NOT BEING SAVED AGAIN(VIKTIGT)(if null/empty dont save)
     //TODO Omskrivning av kod för secondactivity
     //TODO RENSA DATABASEN EFTER VISS ANTAL USERINFORMATION
-    //TODO IF back button is pressed delete the data of the recent activity and CHECK THAT THE USER IONFORMATION IS NOT BEING SAVED AGAIN(VIKTIGT)(if null/empty dontsave)
-    //TODO fixa naming conventions för datalist/row XML fil så det blir samma logit som i alla XML filer
+    //TODO fixa naming conventions för datalist/row XML fil så det blir samma logik som i alla XML filer
+
     //Todo onResume();  ex Chronometern? userinformation från Second/ThirdActivity
     //Todo onPause();  ex Chronometern? userinformation från Second/ThirdActivity
     //Todo onDestroy(); finns det värden som behöver sparas?
@@ -253,7 +250,6 @@ public class SecondActivity extends AppCompatActivity {
         for (int i=0; i<array.length; i++) {
             array[i] = array[i] * 1.03;
         }
-
     }
 
     public boolean onOptionsItemSelected(MenuItem item){

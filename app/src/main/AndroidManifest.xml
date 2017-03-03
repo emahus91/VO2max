@@ -8,17 +8,16 @@
         android:label="   Pyramid Test - V02max"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" android:windowSoftInputMode="stateHidden">
+        <activity android:name=".MainActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SecondActivity" android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".TheMeasurementActivity"
-         android:label="  Home"/>
+        <activity android:name=".SecondActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
+        <activity android:name=".TheMeasurementActivity" android:label="  Home" android:screenOrientation="portrait"/>
         <activity android:name=".DataListActivity"/>
-        <activity android:name=".SearchContactActivity" android:windowSoftInputMode="stateHidden">
+        <activity android:name=".SearchContactActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
