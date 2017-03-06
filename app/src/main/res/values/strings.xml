@@ -2,11 +2,11 @@
     <string name="app_name">Pyramid Test - V02max</string>
     <string name="greeting">Welcome to the swedish school of sport and health sciences (GIH) VO2max mobile application!</string>
     <string name="NewMeasurement">New measurement</string>
-    <string name="agetextview">Enter the persons age:</string>
+    <string name="agetextview">Enter Age:</string>
     <string name="Pretest1">Pretest 1</string>
     <string name="othertest">Other test?</string>
-    <string name="weighttextview">Enter the persons weight:</string>
-    <string name="idtextview">Enter the persons ID:</string>
+    <string name="weighttextview">Enter Weight:</string>
+    <string name="idtextview">Enter ID:</string>
     <string name="button">View Data</string>
     <string name="ButtonAddData">Add Data</string>
 
@@ -31,7 +31,7 @@
     <string name="decrementbutton">decrementbutton</string>
     <string name="incrementbutton">incrementbutton</string>
     <string name="stop">Stop</string>
-    <string name="Statistic_Btn">Statistic</string>
+    <string name="Statistic_Btn">Database</string>
     <string name="Submit_Btn">Submit</string>
     <string name="SearchBtn">Search</string>
     <string name="btnSearch">Search Contact</string>
@@ -51,6 +51,12 @@
     <string name="antal_vandor_4">N4</string>
     <string name="antal_vandor_5">N5</string>
     <string name="DeleteBtn">Delete Contact</string>
+    <string name="user_id">User ID</string>
+    <string name="user_idtextview">User ID</string>
+    <string name="delete_user">DELETE USER</string>
+    <string name="search">SEARCH</string>
+    <string name="show_user">Show User</string>
+    <string name="other_tests">Other tests</string>
 
 
 </resources>

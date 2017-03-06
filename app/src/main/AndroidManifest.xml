@@ -15,7 +15,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SecondActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
-        <activity android:name=".TheMeasurementActivity" android:label="  Home" android:screenOrientation="portrait"/>
+        <activity android:name=".TheMeasurementActivity" android:label="  Home" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait"/>
         <activity android:name=".DataListActivity"/>
         <activity android:name=".SearchContactActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
         <meta-data

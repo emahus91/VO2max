@@ -52,7 +52,6 @@ public class SecondActivity extends AppCompatActivity {
         final EditText etVandor5= (EditText) findViewById(R.id.Vandor5EditTextID);
         Button btnUpdate = (Button) findViewById(R.id.UpdateButtonID);
         Button btnStart = (Button) findViewById(R.id.StartButtonID);
-        Button btnStop = (Button) findViewById(R.id.StopButtonID);
         Button btnRestart=(Button) findViewById(R.id.RestartButtonID);
 
 
@@ -68,14 +67,6 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
 
-        btnStop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //TODO if sats om stop knappen trycks 2 gånger.....(fixa stopknapp bug)
-                simpleChronometer.stop();
-                timeWhenStopped = simpleChronometer.getBase() - SystemClock.elapsedRealtime();
-            }
-        });
 
         // // perform click  event on restart button to set the base time on chronometer
         btnRestart.setOnClickListener(new View.OnClickListener() {
