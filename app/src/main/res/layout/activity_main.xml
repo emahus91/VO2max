@@ -9,7 +9,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/activity_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
@@ -23,6 +23,103 @@
             android:id="@+id/GreetingTextViewID" />
 
 
+        <TextView
+            android:text="@string/idtextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/NameTextView"
+            android:layout_alignTop="@+id/NameEditTextID"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:textStyle="normal|bold"
+            android:textSize="18sp" />
+
+        <TextView
+            android:text="@string/agetextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/AgeTextView"
+            android:textStyle="normal|bold"
+            android:layout_below="@+id/NameTextView"
+            android:layout_alignParentStart="true"
+            android:textSize="18sp" />
+
+        <TextView
+            android:text="@string/weighttextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/WeightTextViewID"
+            android:textStyle="normal|bold"
+            android:textSize="18sp"
+            android:layout_marginTop="18dp"
+            android:layout_below="@+id/AgeTextView"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:text="@string/Statistic_Btn"
+            android:layout_width="135dp"
+            android:layout_height="50dp"
+            android:background="@drawable/my_button"
+            android:id="@+id/Statistic_Btn"
+            android:onClick="viewContact"
+            android:layout_below="@+id/NewMeasurementButtonID"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="18dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="4"
+            android:id="@+id/WeightEditTextID"
+            android:layout_alignBaseline="@+id/WeightTextViewID"
+            android:layout_alignBottom="@+id/WeightTextViewID"
+            android:layout_toEndOf="@+id/Statistic_Btn" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="4"
+            android:id="@+id/AgeEditTextID"
+            android:layout_above="@+id/WeightTextViewID"
+            android:layout_alignStart="@+id/WeightEditTextID" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="6"
+            android:id="@+id/NameEditTextID"
+            android:selectAllOnFocus="true"
+            android:inputType="none|textPersonName"
+            android:layout_below="@+id/OtherTestsCheckBoxID"
+            android:layout_alignStart="@+id/AgeEditTextID" />
+
+        <Button
+            android:text="@string/NewMeasurement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="58dp"
+            android:id="@+id/NewMeasurementButtonID"
+            android:layout_below="@+id/WeightEditTextID"
+            android:background="@drawable/my_button4"
+            android:layout_alignEnd="@+id/WeightEditTextID"
+            android:layout_toEndOf="@+id/NameTextView" />
+
+        <Button
+            android:text="@string/btnSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="search_contact"
+            android:background="@drawable/my_button"
+            android:id="@+id/button"
+            android:layout_alignBaseline="@+id/Statistic_Btn"
+            android:layout_alignBottom="@+id/Statistic_Btn"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/Statistic_Btn"
+            android:layout_marginStart="10dp" />
+
         <CheckBox
             android:text="@string/Pretest1"
             android:id ="@+id/PretestCheckBoxID"
@@ -30,104 +127,18 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:layout_below="@+id/GreetingTextViewID"
-  />
-
-        <Button
-            android:text="@string/NewMeasurement"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="120dp"
-            android:layout_marginTop="330dp"
-            android:id="@+id/NewMeasurementButtonID" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="6"
-            android:id="@+id/WeightEditTextID"
-            android:layout_alignBaseline="@+id/WeightTextViewID"
-            android:layout_alignBottom="@+id/AgeEditTextID"
-            android:layout_toEndOf="@+id/WeightTextViewID" />
-
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="8"
-            android:id="@+id/AgeEditTextID"
-            android:layout_alignBaseline="@+id/AgeTextView"
-            android:layout_alignBottom="@+id/AgeTextView"
-            android:layout_toEndOf="@+id/AgeTextView" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:ems="10"
-            android:id="@+id/NameEditTextID"
-            android:layout_alignParentStart="true"
-            android:layout_above="@+id/AgeEditTextID"
-            android:textSize="18sp"
-            android:selectAllOnFocus="true"
-            android:inputType="none|textPersonName" />
-
-        <TextView
-            android:text="@string/weighttextview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/WeightTextViewID"
-            android:layout_alignBottom="@+id/NewMeasurementButtonID"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="148dp" />
-
-        <TextView
-            android:text="@string/idtextview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/NameTextView"
-            android:layout_alignTop="@+id/NameEditTextID"
-            android:layout_alignParentStart="true" />
-
-        <TextView
-            android:text="@string/agetextview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/AgeTextView"
-            android:layout_marginBottom="15dp"
-            android:layout_above="@+id/WeightTextViewID"
-            android:layout_alignEnd="@+id/NameTextView" />
-
-        <Button
-            android:text="@string/Statistic_Btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/NewMeasurementButtonID"
-            android:layout_alignStart="@+id/AgeTextView"
-            android:layout_marginBottom="33dp"
-            android:id="@+id/Statistic_Btn"
-            android:onClick="viewContact"/>
-
-        <Button
-            android:text="@string/btnSearch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:onClick="search_contact"
-            android:id="@+id/button"
-            android:layout_below="@+id/WeightTextViewID"
-            android:layout_alignStart="@+id/Statistic_Btn" />
+            android:layout_marginTop="14dp" />
 
         <CheckBox
-            android:text="Other tests"
+            android:text="@string/other_tests"
             android:id ="@+id/OtherTestsCheckBoxID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:layout_below="@+id/GreetingTextViewID"
-            android:layout_toEndOf="@+id/NameTextView" />
+            android:layout_alignBaseline="@+id/PretestCheckBoxID"
+            android:layout_alignBottom="@+id/PretestCheckBoxID"
+            android:layout_alignEnd="@+id/AgeEditTextID" />
 
 
     </RelativeLayout>

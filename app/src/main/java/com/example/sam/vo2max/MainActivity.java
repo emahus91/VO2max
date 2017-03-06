@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 sAge = etAge.getText().toString();
                 sWeight = etWeight.getText().toString();
 
-                //TODO CHECK IF CHeck box is checked
+                //TODO Tricks för att påminna/tvinga användaren att välja en av alternativen(viktigast pretest1) då om man bara har en checkbox kan användaren välja att ignorera kryssa i.
                 if(cbPretest1.isChecked()&& cbOtherTest.isChecked()){
                     Toast.makeText(MainActivity.this, "Please tick only one checkbox!!",Toast.LENGTH_LONG).show();
                     return;}
