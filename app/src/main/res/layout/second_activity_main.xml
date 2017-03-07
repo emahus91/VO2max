@@ -20,16 +20,17 @@
                 android:layout_width="80dp"
                 android:layout_height="50dp"
                 android:textSize="36sp"
-                android:textColor="#d3ff0149"
+                android:textColor="#EFEF0C3D"
                 android:textStyle="bold"
                 android:layout_weight="0.73"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:layout_marginTop="10dp" />
 
             <Button
                 android:id="@+id/StartButtonID"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:background="@drawable/my_button3"
+                android:background="@drawable/my_button_green"
                 android:text="@string/start"
                 android:layout_weight="0.17" />
 
@@ -37,8 +38,8 @@
                 android:id="@+id/RestartButtonID"
                 android:layout_width="68dp"
                 android:layout_height="40dp"
-                android:background="@drawable/my_button4"
-                android:text="@string/restart"
+                android:background="@drawable/my_button_gray"
+                android:text="@string/reset"
                 android:layout_marginStart="10dp" />
         </LinearLayout>
 
@@ -49,54 +50,77 @@
             android:orientation="horizontal" >
 
             <TextView
-                android:text="@string/tid_min"
+                android:text="@string/minutes"
                 android:layout_width="120dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/textViewTid"
-                android:textSize="20sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 android:textAlignment="center"
-                android:layout_weight="0.19" />
+                android:layout_weight="0.19"
+                android:layout_marginTop="3dp" />
 
             <TextView
-                android:text="@string/antal_vandor"
+                android:text="@string/number_of_laps"
                 android:layout_width="120dp"
-                android:layout_height="wrap_content"
+                android:layout_height="38dp"
                 android:id="@+id/textViewVandor"
-                android:layout_weight="0.42"
-                android:textSize="20sp"
+                android:layout_weight="0.11"
+                android:textSize="24sp"
                 android:textStyle="bold"
-                android:textAlignment="center" />
+                android:textAlignment="textStart"
+                android:layout_marginTop="3dp"
+                android:textColor="#EFEF0C3D" />
 
         </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="46dp"
         android:orientation="horizontal"
-        android:layout_weight="0.37">
+        android:weightSum="1">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.16"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.13"/>
 
         <TextView
-            android:text="@string/_3"
+            android:text="@string/min_3"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/textViewTid3"
-            android:layout_weight="0.08"
             android:textStyle="normal|bold"
             android:textAlignment="center"
+            android:background = "@drawable/my_button_gray_oval"
             android:textSize="24sp"
-            android:gravity="center" />
+            android:gravity="center"
+            android:layout_weight="0.16" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.16"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.11"/>
 
         <EditText
-            android:layout_width="5dp"
+            android:layout_width="86dp"
             android:layout_height="match_parent"
             android:text="@string/_00"
             android:id="@+id/Vandor3EditTextID"
-            android:layout_weight="0.11"
+            android:background = "@drawable/cell_shape_red"
             android:gravity="center"
             android:textSize="24sp"
-            android:inputType="number" />
+            android:inputType="number"
+            android:layout_weight="0.04" />
 
     </LinearLayout>
 
@@ -105,28 +129,50 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_weight="0.37">
+            android:layout_weight="0.37"
+        android:weightSum="1">
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.16"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.13"/>
 
-            <TextView
-                android:text="@string/_4"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/textViewTid4"
-                android:layout_weight="0.12"
-                android:textStyle="normal|bold"
-                android:textAlignment="center"
-                android:textSize="24sp"
-                android:gravity="center" />
+        <TextView
+            android:text="@string/min_4"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:id="@+id/textViewTid4"
+            android:textStyle="normal|bold"
+            android:textAlignment="center"
+            android:background = "@drawable/my_button_gray_oval"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:layout_weight="0.14"
+            android:layout_marginTop="4dp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.16"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.11"/>
 
         <EditText
-            android:layout_width="5dp"
-            android:layout_height="match_parent"
+            android:layout_width="81dp"
+            android:layout_height="44dp"
             android:text="@string/_000"
             android:id="@+id/Vandor4EditTextID"
-            android:layout_weight="0.17"
             android:gravity="center"
+            android:background = "@drawable/cell_shape_red"
             android:textSize="24sp"
-            android:inputType="number" />
+            android:inputType="number"
+            android:layout_marginTop="5dp"
+            android:layout_weight="0.06" />
 
 
         </LinearLayout>
@@ -135,28 +181,49 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_weight="0.37">
+            android:layout_weight="0.37"
+            android:weightSum="1">
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.16"/>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.13"/>
 
             <TextView
-                android:text="@string/_5"
+                android:text="@string/min_5"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="44dp"
                 android:id="@+id/textViewTid5"
-                android:layout_weight="0.22"
                 android:textStyle="normal|bold"
                 android:textAlignment="center"
+                android:background = "@drawable/my_button_gray_oval"
                 android:textSize="24sp"
-                android:gravity="center" />
+                android:gravity="center"
+                android:layout_weight="0.15"
+                android:layout_marginTop="5dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.16"/>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.12"/>
 
             <EditText
-                android:layout_width="5dp"
+                android:layout_width="86dp"
                 android:layout_height="match_parent"
                 android:text="@string/_00000"
                 android:id="@+id/Vandor5EditTextID"
-                android:layout_weight="0.32"
+                android:background = "@drawable/cell_shape_red"
                 android:gravity="center"
                 android:textSize="24sp"
-                android:inputType="number" />
+                android:inputType="number"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0.04" />
 
         </LinearLayout>
 
@@ -170,12 +237,12 @@
     </com.example.sam.vo2max.ValueSelector>
 
     <Button
-            android:id="@+id/UpdateButtonID"
-            android:layout_width="wrap_content"
+            android:id="@+id/CalculateButtonID"
+            android:layout_width="114dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-        android:background="@drawable/my_button4"
-            android:text="@string/update" />
+        android:background="@drawable/my_button_blue"
+            android:text="@string/Calculate" />
 
 </LinearLayout>
 </ScrollView>

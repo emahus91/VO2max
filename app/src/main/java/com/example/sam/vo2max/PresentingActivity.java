@@ -12,7 +12,7 @@ import java.text.DecimalFormat;
 //import static com.example.sam.vo2max.R.id.textViewID;
 
 
-public class TheMeasurementActivity extends AppCompatActivity {
+public class PresentingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +43,13 @@ public class TheMeasurementActivity extends AppCompatActivity {
         Bundle user_info = intent.getExtras(), power_values =intent.getExtras(),vo2max_liter_values =intent.getExtras(),
                vo2max_mliter_values =intent.getExtras(),antal_vandor =intent.getExtras() ;
 
-        final String[] userInfo= user_info.getStringArray(SecondActivity.USER_KEY2);
-        final double[] powerValues= power_values.getDoubleArray(SecondActivity.POWER_KEY);
-        final double[] vo2max_liter_Values = vo2max_liter_values.getDoubleArray(SecondActivity.VO2MAX_LITER_KEY);
-        final double[] vo2max_mliter_Values = vo2max_mliter_values.getDoubleArray(SecondActivity.VO2MAX_MLITER_KEY);
-        final double[] antalVandor = antal_vandor.getDoubleArray(SecondActivity.ANTAL_VANDOR_KEY);
+        final String[] userInfo= user_info.getStringArray(CalculationActivity.USER_KEY2);
+        final double[] powerValues= power_values.getDoubleArray(CalculationActivity.POWER_KEY);
+        final double[] vo2max_liter_Values = vo2max_liter_values.getDoubleArray(CalculationActivity.VO2MAX_LITER_KEY);
+        final double[] vo2max_mliter_Values = vo2max_mliter_values.getDoubleArray(CalculationActivity.VO2MAX_MLITER_KEY);
+        final double[] antalVandor = antal_vandor.getDoubleArray(CalculationActivity.ANTAL_VANDOR_KEY);
 
-        //double vo2Max_5 = intent.getDoubleExtra(SecondActivity.VO2_MAX, 0); // or double number = getIntent().getExtras().getInt("NEW_NUMBER");
+        //double vo2Max_5 = intent.getDoubleExtra(CalculationActivity.VO2_MAX, 0); // or double number = getIntent().getExtras().getInt("NEW_NUMBER");
         //Create the text view
        // TextView textView = new TextView(this);
         //textView.setTextSize(25);

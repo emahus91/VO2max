@@ -6,7 +6,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/valueSelector_margin_top"
         android:textSize="@dimen/valueSelector_text"
-        android:text="@string/vandorknappen"
+        android:text="@string/Laps_textbox"
         android:enabled="false"
         android:inputType="number"
         android:background="@null"
@@ -21,7 +21,8 @@
         android:textSize="@dimen/valueSelector_label_text"
         android:text="@string/valueSelector_label"
         android:layout_below="@+id/valueTextView"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/silver" />
 
     <ImageView
         android:contentDescription="@string/incrementbutton"
