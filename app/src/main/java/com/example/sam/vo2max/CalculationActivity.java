@@ -15,7 +15,7 @@ package com.example.sam.vo2max;
         import android.database.sqlite.SQLiteDatabase;
         import java.text.DecimalFormat;
 
-public class SecondActivity extends AppCompatActivity {
+public class CalculationActivity extends AppCompatActivity {
 
     public final static String POWER_KEY ="com.example.sam.vo2max.POWER_KEY ";
     public final static String USER_KEY2 ="com.example.sam.vo2max.USER_KEY2";
@@ -50,7 +50,7 @@ public class SecondActivity extends AppCompatActivity {
         final EditText etVandor3= (EditText) findViewById(R.id.Vandor3EditTextID);
         final EditText etVandor4= (EditText) findViewById(R.id.Vandor4EditTextID);
         final EditText etVandor5= (EditText) findViewById(R.id.Vandor5EditTextID);
-        Button btnUpdate = (Button) findViewById(R.id.UpdateButtonID);
+        Button btnUpdate = (Button) findViewById(R.id.CalculateButtonID);
         Button btnStart = (Button) findViewById(R.id.StartButtonID);
         Button btnRestart=(Button) findViewById(R.id.RestartButtonID);
 
@@ -109,15 +109,15 @@ public class SecondActivity extends AppCompatActivity {
                 if (etVandor3.getText().toString().length() == 0|| etVandor3.getText().toString().equals("")){
                     //etName.setBackgroundColor(Color.RED);
                     etVandor3.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_ATOP);
-                    Toast.makeText(SecondActivity.this, "Ange antal vändor!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(CalculationActivity.this, "Ange antal vändor!",Toast.LENGTH_LONG).show();
                     return;}
                 if (etVandor4.getText().toString().length() == 0 || etVandor4.getText().toString().equals("")){
                     etVandor4.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_ATOP);
-                    Toast.makeText(SecondActivity.this, "Ange antal vändor!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(CalculationActivity.this, "Ange antal vändor!",Toast.LENGTH_LONG).show();
                     return;}
                 if (etVandor5.getText().toString().length() == 0 || etVandor5.getText().toString().equals("")){
                     etVandor5.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_ATOP);
-                    Toast.makeText(SecondActivity.this, "Ange antal vändor!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(CalculationActivity.this, "Ange antal vändor!",Toast.LENGTH_LONG).show();
                     return;}
 
                 // skapar lokala variabler inför beräkningen
@@ -166,13 +166,13 @@ public class SecondActivity extends AppCompatActivity {
                // Multiply all the VO2max values by 1.03 if pretest1 box has been ticked
                 if(boxChecked){
                     arrayMultiply(vo2max_liter_Values);
-                    Toast.makeText(SecondActivity.this, "Pretest box Ticked!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(CalculationActivity.this, "Pretest box Ticked!",Toast.LENGTH_LONG).show();
                 }else{
-                    Toast.makeText(SecondActivity.this, "Pretest box NOT Ticked!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(CalculationActivity.this, "Pretest box NOT Ticked!",Toast.LENGTH_LONG).show();
                 }
 
                 //Skickar all data till 3dje aktivitet för analys
-                Intent intent2 = new Intent(SecondActivity.this,TheMeasurementActivity.class);
+                Intent intent2 = new Intent(CalculationActivity.this,PresentingActivity.class);
                 Bundle user_info2 = new Bundle(), power_values =new Bundle(), vo2max_liter_values =new Bundle(), vo2max_mliter_values =new Bundle(), antal_vandor= new Bundle();
 
                 user_info2.putStringArray(USER_KEY2, userInfo);

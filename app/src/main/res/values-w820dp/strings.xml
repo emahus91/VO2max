@@ -6,6 +6,6 @@
     <string name="N3">antal_vandor_3</string>
     <string name="N4">antal_vandor_4</string>
     <string name="N5">antal_vandor_5</string>
-    <string name="antal_vandor_3">antal_vandor_3</string>
-    <string name="antal_vandor_5">antal_vandor_5</string>
+    <string name="number_of_laps_3">antal_vandor_3</string>
+    <string name="number_of_laps_5">antal_vandor_5</string>
 </resources>

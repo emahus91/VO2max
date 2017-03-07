@@ -127,7 +127,8 @@ public class SearchContactActivity extends AppCompatActivity {
         userDbHelper.deleteInformation(search_name,sqLiteDatabase);
         tvUserId.setText("User ID Succefuly Deleted!");
         btnShowUser.setVisibility((View.GONE));
-        Toast.makeText(getBaseContext(),"Contact deleted",Toast.LENGTH_LONG).show();
+        btnDeleteUser.setVisibility((View.GONE));
+        //Toast.makeText(getBaseContext(),"Contact deleted",Toast.LENGTH_LONG).show();
     }
 
     public boolean onOptionsItemSelected(MenuItem item){

@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void copyUserInformation(){
 
-        Intent intent1 = new Intent(MainActivity.this,SecondActivity.class);
+        Intent intent1 = new Intent(MainActivity.this,CalculationActivity.class);
         Bundle user_info = new Bundle();
 
         user_info.putStringArray(USER_KEY, new String[]{sName, sAge,sWeight}); //String[0]= sName

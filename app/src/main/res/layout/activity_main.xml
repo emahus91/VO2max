@@ -57,10 +57,10 @@
             android:layout_alignParentStart="true" />
 
         <Button
-            android:text="@string/Statistic_Btn"
+            android:text="@string/database_btn"
             android:layout_width="135dp"
             android:layout_height="50dp"
-            android:background="@drawable/my_button"
+            android:background="@drawable/my_button_beige"
             android:id="@+id/Statistic_Btn"
             android:onClick="viewContact"
             android:layout_below="@+id/NewMeasurementButtonID"
@@ -103,7 +103,7 @@
             android:layout_marginTop="58dp"
             android:id="@+id/NewMeasurementButtonID"
             android:layout_below="@+id/WeightEditTextID"
-            android:background="@drawable/my_button4"
+            android:background="@drawable/my_button_blue"
             android:layout_alignEnd="@+id/WeightEditTextID"
             android:layout_toEndOf="@+id/NameTextView" />
 
@@ -112,7 +112,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="search_contact"
-            android:background="@drawable/my_button"
+            android:background="@drawable/my_button_beige"
             android:id="@+id/button"
             android:layout_alignBaseline="@+id/Statistic_Btn"
             android:layout_alignBottom="@+id/Statistic_Btn"
@@ -128,7 +128,9 @@
             android:textAlignment="center"
             android:layout_below="@+id/GreetingTextViewID"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="14dp" />
+            android:layout_marginTop="14dp"
+            android:focusable="false"
+            android:layout_alignEnd="@+id/WeightTextViewID" />
 
         <CheckBox
             android:text="@string/other_tests"
