@@ -2,7 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingEnd="16dp"
-    android:paddingLeft="13dp"
+    android:paddingStart="13dp"
     android:paddingTop="16dp"
     android:paddingBottom="16dp">
 
@@ -40,16 +40,18 @@
         android:layout_alignParentStart="true" />
 
     <Button
+        android:id="@+id/SearchButtonID"
         android:layout_width="125dp"
         android:layout_height="wrap_content"
-        android:text="@string/search"
-        android:onClick="searchContact"
-        android:id="@+id/SearchButtonID"
-        android:background="@drawable/my_button_beige"
+        android:layout_alignBottom="@+id/SearchNameEditTextID"
         android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/SearchNameEditTextID"
         android:layout_alignParentTop="true"
-        android:layout_alignBottom="@+id/SearchNameEditTextID" />
+        android:layout_toEndOf="@+id/SearchNameEditTextID"
+        android:background="@drawable/my_button_beige"
+        android:drawableStart="@drawable/ic_searchbutton_2_4"
+        android:onClick="searchContact"
+        android:paddingStart="5dp"
+        android:text="@string/search" />
 
     <EditText
         android:layout_width="180dp"

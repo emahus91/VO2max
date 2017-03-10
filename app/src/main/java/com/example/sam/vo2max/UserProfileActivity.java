@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.view.View.OnClickListener;
 
-public class MainActivity extends AppCompatActivity {
+public class UserProfileActivity extends AppCompatActivity {
 
     public final static String USER_KEY = "com.example.sam.vo2max.USER_KEY";
     public final static String CHECKBOX_KEY = "com.example.sam.vo2max.CHECKBOX_KEY";
@@ -70,39 +70,39 @@ public class MainActivity extends AppCompatActivity {
 
                 //TODO Tricks för att påminna/tvinga användaren att välja en av alternativen(viktigast pretest1) då om man bara har en checkbox kan användaren välja att ignorera kryssa i.
                 if(cbPretest1.isChecked()&& cbOtherTest.isChecked()){
-                    Toast.makeText(MainActivity.this, "Please tick only one checkbox!!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(UserProfileActivity.this, "Please tick only one checkbox!!",Toast.LENGTH_LONG).show();
                     return;}
 
                 if (cbPretest1.isChecked()|| cbOtherTest.isChecked()){}
                     else{
                     cbPretest1.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_ATOP);
                     cbOtherTest.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_ATOP);
-                    Toast.makeText(MainActivity.this, "Checkbox not ticked!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(UserProfileActivity.this, "Checkbox not ticked!",Toast.LENGTH_LONG).show();
                     return;}
 
                 if (sName.length() == 0 || sName.equals("")){
                     //etName.setBackgroundColor(Color.RED);
                     etName.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_ATOP);
-                    Toast.makeText(MainActivity.this, "Please Write your Name!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(UserProfileActivity.this, "Please Write your Name!",Toast.LENGTH_LONG).show();
                     return;}
 
                 //kontrollera om den inmatade Åldern stämmer
                 if (sAge.length() == 0 || sAge.equals("")) {
                     etAge.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_ATOP);
-                    Toast.makeText(MainActivity.this, "Please Write your Age!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(UserProfileActivity.this, "Please Write your Age!", Toast.LENGTH_LONG).show();
                     return;
                 }else if((Double.valueOf(sAge)) >= 100 || (Double.valueOf(sAge)) <18){
                     etAge.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_ATOP);
-                    Toast.makeText(MainActivity.this,"Wrong Age range!" ,Toast.LENGTH_LONG).show();
+                    Toast.makeText(UserProfileActivity.this,"Wrong Age range!" ,Toast.LENGTH_LONG).show();
                     return;}
 
                 if (sWeight.length() == 0){
                     etWeight.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_ATOP);
-                    Toast.makeText(MainActivity.this, "Please Write your Weight!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(UserProfileActivity.this, "Please Write your Weight!",Toast.LENGTH_LONG).show();
                     return;
                 }else if((Double.valueOf(sWeight)) >= 150 || (Double.valueOf(sWeight)) <10){
                     etAge.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_ATOP);
-                    Toast.makeText(MainActivity.this, "Wrong Weight range!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(UserProfileActivity.this, "Wrong Weight range!",Toast.LENGTH_LONG).show();
                     return;}
 
                 copyUserInformation(); // Copy All userinformation to Second activity
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void copyUserInformation(){
 
-        Intent intent1 = new Intent(MainActivity.this,CalculationActivity.class);
+        Intent intent1 = new Intent(UserProfileActivity.this,CalculationActivity.class);
         Bundle user_info = new Bundle();
 
         user_info.putStringArray(USER_KEY, new String[]{sName, sAge,sWeight}); //String[0]= sName
@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void search_contact(View view)
     {
-        Intent intent3 = new Intent(MainActivity.this, SearchContactActivity.class);
+        Intent intent3 = new Intent(UserProfileActivity.this, SearchContactActivity.class);
         startActivity(intent3);
     }
    public void showActionBar(){

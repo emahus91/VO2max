@@ -33,7 +33,7 @@
     <string name="database_btn">Database</string>
     <string name="Submit_Btn">Submit</string>
     <string name="SearchBtn">Search</string>
-    <string name="btnSearch">Search Contact</string>
+    <string name="btnSearch">Search User</string>
     <string name="power5MPT">5MPT</string>
     <string name="vo2max_liter_5">[l5]</string>
     <string name="namn">Namn</string>
@@ -70,6 +70,9 @@
     <string name="vo2maxml3">Vo2maxml3</string>
     <string name="vo2maxml4">Vo2maxml4</string>
     <string name="vo2maxml5">Vo2maxml5</string>
+    <string name="kg">kg</string>
+    <string name="user_age_hint">User Age</string>
+    <string name="user_id_hint">User ID</string>
 
 
 </resources>
