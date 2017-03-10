@@ -38,7 +38,7 @@ public class CalculationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) { // TODO behöver all metoder skrivas inom onCreate metoden?
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.second_activity_main);
+        setContentView(R.layout.calculation_activity_layout);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         final ValueSelector valueSelector = (ValueSelector) findViewById(R.id.valueSelector);
@@ -82,17 +82,17 @@ public class CalculationActivity extends AppCompatActivity {
             @Override
             public void onChronometerTick(Chronometer chronometer)
             {
-                if ("00:05".equals(chronometer.getText())) {
+                if ("03:00".equals(chronometer.getText())) {
                     int value = valueSelector.getValue();
                     etVandor3.setText(String.valueOf(value));
                 }
 
-                if ("00:10".equals(chronometer.getText())) {
+                if ("04:00".equals(chronometer.getText())) {
                     int value = valueSelector.getValue();
                     etVandor4.setText(String.valueOf(value));
                 }
 
-                if ("00:15".equals(chronometer.getText())) {
+                if ("05:00".equals(chronometer.getText())) {
                     int value = valueSelector.getValue();
                     etVandor5.setText(String.valueOf(value));
                 }
@@ -129,8 +129,8 @@ public class CalculationActivity extends AppCompatActivity {
                 Intent intent = getIntent();
                 Bundle user_info =intent.getExtras();
 
-                userInfo= user_info.getStringArray(MainActivity.USER_KEY); // userInfo is a string array already declared above
-                boxChecked = getIntent().getExtras().getBoolean(MainActivity.CHECKBOX_KEY);
+                userInfo= user_info.getStringArray(UserProfileActivity.USER_KEY); // userInfo is a string array already declared above
+                boxChecked = getIntent().getExtras().getBoolean(UserProfileActivity.CHECKBOX_KEY);
 
 
                 //3 ekvationer för beräkning av Power(utförd arbete) vid minut 3 4 och 5.
@@ -244,7 +244,7 @@ public class CalculationActivity extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
+        Intent myIntent = new Intent(getApplicationContext(), UserProfileActivity.class);
         startActivityForResult(myIntent, 0);
         return true;
 

@@ -17,7 +17,7 @@ public class PresentingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_the_measurement);
+        setContentView(R.layout.presentation_activityt_layout);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //setTitle("HOME");
         //ActionBar actionBar = getSupportActionBar();
@@ -79,7 +79,7 @@ public class PresentingActivity extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
+        Intent myIntent = new Intent(getApplicationContext(), UserProfileActivity.class);
         startActivityForResult(myIntent, 0);
         return true;
 

@@ -10,9 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.text.DecimalFormat;
 
 public class SearchContactActivity extends AppCompatActivity {
 
@@ -28,7 +25,7 @@ public class SearchContactActivity extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.searchlayout);
+        setContentView(R.layout.searchcontact_activity_layout);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
@@ -62,7 +59,7 @@ public class SearchContactActivity extends AppCompatActivity {
 
     public void showContact (View view){
 
-        setContentView(R.layout.activity_the_measurement);
+        setContentView(R.layout.presentation_activityt_layout);
         tvUserID = (TextView) findViewById(R.id.UserTextViewID);
         tvLaps3 =  (TextView) findViewById(R.id.Laps3TextViewID);
         tvLaps4 =  (TextView) findViewById(R.id.Laps4TextViewID);
@@ -132,7 +129,7 @@ public class SearchContactActivity extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
+        Intent myIntent = new Intent(getApplicationContext(), UserProfileActivity.class);
         startActivityForResult(myIntent, 0);
         return true;
 

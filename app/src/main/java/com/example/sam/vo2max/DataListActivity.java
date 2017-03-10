@@ -17,7 +17,7 @@ public class DataListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.data_list_activity);
+        setContentView(R.layout.data_list_activity_layout);
         listView = (ListView) findViewById(R.id.list_view);
         listDataAdapter = new ListDataAdapter(getApplicationContext(),R.layout.row_layout);
         listView.setAdapter(listDataAdapter);
