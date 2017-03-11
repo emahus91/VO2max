@@ -73,6 +73,8 @@
     <string name="kg">kg</string>
     <string name="user_age_hint">User Age</string>
     <string name="user_id_hint">User ID</string>
+    <string name="date">Date</string>
+    <string name="date_2">Date</string>
 
 
 </resources>
