@@ -14,6 +14,9 @@ package com.example.sam.vo2max;
         import android.content.Context;
         import android.database.sqlite.SQLiteDatabase;
         import java.text.DecimalFormat;
+        import java.text.SimpleDateFormat;
+        import java.util.Date;
+        import java.util.Locale;
 
 public class CalculationActivity extends AppCompatActivity {
 
@@ -166,10 +169,8 @@ public class CalculationActivity extends AppCompatActivity {
                // Multiply all the VO2max values by 1.03 if pretest1 box has been ticked
                 if(boxChecked){
                     arrayMultiply(vo2max_liter_Values);
-                    Toast.makeText(CalculationActivity.this, "Pretest box Ticked!",Toast.LENGTH_LONG).show();
-                }else{
-                    Toast.makeText(CalculationActivity.this, "Pretest box NOT Ticked!",Toast.LENGTH_LONG).show();
-                }
+                    Toast.makeText(CalculationActivity.this, "Pretest 1",Toast.LENGTH_LONG).show();
+                }else{}
 
                 //Skickar all data till 3dje aktivitet för analys
                 Intent intent2 = new Intent(CalculationActivity.this,PresentingActivity.class);
@@ -199,10 +200,6 @@ public class CalculationActivity extends AppCompatActivity {
     //TODO Avoid saving same information twice, RENSA DATABASEN EFTER VISS ANTAL USERINFORMATION
     //TODO fixa naming conventions för datalist/row XML fil så det blir samma logik som i alla XML filer
 
-    //Todo onResume();  ex Chronometern? userinformation från Second/ThirdActivity
-    //Todo onPause();  ex Chronometern? userinformation från Second/ThirdActivity
-    //Todo onDestroy(); finns det värden som behöver sparas?
-
 
      public void addUserInformation()
       {
@@ -220,14 +217,14 @@ public class CalculationActivity extends AppCompatActivity {
         String antal_vandor_3 = String.valueOf(formatVal.format(antalVandor[0]));
         String antal_vandor_4 = String.valueOf(formatVal.format(antalVandor[1]));
         String antal_vandor_5 = String.valueOf(formatVal.format(antalVandor[2]));
-
+        String date_time_stamp = getDateTime();
 
        userDbHelper = new UserDbHelper(context);
        sqLiteDatabase = userDbHelper.getWritableDatabase();
        userDbHelper.addInformations(name, power3, power4, power5, vo2max_liter_3,
                                     vo2max_liter_4, vo2max_liter_5, vo2max_mliter_3,
                                     vo2max_mliter_4, vo2max_mliter_5, antal_vandor_3,
-                                    antal_vandor_4,antal_vandor_5,sqLiteDatabase);
+                                    antal_vandor_4,antal_vandor_5,date_time_stamp,sqLiteDatabase);
        Toast.makeText(getBaseContext(),"Data Saved",Toast.LENGTH_SHORT).show();
        userDbHelper.close();
      }
@@ -248,5 +245,11 @@ public class CalculationActivity extends AppCompatActivity {
         startActivityForResult(myIntent, 0);
         return true;
 
+    }
+    private String getDateTime() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat(
+                "yyyy-MM-dd", Locale.getDefault()); //"yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+        Date date = new Date();
+        return dateFormat.format(date);
     }
 }

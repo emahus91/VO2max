@@ -22,7 +22,7 @@ public class UserContract {
             public static final String ANTAL_VANDOR_3 = "ANTAL_VANDOR_3";
             public static final String ANTAL_VANDOR_4 = "ANTAL_VANDOR_4";
             public static final String ANTAL_VANDOR_5 = "ANTAL_VANDOR_5";
-
+            public static final String DATE_TIME_STAMP = "DATE_TIME_STAMP";
             public static final String TABLE_NAME = "user_info";
 
         }

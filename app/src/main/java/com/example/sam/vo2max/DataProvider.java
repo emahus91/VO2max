@@ -18,11 +18,12 @@ public class DataProvider {
     private String antal_vandor_3;
     private String antal_vandor_4;
     private String antal_vandor_5;
+    private String date_time_stamp;
 
     public DataProvider(String name, String power3, String power4,
                         String power5, String vo2max_liter_3, String vo2max_liter_4,
                         String vo2max_liter_5,String vo2max_mliter_3, String vo2max_mliter_4,
-                        String vo2max_mliter_5, String antal_vandor_3,String antal_vandor_4,String antal_vandor_5)
+                        String vo2max_mliter_5, String antal_vandor_3,String antal_vandor_4,String antal_vandor_5,String date_time_stamp)
     {
         this.name = name;
         this.power3=power3;
@@ -37,8 +38,15 @@ public class DataProvider {
         this.antal_vandor_3 = antal_vandor_3;
         this.antal_vandor_4 = antal_vandor_4;
         this.antal_vandor_5 = antal_vandor_5;
+        this.date_time_stamp = date_time_stamp;
     }
 
+    public String getDate_time_stamp() {
+        return date_time_stamp;
+    }
+    public void setDate_time_stamp(String date_time_stamp) {
+        this.date_time_stamp = date_time_stamp;
+    }
 
     public String getName() {
         return name;
