@@ -29,10 +29,9 @@ public class DataListActivity extends AppCompatActivity {
         if(cursor.moveToFirst())
         {
             do{
-
                 String name,power3,power4,power5, vo2max_liter_3, vo2max_liter_4,
                         vo2max_liter_5,vo2max_mliter_3, vo2max_mliter_4, vo2max_mliter_5,
-                        antal_vandor_3, antal_vandor_4, antal_vandor_5;
+                        antal_vandor_3, antal_vandor_4, antal_vandor_5, date_time_stamp;
                 name = cursor.getString(0);
                 power3 = cursor.getString(1);
                 power4 = cursor.getString(2);
@@ -46,10 +45,11 @@ public class DataListActivity extends AppCompatActivity {
                 antal_vandor_3 = cursor.getString(10);
                 antal_vandor_4 = cursor.getString(11);
                 antal_vandor_5 = cursor.getString(12);
+                date_time_stamp = cursor.getString(13);
 
                 DataProvider dataProvider = new DataProvider(name,power3,power4,power5, vo2max_liter_3, vo2max_liter_4,
                                                             vo2max_liter_5,vo2max_mliter_3, vo2max_mliter_4,
-                                                            vo2max_mliter_5,antal_vandor_3,antal_vandor_4,antal_vandor_5);
+                                                            vo2max_mliter_5,antal_vandor_3,antal_vandor_4,antal_vandor_5,date_time_stamp);
                 listDataAdapter.add(dataProvider);
 
             }while (cursor.moveToNext());

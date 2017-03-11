@@ -7,8 +7,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+
+import static com.example.sam.vo2max.UserContract.NewUserInfo.DATE_TIME_STAMP;
 
 /**
  * Created by Aran & Samuel on 2017-02-11.
@@ -24,7 +29,7 @@ public class ListDataAdapter extends ArrayAdapter {
     static class LayoutHandler
     {
         TextView NAME, POWER3, POWER4, POWER5, VO2MAX_LITER_3, VO2MAX_LITER_4, VO2MAX_LITER_5,
-                VO2MAX_MLITER_3, VO2MAX_MLITER_4, VO2MAX_MLITER_5,ANTAL_VANDOR_3,ANTAL_VANDOR_4,ANTAL_VANDOR_5;
+                VO2MAX_MLITER_3, VO2MAX_MLITER_4, VO2MAX_MLITER_5,ANTAL_VANDOR_3,ANTAL_VANDOR_4,ANTAL_VANDOR_5, DATE_TIME_STAMP;
     }
 
     @Override
@@ -55,7 +60,7 @@ public class ListDataAdapter extends ArrayAdapter {
 
             row = layoutInflater.inflate(R.layout.row_layout, parent, false);
             layoutHandler = new LayoutHandler();
-            layoutHandler.NAME = (TextView)row.findViewById(R.id.text_user_name);
+            layoutHandler.NAME = (TextView)row.findViewById(R.id.text_user_id);
             layoutHandler.POWER3 = (TextView)row.findViewById(R.id.text_user_power3);
             layoutHandler.POWER4 = (TextView)row.findViewById(R.id.text_user_power4);
             layoutHandler.POWER5 = (TextView)row.findViewById(R.id.text_user_power5);
@@ -68,6 +73,7 @@ public class ListDataAdapter extends ArrayAdapter {
             layoutHandler.ANTAL_VANDOR_3= (TextView)row.findViewById(R.id.text_user_antal_vandor_3);
             layoutHandler.ANTAL_VANDOR_4 = (TextView)row.findViewById(R.id.text_user_antal_vandor_4 );
             layoutHandler.ANTAL_VANDOR_5 = (TextView)row.findViewById(R.id.text_user_antal_vandor_5);
+            layoutHandler.DATE_TIME_STAMP = (TextView)row.findViewById(R.id.text_user_date_time_stamp);
 
             row.setTag(layoutHandler);
         }
@@ -90,6 +96,8 @@ public class ListDataAdapter extends ArrayAdapter {
         layoutHandler.ANTAL_VANDOR_3.setText(dataProvider.getAntal_vandor_3());
         layoutHandler.ANTAL_VANDOR_4.setText(dataProvider.getAntal_vandor_4());
         layoutHandler.ANTAL_VANDOR_5.setText(dataProvider.getAntal_vandor_5());
+        layoutHandler.DATE_TIME_STAMP.setText(dataProvider.getDate_time_stamp());
         return row;
     }
+
 }

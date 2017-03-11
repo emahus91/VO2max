@@ -36,7 +36,7 @@
     <string name="btnSearch">Search User</string>
     <string name="power5MPT">5MPT</string>
     <string name="vo2max_liter_5">[l5]</string>
-    <string name="namn">Namn</string>
+    <string name="userid">ID</string>
     <string name="alder">Ålder</string>
     <string name="vikt">Vikt</string>
     <string name="vo2max_liter_4">[l4]</string>
@@ -73,6 +73,8 @@
     <string name="kg">kg</string>
     <string name="user_age_hint">User Age</string>
     <string name="user_id_hint">User ID</string>
+    <string name="date">Date</string>
+    <string name="date_2">Date</string>
 
 
 </resources>
