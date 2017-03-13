@@ -2,15 +2,15 @@ package com.example.sam.vo2max;
 
 import android.content.Intent;
 import android.graphics.PorterDuff;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.view.View.OnClickListener;
 
 public class UserProfileActivity extends AppCompatActivity {
 
@@ -27,8 +27,8 @@ public class UserProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        showActionBar();
         addListnerOnCheckBox(); //onCheckListnerCheckBox
         addListnerOnMeasurmentButton(); //onClickListnerMeasurmentButton
 
@@ -122,25 +122,11 @@ public class UserProfileActivity extends AppCompatActivity {
         startActivity(intent1);
     }
 
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent myIntent = new Intent(getApplicationContext(), MenyActivity.class);
+        startActivityForResult(myIntent, 0);
+        return true;
 
-    public void viewContact(View view)
-    {
-        Intent intent = new Intent(this, DataListActivity.class);
-        startActivity(intent);
     }
-
-
-    public void search_contact(View view)
-    {
-        Intent intent3 = new Intent(UserProfileActivity.this, SearchContactActivity.class);
-        startActivity(intent3);
-    }
-   public void showActionBar(){
-
-       ActionBar actionBar = getSupportActionBar();
-       actionBar.setLogo(R.mipmap.ic_launcher);
-       actionBar.setDisplayUseLogoEnabled(true);
-       actionBar.setDisplayShowHomeEnabled(true);
-   }
 
 }

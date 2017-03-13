@@ -1,22 +1,23 @@
 package com.example.sam.vo2max;
 
-        import android.content.Intent;
-        import android.graphics.PorterDuff;
-        import android.os.Bundle;
-        import android.os.SystemClock;
-        import android.support.v7.app.AppCompatActivity;
-        import android.view.MenuItem;
-        import android.view.View;
-        import android.widget.Button;
-        import android.widget.Chronometer;
-        import android.widget.EditText;
-        import android.widget.Toast;
-        import android.content.Context;
-        import android.database.sqlite.SQLiteDatabase;
-        import java.text.DecimalFormat;
-        import java.text.SimpleDateFormat;
-        import java.util.Date;
-        import java.util.Locale;
+import android.content.Context;
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.PorterDuff;
+import android.os.Bundle;
+import android.os.SystemClock;
+import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Chronometer;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class CalculationActivity extends AppCompatActivity {
 
@@ -48,6 +49,18 @@ public class CalculationActivity extends AppCompatActivity {
         valueSelector.setMinValue(0);
         valueSelector.setMaxValue(80);
 
+        // //ticking sound for plus button
+        //final MediaPlayer tickSoundMP = MediaPlayer.create(CalculationActivity.this, R.raw.beep_07);
+
+        //ImageView playTickSound = (ImageView) this.findViewById(R.id.plusButton);
+
+        //playTickSound.setOnClickListener(new View.OnClickListener() {
+          //  @Override
+            //public void onClick(View v) {
+              //  tickSoundMP.start();
+      //      }
+        //});
+
         //INITIATING VIEWS
         final Chronometer simpleChronometer= (Chronometer) findViewById(R.id.simpleChronometer);
         final EditText etVandor3= (EditText) findViewById(R.id.Vandor3EditTextID);
@@ -57,10 +70,8 @@ public class CalculationActivity extends AppCompatActivity {
         Button btnStart = (Button) findViewById(R.id.StartButtonID);
         Button btnRestart=(Button) findViewById(R.id.RestartButtonID);
 
-
-
         //simpleChronometer.setBase(SystemClock.elapsedRealtime() - (2* 60000 + 0 * 1000)); //making chrono start from a specific time
-        // perform click  event on start button to start a chronometer
+        //perform click  event on start button to start a chronometer
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -192,6 +203,7 @@ public class CalculationActivity extends AppCompatActivity {
                 addUserInformation();
             }
         });
+
     }
 
 
@@ -241,7 +253,7 @@ public class CalculationActivity extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), UserProfileActivity.class);
+        Intent myIntent = new Intent(getApplicationContext(), MenyActivity.class);
         startActivityForResult(myIntent, 0);
         return true;
 
@@ -252,4 +264,5 @@ public class CalculationActivity extends AppCompatActivity {
         Date date = new Date();
         return dateFormat.format(date);
     }
+
 }
