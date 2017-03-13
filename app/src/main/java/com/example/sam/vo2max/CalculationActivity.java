@@ -49,18 +49,6 @@ public class CalculationActivity extends AppCompatActivity {
         valueSelector.setMinValue(0);
         valueSelector.setMaxValue(80);
 
-        // //ticking sound for plus button
-        //final MediaPlayer tickSoundMP = MediaPlayer.create(CalculationActivity.this, R.raw.beep_07);
-
-        //ImageView playTickSound = (ImageView) this.findViewById(R.id.plusButton);
-
-        //playTickSound.setOnClickListener(new View.OnClickListener() {
-          //  @Override
-            //public void onClick(View v) {
-              //  tickSoundMP.start();
-      //      }
-        //});
-
         //INITIATING VIEWS
         final Chronometer simpleChronometer= (Chronometer) findViewById(R.id.simpleChronometer);
         final EditText etVandor3= (EditText) findViewById(R.id.Vandor3EditTextID);
@@ -134,7 +122,7 @@ public class CalculationActivity extends AppCompatActivity {
                     Toast.makeText(CalculationActivity.this, "Ange antal vändor!",Toast.LENGTH_LONG).show();
                     return;}
 
-                // skapar lokala variabler inför beräkningen
+                //skapar lokala variabler inför beräkningen
 
                 final double tid_3min =180, tid_4min =240 , tid_5min =300, Height =0.62, tA =9.82; //[s],[l/min], ,[m], [m/s²]
 
