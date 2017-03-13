@@ -84,4 +84,11 @@ public class PresentingActivity extends AppCompatActivity {
         return true;
 
     }
+
+    //tar bort funktionen att gå bakåt via mobilens egna knappar
+    @Override
+    public void onBackPressed()
+    {
+        // super.onBackPressed(); // Comment this super call to avoid calling finish() //tom rad bara
+    }
 }
