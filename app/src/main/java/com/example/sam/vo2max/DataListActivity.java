@@ -1,9 +1,11 @@
 package com.example.sam.vo2max;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ListView;
 
 public class DataListActivity extends AppCompatActivity {
@@ -21,6 +23,7 @@ public class DataListActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.list_view);
         listDataAdapter = new ListDataAdapter(getApplicationContext(),R.layout.row_layout);
         listView.setAdapter(listDataAdapter);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         userDbHelper = new UserDbHelper(getApplicationContext());
         sqLiteDatabase = userDbHelper.getReadableDatabase();
@@ -54,6 +57,13 @@ public class DataListActivity extends AppCompatActivity {
 
             }while (cursor.moveToNext());
         }
+
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent myIntent = new Intent(getApplicationContext(), MenyActivity.class);
+        startActivityForResult(myIntent, 0);
+        return true;
 
     }
 }

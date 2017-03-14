@@ -129,7 +129,7 @@ public class SearchContactActivity extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), UserProfileActivity.class);
+        Intent myIntent = new Intent(getApplicationContext(), MenyActivity.class);
         startActivityForResult(myIntent, 0);
         return true;
 
