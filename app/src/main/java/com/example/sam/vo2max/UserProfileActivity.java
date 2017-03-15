@@ -119,7 +119,7 @@ public class UserProfileActivity extends AppCompatActivity {
         intent1.putExtra(CHECKBOX_KEY,boxChecked);
         intent1.putExtras(user_info);
 
-        startActivity(intent1);
+        startActivity(intent1); 
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
