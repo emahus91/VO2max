@@ -107,7 +107,6 @@ public class ValueSelector extends RelativeLayout {
                 tickSoundMP.start();
             }
         });
-
     }
 
     private void incrementValue() {

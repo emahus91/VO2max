@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/StartNewMeasurementID"
+        android:layout_width="300dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/my_button_blue"
+        android:layout_marginTop="48dp"
+        android:layout_height="wrap_content"
+        android:text="@string/StartNewMeasurementButton" />
+
+    <Button
+        android:id="@+id/DatabaseButtonID"
+        android:layout_width="300dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/my_button_beige"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:onClick="viewContact"
+        android:text="@string/DatabaseButton" />
+
+    <Button
+        android:id="@+id/SearchContactButtonID"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/my_button_beige"
+        android:layout_marginTop="24dp"
+        android:onClick="search_contact"
+        android:text="@string/SearchContactButton" />
+
+    <Button
+        android:id="@+id/InstructionsButton"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/my_button_beige"
+        android:layout_marginTop="24dp"
+        android:text="@string/InstructionsButtonID" />
+</LinearLayout>
+</ScrollView>
