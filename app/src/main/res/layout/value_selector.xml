@@ -25,30 +25,30 @@
         android:textColor="@color/silver" />
 
     <ImageView
-        android:contentDescription="@string/incrementbutton"
-        android:src="@drawable/valueselect_plus_state"
-        android:layout_width="100dp"
-        android:layout_height="108dp"
-        android:layout_marginTop="@dimen/valueSelector_button_hMargin"
+        android:id="@+id/plusButton"
+        android:layout_width="122dp"
+        android:layout_height="85dp"
+        android:layout_alignStart="@+id/valueLabel"
+        android:layout_centerVertical="true"
         android:layout_marginBottom="@dimen/valueSelector_button_hMargin"
         android:layout_marginStart="@dimen/valueSelector_button_insideMargin"
-        android:id="@+id/plusButton"
+        android:layout_marginTop="@dimen/valueSelector_button_hMargin"
         android:clickable="true"
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/valueLabel" />
+        android:contentDescription="@string/incrementbutton"
+        android:src="@drawable/valueselect_plus_state" />
 
     <ImageView
-        android:contentDescription="@string/decrementbutton"
-        android:src="@drawable/valueselect_minus_state"
-        android:layout_width="188dp"
-        android:layout_height="99dp"
-        android:layout_marginTop="@dimen/valueSelector_button_hMargin"
+        android:id="@+id/minusButton"
+        android:layout_width="310dp"
+        android:layout_height="66dp"
+        android:layout_alignEnd="@+id/valueLabel"
+        android:layout_centerVertical="true"
         android:layout_marginBottom="@dimen/valueSelector_button_hMargin"
         android:layout_marginEnd="@dimen/valueSelector_button_insideMargin"
-        android:id="@+id/minusButton"
+        android:layout_marginTop="@dimen/valueSelector_button_hMargin"
         android:clickable="true"
-        android:layout_centerVertical="true"
-        android:layout_alignEnd="@+id/valueLabel" />
+        android:contentDescription="@string/decrementbutton"
+        android:src="@drawable/valueselect_minus_state" />
 
 </merge>
 

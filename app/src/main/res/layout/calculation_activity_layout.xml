@@ -1,7 +1,9 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -242,8 +244,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/valueSelector_height"
         android:layout_marginLeft="@dimen/valueSelector_hMargin"
-        android:layout_marginRight="@dimen/valueSelector_hMargin">
-    </com.example.sam.vo2max.ValueSelector>
+        android:layout_marginRight="@dimen/valueSelector_hMargin"></com.example.sam.vo2max.ValueSelector>
 
 
     <Button
@@ -253,8 +254,8 @@
         android:layout_gravity="center_horizontal"
         android:background="@drawable/my_button_blue"
         android:drawableStart="@drawable/ic_calculatebutton_2_4"
-        android:paddingEnd="3dp"
-        android:paddingStart="5dp"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
         android:text="@string/Calculate"
         android:textColor="@color/black" />
 

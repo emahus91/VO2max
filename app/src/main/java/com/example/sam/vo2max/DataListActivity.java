@@ -3,6 +3,7 @@ package com.example.sam.vo2max;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -15,6 +16,7 @@ public class DataListActivity extends AppCompatActivity {
     UserDbHelper userDbHelper;
     Cursor cursor;
     ListDataAdapter listDataAdapter;
+    private MediaPlayer backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,9 +63,19 @@ public class DataListActivity extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), MenyActivity.class);
+        Intent myIntent = new Intent(getApplicationContext(), MenuActivity.class);
         startActivityForResult(myIntent, 0);
+        stopPlaying(backButton);
+        backButton = MediaPlayer.create(DataListActivity.this, R.raw.back_button);
+        backButton.start();
         return true;
+    }
 
+    private void stopPlaying(MediaPlayer mp) {
+        if (mp != null) {
+            mp.stop();
+            mp.release();
+            mp = null;
+        }
     }
 }

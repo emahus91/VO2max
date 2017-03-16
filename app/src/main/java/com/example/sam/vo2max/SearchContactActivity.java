@@ -3,6 +3,8 @@ package com.example.sam.vo2max;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.PorterDuff;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -10,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SearchContactActivity extends AppCompatActivity {
 
@@ -19,7 +22,8 @@ public class SearchContactActivity extends AppCompatActivity {
     Button btnSearch, btnShowUser, btnDeleteUser;
     UserDbHelper userDbHelper;
     SQLiteDatabase sqLiteDatabase;
-    String search_name;
+    String searchName;
+    private MediaPlayer buttonClickMenu,backButton,errorSound;
 
     @Override
     protected void onCreate (Bundle savedInstanceState)
@@ -42,10 +46,20 @@ public class SearchContactActivity extends AppCompatActivity {
 
     public void searchContact(View view)
     {
-        search_name = etSearchID.getText().toString();
+        searchName = etSearchID.getText().toString();
         userDbHelper = new UserDbHelper(getApplicationContext());
         sqLiteDatabase = userDbHelper.getReadableDatabase();
-        Cursor cursor = userDbHelper.getContact(search_name, sqLiteDatabase);
+        Cursor cursor = userDbHelper.getContact(searchName, sqLiteDatabase);
+
+        stopPlaying(errorSound);
+        errorSound = MediaPlayer.create(SearchContactActivity.this, R.raw.error_sound);
+
+        if (searchName.length() == 0 || searchName.equals("")){
+            errorSound.start();
+            etSearchID.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_ATOP);
+            Toast.makeText(SearchContactActivity.this, "Please Write User ID!",Toast.LENGTH_LONG).show();
+            return;}
+
         if(cursor.moveToFirst())
         {
             String userID = cursor.getString(0);
@@ -55,6 +69,9 @@ public class SearchContactActivity extends AppCompatActivity {
             btnShowUser.setVisibility((View.VISIBLE));
             btnDeleteUser.setVisibility(View.VISIBLE);
         }
+        stopPlaying(buttonClickMenu);
+        buttonClickMenu = MediaPlayer.create(this, R.raw.button_click_menu2);
+        buttonClickMenu.start();
     }
 
     public void showContact (View view){
@@ -74,10 +91,10 @@ public class SearchContactActivity extends AppCompatActivity {
         tvVo2maxml4 = (TextView) findViewById(R.id.Vo2maxml4TextViewID);
         tvVo2maxml5 = (TextView) findViewById(R.id.Vo2maxml5TextViewID);
 
-        search_name = etSearchID.getText().toString();
+        searchName = etSearchID.getText().toString();
         userDbHelper = new UserDbHelper(getApplicationContext());
         sqLiteDatabase = userDbHelper.getReadableDatabase();
-        Cursor cursor = userDbHelper.getContact(search_name, sqLiteDatabase);
+        Cursor cursor = userDbHelper.getContact(searchName, sqLiteDatabase);
 
         if(cursor.moveToFirst())
         {
@@ -113,25 +130,39 @@ public class SearchContactActivity extends AppCompatActivity {
             tvVo2maxml4.setText(" V02max (4 min): " + vo2max_mliter_4 +" [ml/kg/min]");
             tvVo2maxml5.setText(" V02max (5 min): " + vo2max_mliter_5 +" [ml/kg/min]");
         }
-
-
+        stopPlaying(buttonClickMenu);
+        buttonClickMenu = MediaPlayer.create(this, R.raw.button_click_menu2);
+        buttonClickMenu.start();
     }
 
     public void deleteContact (View view)
     {
         userDbHelper = new UserDbHelper(getApplicationContext());
         sqLiteDatabase = userDbHelper.getReadableDatabase();
-        userDbHelper.deleteInformation(search_name,sqLiteDatabase);
+        userDbHelper.deleteInformation(searchName,sqLiteDatabase);
         tvUserId.setText("User ID Succefuly Deleted!");
         btnShowUser.setVisibility((View.GONE));
         btnDeleteUser.setVisibility((View.GONE));
+        stopPlaying(buttonClickMenu);
+        buttonClickMenu = MediaPlayer.create(this, R.raw.button_click_menu2);
+        buttonClickMenu.start();
         //Toast.makeText(getBaseContext(),"Contact deleted",Toast.LENGTH_LONG).show();
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), MenyActivity.class);
+        Intent myIntent = new Intent(getApplicationContext(), MenuActivity.class);
         startActivityForResult(myIntent, 0);
+        stopPlaying(backButton);
+        backButton = MediaPlayer.create(SearchContactActivity.this, R.raw.back_button);
+        backButton.start();
         return true;
 
+    }
+    private void stopPlaying(MediaPlayer mp) {
+        if (mp != null) {
+            mp.stop();
+            mp.release();
+            mp = null;
+        }
     }
 }

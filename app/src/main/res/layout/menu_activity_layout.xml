@@ -11,20 +11,27 @@
     <Button
         android:id="@+id/StartNewMeasurementID"
         android:layout_width="300dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/my_button_blue"
-        android:layout_marginTop="48dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/my_button_blue"
+        android:drawableStart="@drawable/ic_mesurmentbutton_2_4_2"
+        android:onClick="newMeasurment"
+        android:paddingEnd="30dp"
+        android:paddingStart="30dp"
         android:text="@string/StartNewMeasurementButton" />
 
     <Button
         android:id="@+id/DatabaseButtonID"
         android:layout_width="300dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/my_button_beige"
         android:layout_height="wrap_content"
-        android:layout_marginTop="110dp"
-        android:onClick="viewContact"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/my_button_beige"
+        android:drawableStart="@drawable/ic_listbutton_2_4"
+        android:onClick="showDatabase"
+        android:paddingEnd="30dp"
+        android:paddingStart="30dp"
         android:text="@string/DatabaseButton" />
 
     <Button
@@ -32,9 +39,12 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/my_button_beige"
         android:layout_marginTop="24dp"
-        android:onClick="search_contact"
+        android:background="@drawable/my_button_beige"
+        android:drawableStart="@drawable/ic_searchbutton_2_4"
+        android:onClick="searchContact"
+        android:paddingEnd="30dp"
+        android:paddingStart="30dp"
         android:text="@string/SearchContactButton" />
 
     <Button
@@ -42,8 +52,12 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/my_button_beige"
         android:layout_marginTop="24dp"
+        android:background="@drawable/my_button_beige"
+        android:drawableStart="@drawable/ic_instructionbutton"
+        android:onClick="showInstruction"
+        android:paddingEnd="30dp"
+        android:paddingStart="30dp"
         android:text="@string/InstructionsButtonID" />
 </LinearLayout>
 </ScrollView>

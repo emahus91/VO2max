@@ -75,7 +75,7 @@
     <string name="user_id_hint">User ID</string>
     <string name="date">Date</string>
     <string name="date_2">Date</string>
-    <string name="StartNewMeasurementButton">Start a new measurement</string>
+    <string name="StartNewMeasurementButton">New measurement</string>
     <string name="DatabaseButton">Database</string>
     <string name="SearchContactButton">Search Contact</string>
     <string name="InstructionsButtonID">Instructions</string>
