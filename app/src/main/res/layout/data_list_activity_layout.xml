@@ -10,7 +10,7 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     tools:context="com.example.sam.vo2max.DataListActivity"
-    android:background="@color/colorPrimary">
+    android:background="@color/white">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
