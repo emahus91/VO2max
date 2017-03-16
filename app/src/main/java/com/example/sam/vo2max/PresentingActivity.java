@@ -1,6 +1,7 @@
 package com.example.sam.vo2max;
 
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
@@ -13,6 +14,8 @@ import java.text.DecimalFormat;
 
 
 public class PresentingActivity extends AppCompatActivity {
+
+    private MediaPlayer backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,12 +52,6 @@ public class PresentingActivity extends AppCompatActivity {
         final double[] vo2max_mliter_Values = vo2max_mliter_values.getDoubleArray(CalculationActivity.VO2MAX_MLITER_KEY);
         final double[] antalVandor = antal_vandor.getDoubleArray(CalculationActivity.ANTAL_VANDOR_KEY);
 
-        //double vo2Max_5 = intent.getDoubleExtra(CalculationActivity.VO2_MAX, 0); // or double number = getIntent().getExtras().getInt("NEW_NUMBER");
-        //Create the text view
-       // TextView textView = new TextView(this);
-        //textView.setTextSize(25);
-        //textView.setTextColor(Color.BLUE);
-        //textView.setBackgroundColor(Color.BLUE);
         DecimalFormat formatVal= new DecimalFormat("##.##");//textView.setText(formatVal.format(powerValues[0]));
 
         assert userInfo != null; assert powerValues != null; assert vo2max_liter_Values != null; assert vo2max_mliter_Values != null; assert antalVandor != null;
@@ -79,10 +76,19 @@ public class PresentingActivity extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), MenyActivity.class);
+        Intent myIntent = new Intent(getApplicationContext(), MenuActivity.class);
         startActivityForResult(myIntent, 0);
+        stopPlaying(backButton);
+        backButton = MediaPlayer.create(PresentingActivity.this, R.raw.back_button);
+        backButton.start();
         return true;
-
+    }
+    private void stopPlaying(MediaPlayer mp) {
+        if (mp != null) {
+            mp.stop();
+            mp.release();
+            mp = null;
+        }
     }
 
     //tar bort funktionen att gå bakåt via mobilens egna knappar

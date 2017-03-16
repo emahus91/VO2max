@@ -2,6 +2,7 @@ package com.example.sam.vo2max;
 
 import android.content.Context;
 import android.media.MediaPlayer;
+import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -92,6 +93,9 @@ public class ValueSelector extends RelativeLayout {
             @Override
             public void onClick(View v) {
                 decrementValue();
+                stopPlaying(tickSoundMP);
+                tickSoundMP = MediaPlayer.create(context, R.raw.beep_07);
+                tickSoundMP.start();
             }
         });
 
@@ -101,9 +105,8 @@ public class ValueSelector extends RelativeLayout {
                 incrementValue();
 
                 //ticking sound for plus button
-                stopPlaying();
-                tickSoundMP = MediaPlayer.create(context, R.raw.beep_07);
-
+                stopPlaying(tickSoundMP);
+                tickSoundMP = MediaPlayer.create(context, R.raw.button_click_1);
                 tickSoundMP.start();
             }
         });
@@ -123,11 +126,11 @@ public class ValueSelector extends RelativeLayout {
         }
     }
 
-    private void stopPlaying() {
-        if (tickSoundMP != null) {
-            tickSoundMP.stop();
-            tickSoundMP.release();
-            tickSoundMP = null;
+    private void stopPlaying(MediaPlayer mp) {
+        if (mp != null) {
+            mp.stop();
+            mp.release();
+            mp = null;
         }
     }
 
