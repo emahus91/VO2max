@@ -164,23 +164,24 @@ public class CalculationActivity extends AppCompatActivity {
                     vo2max_liter_Values[1] = (powerValues[1] - 21.296) / 33.242;//vo2max_liter_Values[1]= Vo2max4min [l/min]
                     vo2max_liter_Values[2] = (powerValues[2] - 21.296) / 33.242;//vo2max_liter_Values[2]= Vo2max5min [l/min]
 
-                    vo2max_mliter_Values[0] = (vo2max_liter_Values[0] * 1000) / (Double.valueOf(userInfo[1])); //vo2max_mliter_Values[0]= Vo2max3min [ml/kg/min]
-                    vo2max_mliter_Values[1] = (vo2max_liter_Values[1] * 1000) / (Double.valueOf(userInfo[1])); //vo2max_mliter_Values[1]= Vo2max3min [ml/kg/min]
-                    vo2max_mliter_Values[2] = (vo2max_liter_Values[2] * 1000) / (Double.valueOf(userInfo[1])); //vo2max_mliter_Values[2]= Vo2max3min [ml/kg/min]
+                    vo2max_mliter_Values[0] = (vo2max_liter_Values[0] * 1000) / (Double.valueOf(userInfo[2])); //vo2max_mliter_Values[0]= Vo2max3min [ml/kg/min]
+                    vo2max_mliter_Values[1] = (vo2max_liter_Values[1] * 1000) / (Double.valueOf(userInfo[2])); //vo2max_mliter_Values[1]= Vo2max3min [ml/kg/min]
+                    vo2max_mliter_Values[2] = (vo2max_liter_Values[2] * 1000) / (Double.valueOf(userInfo[2])); //vo2max_mliter_Values[2]= Vo2max3min [ml/kg/min]
 
                 } else if ((Double.valueOf(userInfo[1])) >= 60 && (Double.valueOf(userInfo[1])) <= 100) { //means Old adults b/w 60 & 100 years old
                     vo2max_liter_Values[0] = (powerValues[0] - 11.026) / 40.816;
                     vo2max_liter_Values[1] = (powerValues[1] - 11.026) / 40.816;
                     vo2max_liter_Values[2] = (powerValues[2] - 11.026) / 40.816;
 
-                    vo2max_mliter_Values[0] = (vo2max_liter_Values[0] * 1000) / (Double.valueOf(userInfo[1])); //userInfo[1]= user Age
-                    vo2max_mliter_Values[1] = (vo2max_liter_Values[1] * 1000) / (Double.valueOf(userInfo[1]));
-                    vo2max_mliter_Values[2] = (vo2max_liter_Values[2] * 1000) / (Double.valueOf(userInfo[1]));
+                    vo2max_mliter_Values[0] = (vo2max_liter_Values[0] * 1000) / (Double.valueOf(userInfo[2])); //userInfo[1]= user Age, userInfo[2] = user weight
+                    vo2max_mliter_Values[1] = (vo2max_liter_Values[1] * 1000) / (Double.valueOf(userInfo[2]));
+                    vo2max_mliter_Values[2] = (vo2max_liter_Values[2] * 1000) / (Double.valueOf(userInfo[2]));
                 }// else if (power5MPT_5==0){vo2Max_5= 0;} //TODO denna rad funkar inte just nu, lägg in det som en while argument(syftet är att inte få negativ resultat för V02max)
 
                 // Multiply all the VO2max values by 1.03 if pretest1 box has been ticked
                 if (boxChecked) {
                     arrayMultiply(vo2max_liter_Values);
+                    arrayMultiply(vo2max_mliter_Values);
                 } else {
                 }
 
@@ -214,7 +215,7 @@ public class CalculationActivity extends AppCompatActivity {
 
 
     public void addUserInformation() {
-        DecimalFormat formatVal = new DecimalFormat("##.##");
+        DecimalFormat formatVal = new DecimalFormat("##.###");
         String name = userInfo[0];
         String power3 = String.valueOf(formatVal.format(powerValues[0]));
         String power4 = String.valueOf(formatVal.format(powerValues[1]));
@@ -254,9 +255,9 @@ public class CalculationActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent myIntent = new Intent(getApplicationContext(), MenuActivity.class);
         startActivityForResult(myIntent, 0);
-        stopPlaying(backButton);
-        backButton = MediaPlayer.create(CalculationActivity.this, R.raw.back_button);
-        backButton.start();
+        //stopPlaying(backButton);
+        //backButton = MediaPlayer.create(CalculationActivity.this, R.raw.back_button);
+        //backButton.start();
         return true;
 
     }

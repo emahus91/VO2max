@@ -78,9 +78,9 @@ public class PresentingActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         Intent myIntent = new Intent(getApplicationContext(), MenuActivity.class);
         startActivityForResult(myIntent, 0);
-        stopPlaying(backButton);
-        backButton = MediaPlayer.create(PresentingActivity.this, R.raw.back_button);
-        backButton.start();
+        //stopPlaying(backButton);
+        //backButton = MediaPlayer.create(CalculationActivity.this, R.raw.back_button);
+        //backButton.start();
         return true;
     }
     private void stopPlaying(MediaPlayer mp) {

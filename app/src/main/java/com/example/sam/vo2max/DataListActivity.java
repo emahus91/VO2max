@@ -65,9 +65,9 @@ public class DataListActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         Intent myIntent = new Intent(getApplicationContext(), MenuActivity.class);
         startActivityForResult(myIntent, 0);
-        stopPlaying(backButton);
-        backButton = MediaPlayer.create(DataListActivity.this, R.raw.back_button);
-        backButton.start();
+        //stopPlaying(backButton);
+        //backButton = MediaPlayer.create(CalculationActivity.this, R.raw.back_button);
+        //backButton.start();
         return true;
     }
 

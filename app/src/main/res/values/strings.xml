@@ -46,9 +46,9 @@
     <string name="vo2max_mliter_3">[ml3]</string>
     <string name="vo2max_mliter_4">[ml4]</string>
     <string name="vo2max_mliter_5">[ml5]</string>
-    <string name="number_of_laps_3">N3</string>
-    <string name="antal_vandor_4">N4</string>
-    <string name="number_of_laps_5">N5</string>
+    <string name="number_of_laps_3">n3</string>
+    <string name="antal_vandor_4">n4</string>
+    <string name="number_of_laps_5">n5</string>
     <string name="DeleteBtn">Delete User</string>
     <string name="user_id">User ID</string>
     <string name="user_idtextview">User ID</string>

@@ -124,7 +124,6 @@
         <EditText
             android:layout_width="86dp"
             android:layout_height="match_parent"
-            android:text="@string/_00"
             android:id="@+id/Vandor3EditTextID"
             android:background = "@drawable/cell_shape_red"
             android:gravity="center"
@@ -175,7 +174,6 @@
         <EditText
             android:layout_width="81dp"
             android:layout_height="44dp"
-            android:text="@string/_000"
             android:id="@+id/Vandor4EditTextID"
             android:gravity="center"
             android:background = "@drawable/cell_shape_red"
@@ -227,7 +225,6 @@
             <EditText
                 android:layout_width="86dp"
                 android:layout_height="match_parent"
-                android:text="@string/_00000"
                 android:id="@+id/Vandor5EditTextID"
                 android:background = "@drawable/cell_shape_red"
                 android:gravity="center"

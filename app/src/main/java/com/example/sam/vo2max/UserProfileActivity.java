@@ -133,19 +133,18 @@ public class UserProfileActivity extends AppCompatActivity {
         intent1.putExtra(CHECKBOX_KEY,boxChecked);
         intent1.putExtras(user_info);
 
-        startActivity(intent1); 
+        startActivity(intent1);
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
         Intent myIntent = new Intent(getApplicationContext(), MenuActivity.class);
         startActivityForResult(myIntent, 0);
-        stopPlaying(backButton);
-        backButton = MediaPlayer.create(UserProfileActivity.this, R.raw.back_button);
-        backButton.start();
+        //stopPlaying(backButton);
+        //backButton = MediaPlayer.create(CalculationActivity.this, R.raw.back_button);
+        //backButton.start();
         return true;
 
     }
-
 
     private void stopPlaying(MediaPlayer mp) {
         if (mp != null) {
