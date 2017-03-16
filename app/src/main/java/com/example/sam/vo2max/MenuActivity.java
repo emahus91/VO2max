@@ -47,9 +47,9 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void showInstruction(View view) {
-       // stopPlaying(buttonInstruction);
-        //buttonInstruction = MediaPlayer.create(this, R.raw.button_click_menu2);
-       // buttonInstruction.start();
+        stopPlaying(buttonInstruction);
+        buttonInstruction = MediaPlayer.create(this, R.raw.fart);
+        buttonInstruction.start();
     }
 
     public void showActionBar() {
