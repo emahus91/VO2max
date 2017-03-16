@@ -79,6 +79,7 @@
     <string name="DatabaseButton">Database</string>
     <string name="SearchContactButton">Search Contact</string>
     <string name="InstructionsButtonID">Instructions</string>
+    <string name="Delete_all_users_btn">Delete all data</string>
 
 
 </resources>
