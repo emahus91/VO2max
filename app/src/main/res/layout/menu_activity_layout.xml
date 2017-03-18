@@ -8,12 +8,20 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <TextView
+        android:id="@+id/GreetingTextViewID"
+        android:layout_width="305dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/greeting" />
+
     <Button
         android:id="@+id/StartNewMeasurementID"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="35dp"
         android:background="@drawable/my_button_blue"
         android:drawableStart="@drawable/ic_mesurmentbutton_2_4_2"
         android:onClick="newMeasurment"

@@ -80,6 +80,9 @@
     <string name="SearchContactButton">Search Contact</string>
     <string name="InstructionsButtonID">Instructions</string>
     <string name="Delete_all_users_btn">Delete all data</string>
+    <string name="greeting2">Welcome to the activity to start a new test! Click the Pretest 1 checkbox if it is the persons first time
+        performing the test. Otherwise click the Other tests checkbox. Press the START TEST button when everything is
+    finished. </string>
 
 
 </resources>
