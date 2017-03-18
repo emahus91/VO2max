@@ -19,9 +19,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/greeting"
-            android:id="@+id/GreetingTextViewID" />
-
+            android:textSize="13sp"
+            android:text="@string/greeting2"
+            android:id="@+id/GreetingTextView2ID" />
 
         <TextView
             android:text="@string/idtextview"
@@ -110,7 +110,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:layout_below="@+id/GreetingTextViewID"
+            android:layout_below="@+id/GreetingTextView2ID"
             android:layout_alignParentStart="true"
             android:layout_marginTop="14dp"
             android:focusable="false"
@@ -125,7 +125,6 @@
             android:layout_alignBaseline="@+id/PretestCheckBoxID"
             android:layout_alignBottom="@+id/PretestCheckBoxID"
             android:layout_alignEnd="@+id/AgeEditTextID" />
-
 
     </RelativeLayout>
 </ScrollView>
